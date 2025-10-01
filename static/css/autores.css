@@ -41,7 +41,7 @@
 
 /* ============ CAROUSEL STYLES ============ */
 .murales-carousel {
-  background-color: #e2c9ba;
+  background-color: #f36e23;
   min-height: 80vh;
 }
 
@@ -50,20 +50,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  max-width: 900px;
+  gap: 30px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.carousel-main-image {
+/* Carousel image and indicators container */
+.carousel-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
   flex: 1;
+}
+
+.carousel-main-image {
   text-align: center;
+  max-width: 600px;
 }
 
 .carousel-main-image img {
   max-width: 100%;
   height: auto;
-  max-height: 500px;
+  max-height: 400px;
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -82,6 +91,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
 }
 
 .carousel-arrow:hover {
@@ -104,7 +115,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
+  margin: 0;
 }
 
 .indicator {
@@ -179,13 +190,21 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .carousel-container {
-    flex-direction: column;
     gap: 15px;
+    max-width: 95%;
   }
 
   .carousel-arrow {
     width: 40px;
     height: 40px;
+  }
+
+  .carousel-main-image {
+    max-width: 500px;
+  }
+
+  .carousel-main-image img {
+    max-height: 300px;
   }
 
   .mural-info {
@@ -198,9 +217,21 @@
 }
 
 @media (max-width: 576px) {
+  .carousel-container {
+    gap: 10px;
+  }
+
   .carousel-arrow {
     width: 35px;
     height: 35px;
+  }
+
+  .carousel-main-image {
+    max-width: 400px;
+  }
+
+  .carousel-main-image img {
+    max-height: 250px;
   }
 
   .indicator {
