@@ -1,0 +1,170 @@
+/* Fondo del encabezado */
+.encabezado {
+    background-color: #ffffff;
+    border-bottom: 3px solid #000;
+  }
+  
+  /* Botón naranja */
+  .btn-contar-historia {
+    background-color: #f36e23;
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+  
+  /* Menú desplegable oscuro */
+  .menu-desplegable {
+    background-color: #1a1a1a;
+    color: white;
+  }
+  
+  .menu-desplegable .dropdown-item {
+    color: white;
+  }
+  
+  .menu-desplegable .dropdown-item:hover {
+    background-color: #444;
+  }
+  
+/* Logos del header */
+.logos {
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.logos img {
+  max-height: 40px;
+  object-fit: contain;
+}
+/*------------------*/
+/*------------------*/
+  /* INTRO PROYECTO */
+.intro-proyecto {
+    background-color: #f36e23;
+    color: white;
+  }
+  
+  .subtitulo {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  
+  .titulo-display {
+    font-size: 2.9rem;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+  
+  .descripcion-intro {
+    font-size: 2rem;
+    line-height: 1.6;
+  }
+  
+
+  
+/* Collage intermedio */
+.collage-intermedio {
+    background: #b2ebf2; /* fondo azul claro unificado */
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+  
+  .img-historia {
+    max-width: 250px;
+    height: auto;
+  }
+  
+  .img-historia-central {
+    max-width: 550px;  /* Más grande */
+    height: auto;
+    z-index: 2;
+  }
+  /* FRASE DESTACADA */
+  .frase-destacada {
+    background-color: #f9a825;
+  }
+  
+  .frase-destacada h2 {
+    font-size: 2.3rem;
+    font-weight: 700;
+  }
+  
+  .frase-destacada .resaltado {
+    color: white;
+  }
+  
+/*------------------*/
+/*------------------*/
+  .slider-demografico {
+    background-color: #f4c5b6; /* Color similar al que mostraste */
+  }
+  
+  .img-slider {
+    max-width: 500px;
+    height: auto;
+    border: 6px solid #f36e23;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+/*------------------*/
+/*------------------*/
+
+  /* SECCIÓN: ¿Qué es el proyecto? */
+.que-es-proyecto {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .bg-naranja {
+    background-color: #f36e23;
+  }
+  
+  .bg-claro {
+    background-color: #f5f2f0;
+  }
+  
+  .titulo-proyecto {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: left;
+  }
+  
+  .descripcion-proyecto {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+
+  /*------------------*/
+/*------------------*/
+  /* Enlaces institucionales */
+.enlaces-informacion {
+    background-color: #eeeeee;
+    color: #333;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  
+  .enlaces-informacion img {
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+  }
+
+  /*-------*/
+/*-------*/
+
+/* Footer Javeriana */
+.footer-javeriana {
+    margin-top: 0;
+    background-color: #000;
+  }
+  
+  .footer-javeriana img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }

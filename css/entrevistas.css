@@ -1,0 +1,101 @@
+/* Fondo del encabezado */
+.encabezado {
+    background-color: #ffffff;
+    border-bottom: 3px solid #000;
+  }
+  
+  /* Botón naranja */
+  .btn-contar-historia {
+    background-color: #f36e23;
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+  
+  /* Menú desplegable oscuro */
+  .menu-desplegable {
+    background-color: #1a1a1a;
+    color: white;
+  }
+  
+  .menu-desplegable .dropdown-item {
+    color: white;
+  }
+  
+  .menu-desplegable .dropdown-item:hover {
+    background-color: #444;
+  }
+  
+/* Logos del header */
+.logos {
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.logos img {
+  max-height: 40px;
+  object-fit: contain;
+}
+
+/*-------*/
+.card.entrevista {
+  padding: 1rem;
+  height: auto;
+  min-height: unset;
+}
+
+.card.entrevista h5 {
+  font-size: 1.1rem;
+  color: #d35400; /* naranja */
+  margin-bottom: 0.5rem;
+}
+
+.card.entrevista p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.card.entrevista audio {
+  margin-bottom: 0.5rem;
+}
+
+.card.entrevista .btn {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+}
+
+
+/*-------*/
+  /* Enlaces institucionales */
+.enlaces-informacion {
+    background-color: #eeeeee;
+    color: #333;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  
+  .enlaces-informacion img {
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+  }
+  /*-------*/
+/*-------*/
+
+/* Footer Javeriana */
+.footer-javeriana {
+    margin-top: 0;
+    background-color: #000;
+  }
+  
+  .footer-javeriana img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  
+ 
