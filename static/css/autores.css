@@ -1,32 +1,32 @@
 /* Fondo del encabezado */
 .encabezado {
-    background-color: #ffffff;
-    border-bottom: 3px solid #000;
-  }
-  
-  /* Botón naranja */
-  .btn-contar-historia {
-    background-color: #f36e23;
-    color: white;
-    border-radius: 20px;
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-  
-  /* Menú desplegable oscuro */
-  .menu-desplegable {
-    background-color: #1a1a1a;
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item {
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item:hover {
-    background-color: #444;
-  }
-  
+  background-color: #ffffff;
+  border-bottom: 3px solid #000;
+}
+
+/* Botón naranja */
+.btn-contar-historia {
+  background-color: #f36e23;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 6px 14px;
+}
+
+/* Menú desplegable oscuro */
+.menu-desplegable {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.menu-desplegable .dropdown-item {
+  color: white;
+}
+
+.menu-desplegable .dropdown-item:hover {
+  background-color: #444;
+}
+
 /* Logos del header */
 .logos {
   max-width: 100%;
@@ -38,50 +38,204 @@
   max-height: 40px;
   object-fit: contain;
 }
-  /*-------*/
-/*-------*/
 
-  .autor-mural {
-    background-color: #e2c9ba;
+/* ============ CAROUSEL STYLES ============ */
+.murales-carousel {
+  background-color: #e2c9ba;
+  min-height: 80vh;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carousel-main-image {
+  flex: 1;
+  text-align: center;
+}
+
+.carousel-main-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-arrow {
+  background: #333;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-arrow:hover {
+  background: #f36e23;
+  transform: scale(1.1);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.carousel-arrow svg {
+  pointer-events: none;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #f36e23;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: #999;
+}
+
+/* Mural Info Section */
+.mural-info {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.mural-info h4 {
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.mural-info p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  text-align: justify;
+}
+
+.author-info,
+.location-info {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 15px;
+}
+
+.author-info strong,
+.location-info strong {
+  color: #333;
+}
+
+/* Audio Player */
+.audio-player {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #e2c9ba;
+}
+
+.audio-player h6 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.audio-player audio {
+  max-width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-container {
+    flex-direction: column;
+    gap: 15px;
   }
-  
-  .autor-mural p {
-    font-size: 1.1rem;
-    line-height: 1.7;
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
   }
-  
-  .autor-mural h3, .autor-mural h5 {
-    color: #111;
+
+  .mural-info {
+    padding: 20px;
   }
-  
-    /*------------------*/
-/*------------------*/
-  /* Enlaces institucionales */
+
+  .mural-info h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .audio-player {
+    padding: 15px;
+  }
+}
+
+/* Enlaces institucionales */
 .enlaces-informacion {
-    background-color: #eeeeee;
-    color: #333;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-  
-  .enlaces-informacion img {
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-    background-color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-  }
+  background-color: #eeeeee;
+  color: #333;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
 
-  /*-------*/
-/*-------*/
+.enlaces-informacion img {
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
 
 /* Footer Javeriana */
 .footer-javeriana {
-    margin-top: 0;
-    background-color: #000;
-  }
-  
-  .footer-javeriana img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+  margin-top: 0;
+  background-color: #000;
+}
+
+.footer-javeriana img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
