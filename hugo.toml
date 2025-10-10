@@ -1,4 +1,5 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://caminosdepazupzlaflora.github.io/upz-la-flora/'
+canonifyURLs = true
 languageCode = 'es'
 title = 'UPZ La Flora'
 theme = 'mi-tema'
