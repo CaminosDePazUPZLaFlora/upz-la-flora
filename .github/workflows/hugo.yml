@@ -2,7 +2,7 @@ name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: ["feature/github-actions-ci"]   # run only on this branch for testing
+    branches: ["development"]   # run only on this branch for testing
 
 permissions:
   contents: write 
