@@ -16,9 +16,8 @@
   <!-- ENCABEZADO -->
   <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
     <div class="container-fluid">
-
-      <!-- Botón naranja izquierdo -->
-      <a class="btn btn-contar-historia me-3" href="/contar/">CONTAR MI HISTORIA</a>
+      <!-- Título principal -->
+      <h1 class="navbar-brand fw-bold mb-0">Historias y Caminos de Barrio</h1>
 
       <!-- Botón responsive -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal">
@@ -26,58 +25,52 @@
       </button>
 
       <!-- Menú de navegación -->
-      <div class="collapse navbar-collapse justify-content-center" id="menu-principal">
+      <div class="collapse navbar-collapse justify-content-end" id="menu-principal">
         <ul class="navbar-nav mb-2 mb-lg-0">
+          <!-- Botón CONTAR MI HISTORIA -->
+          <li class="nav-item">
+            <a class="btn btn-contar-historia me-3 fw-bold" href="/contar/">CONTAR MI HISTORIA</a>
+          </li>
+          
+          <!-- Inicio -->
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="/">Inicio</a>
+          </li>
 
           <!-- Murales -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="menu-murales" data-bs-toggle="dropdown">Ruta de la Memoria</a>
+            <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-murales" data-bs-toggle="dropdown">Ruta de la Memoria</a>
             <ul class="dropdown-menu menu-desplegable">
-              <li><a class="dropdown-item" href="/autores/">Murales</a></li>
-              <li><a class="dropdown-item" href="/mapa/">Mapa</a></li>
+              <li><a class="dropdown-item fw-bold" href="/autores/">Murales</a></li>
+              <li><a class="dropdown-item fw-bold" href="/mapa/">Mapa</a></li>
             </ul>
           </li>
 
           <!-- Archivos -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="menu-archivos" data-bs-toggle="dropdown">Archivos</a>
+            <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-archivos" data-bs-toggle="dropdown">Archivos</a>
             <ul class="dropdown-menu menu-desplegable">
-              <li><a class="dropdown-item" href="/entrevistas/">Entrevistas</a></li>
-              <li><a class="dropdown-item" href="/informacion/">Datos</a></li>
+              <li><a class="dropdown-item fw-bold" href="/entrevistas/">Entrevistas</a></li>
+              <li><a class="dropdown-item fw-bold" href="/informacion/">Datos</a></li>
             </ul>
           </li>
 
           <!-- Otros enlaces -->
-          <li class="nav-item"><a class="nav-link" href="/historia/">Historia</a></li>
-          <li class="nav-item"><a class="nav-link" href="/datos/">Datos demográficos</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="/historia/">Historia</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="/datos/">Datos demográficos</a></li>
 
        <!-- Acerca de -->
        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="menu-nosotros" data-bs-toggle="dropdown">Acerca de nosotros</a>
+        <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-nosotros" data-bs-toggle="dropdown">Acerca de nosotros</a>
         <ul class="dropdown-menu menu-desplegable">
-          <li><a class="dropdown-item" href="/nosotros/">Historias de barrio</a></li>
-          <li><a class="dropdown-item" href="/nosotros/">Caminos de Paz</a></li>
-          <li><a class="dropdown-item" href="/nosotros/">Entidades relacionadas</a></li>
+          <li><a class="dropdown-item fw-bold" href="/nosotros/">Historias de barrio</a></li>
+          <li><a class="dropdown-item fw-bold" href="/nosotros/">Caminos de Paz</a></li>
+          <li><a class="dropdown-item fw-bold" href="/nosotros/">Entidades relacionadas</a></li>
         </ul>
       </li>
         </ul>
       </div>
-
-     <!-- Logos derecha -->
-<div class="d-flex align-items-center gap-3 ms-auto logos flex-wrap">
-  <a href="/">
-    <img src="/img_Home/logo-javeriana.png" alt="Javeriana" height="40" />
-  </a>
-  <img src="/img_Home/logo-prosofi.png" alt="PROSOFI" height="40" />
-  <img src="/img_Home/logo-ojds.png" alt="Observatorio" height="40" />
-
-  <!-- Nuevos logos (ajusta las rutas y nombres según tus carpetas) -->
-  <img src="/img_Home/logo-colegio.png" alt="Colegio Gabriel García Márquez" height="40" />
-  <img src="/img_Home/logo-umb.png" alt="UMB" height="40" />
-  <img src="/img_Home/logo-sabios.png" alt="Sabios del Territorio" height="40" />
-  <img src="/img_Home/logo-cosecha.png" alt="La Cosecha" height="40" />
-  <img src="/img_Home/logo-tunalito.png" alt="Tunalito" height="40" />
-</div>
+    </div>
   </header>
 
   <!-- Bootstrap JS -->
@@ -155,25 +148,83 @@
   </div>
 </div>
 
+    <!-- SECCIÓN: Patrocinadores -->
+    <section class="patrocinadores text-center py-5">
+      <div class="container">
+        <h3 class="mb-4">Patrocinadores</h3>
+        <div
+          class="d-flex flex-wrap justify-content-center align-items-center gap-4"
+        >
+          <a href="https://www.javeriana.edu.co/inicio">
+            <img
+              src="/img_Home/logo-javeriana.png"
+              alt="Javeriana"
+              height="60"
+            />
+          </a>
+          <a href="https://www.javeriana.edu.co/compromiso-social/prosofi">
+            <img src="/img_Home/logo-prosofi.png" alt="PROSOFI" height="60" />
+          </a>
 
+          <a
+            href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn3aY7GLFKTVq84cifF6yRU2aA9kJtT3_IGOFDNEVJ-fWRy2cG3D02CU3e7m8_aem_PrF34RsMLsQMoUTrqtzNTA"
+          >
+            <img src="/img_Home/logo-ojds.png" alt="Observatorio" height="60" />
+            <img
+              src="/img_Home/logo-colegio.png"
+              alt="Colegio Gabriel García Márquez"
+              height="60"
+            />
+          </a>
+
+          <img src="/img_Home/logo-umb.png" alt="UMB" height="60" />
+          <img
+            src="/img_Home/logo-sabios.png"
+            alt="Sabios del Territorio"
+            height="60"
+          />
+          <img src="/img_Home/logo-cosecha.png" alt="La Cosecha" height="60" />
+          <img src="/img_Home/logo-tunalito.png" alt="Tunalito" height="60" />
+        </div>
+      </div>
+    </section>
 
     <!-- SECCIÓN: Enlaces -->
     <section class="enlaces-informacion text-center py-5">
-        <h4 class="mb-4">Ingresa a estos sitios para conocer más de La Flora</h4>
-        <div class="d-flex flex-wrap justify-content-center gap-5">
-          <a href="https://upz52laflora.wixsite.com/laflorausme/multimedia" target="_blank" rel="noopener noreferrer">
-            <img src="/img_Home/upz-la-flora.png" alt="UPZ 52 - La Flora" height="80" class="link-image" />
-          </a>
-          <a href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAAadypQLjKo3c4SXbo4lwP5BD0n_uQ2kKyQuPT4VOOl_FAdlq3dRmAXXwitOaOA_aem_HDdLCXPBKeeC2aWKtRK28A" target="_blank" rel="noopener noreferrer">
-            <img src="/img_Home/observatorio-desigualdades.png" alt="Observatorio Javeriano" height="80" class="link-image" />
-          </a>
-        </div>
-      </section>
-      <!-- FOOTER institucional -->
-      <footer class="footer-javeriana">
-        <img src="/img_Home/footer-javeriana.png" alt="Footer institucional Javeriana" class="img-fluid w-100" />
-      </footer>
-      
+      <h4 class="mb-4">Ingresa a estos sitios para conocer más de La Flora</h4>
+      <div class="d-flex flex-wrap justify-content-center gap-5">
+        <a
+          href="https://upz52laflora.wixsite.com/laflorausme/multimedia"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/img_Home/upz-la-flora.png"
+            alt="UPZ 52 - La Flora"
+            height="80"
+            class="link-image"
+          />
+        </a>
+        <a
+          href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAAadypQLjKo3c4SXbo4lwP5BD0n_uQ2kKyQuPT4VOOl_FAdlq3dRmAXXwitOaOA_aem_HDdLCXPBKeeC2aWKtRK28A"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/img_Home/observatorio-desigualdades.png"
+            alt="Observatorio Javeriano"
+            height="80"
+            class="link-image"
+          />
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER institucional -->
+    <footer class="footer-javeriana">
+      <img src="/img_Home/footer-javeriana.png" alt="Footer institucional Javeriana" class="img-fluid w-100" />
+    </footer>
+
 
 </body>
 </html>

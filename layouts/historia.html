@@ -1,661 +1,845 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UPZ La Flora</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UPZ La Flora</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="/css/historia.css" />
-</head>
-<body>
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/css/historia.css" />
+  </head>
+  <body>
+    <!-- ENCABEZADO -->
+    <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
+      <div class="container-fluid">
+        <!-- Título principal -->
+        <h1 class="navbar-brand fw-bold mb-0">Historias y Caminos de Barrio</h1>
 
-  <!-- ENCABEZADO -->
-  <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
-    <div class="container-fluid">
+        <!-- Botón responsive -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu-principal"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <!-- Botón naranja izquierdo -->
-      <a class="btn btn-contar-historia me-3" href="/contar/">CONTAR MI HISTORIA</a>
+        <!-- Menú de navegación -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="menu-principal"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <!-- Botón CONTAR MI HISTORIA -->
+            <li class="nav-item">
+              <a class="btn btn-contar-historia me-3 fw-bold" href="/contar/"
+                >CONTAR MI HISTORIA</a
+              >
+            </li>
 
-      <!-- Botón responsive -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <!-- Inicio -->
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/">Inicio</a>
+            </li>
 
-      <!-- Menú de navegación -->
-      <div class="collapse navbar-collapse justify-content-center" id="menu-principal">
-        <ul class="navbar-nav mb-2 mb-lg-0">
+            <!-- Murales -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-bold"
+                href="#"
+                id="menu-murales"
+                data-bs-toggle="dropdown"
+                >Ruta de la Memoria</a
+              >
+              <ul class="dropdown-menu menu-desplegable">
+                <li>
+                  <a class="dropdown-item fw-bold" href="/autores/">Murales</a>
+                </li>
+                <li><a class="dropdown-item fw-bold" href="/mapa/">Mapa</a></li>
+              </ul>
+            </li>
 
-          <!-- Murales -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="menu-murales" data-bs-toggle="dropdown">Ruta de la Memoria</a>
-            <ul class="dropdown-menu menu-desplegable">
-              <li><a class="dropdown-item" href="/autores/">Murales</a></li>
-              <li><a class="dropdown-item" href="/mapa/">Mapa</a></li>
-            </ul>
-          </li>
+            <!-- Archivos -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-bold"
+                href="#"
+                id="menu-archivos"
+                data-bs-toggle="dropdown"
+                >Archivos</a
+              >
+              <ul class="dropdown-menu menu-desplegable">
+                <li>
+                  <a class="dropdown-item fw-bold" href="/entrevistas/"
+                    >Entrevistas</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fw-bold" href="/informacion/"
+                    >Datos</a
+                  >
+                </li>
+              </ul>
+            </li>
 
-          <!-- Archivos -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="menu-archivos" data-bs-toggle="dropdown">Archivos</a>
-            <ul class="dropdown-menu menu-desplegable">
-              <li><a class="dropdown-item" href="/entrevistas/">Entrevistas</a></li>
-              <li><a class="dropdown-item" href="/informacion/">Datos</a></li>
-            </ul>
-          </li>
+            <!-- Otros enlaces -->
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/historia/">Historia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/datos/">Datos demográficos</a>
+            </li>
 
-          <!-- Otros enlaces -->
-          <li class="nav-item"><a class="nav-link" href="/historia/">Historia</a></li>
-          <li class="nav-item"><a class="nav-link" href="/datos/">Datos demográficos</a></li>
-
-       <!-- Acerca de -->
-       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="menu-nosotros" data-bs-toggle="dropdown">Acerca de nosotros</a>
-        <ul class="dropdown-menu menu-desplegable">
-          <li><a class="dropdown-item" href="/nosotros/">Historias de barrio</a></li>
-          <li><a class="dropdown-item" href="/nosotros/">Caminos de Paz</a></li>
-          <li><a class="dropdown-item" href="/nosotros/">Entidades relacionadas</a></li>
-        </ul>
-      </li>
-        </ul>
+            <!-- Acerca de -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-bold"
+                href="#"
+                id="menu-nosotros"
+                data-bs-toggle="dropdown"
+                >Acerca de nosotros</a
+              >
+              <ul class="dropdown-menu menu-desplegable">
+                <li>
+                  <a class="dropdown-item fw-bold" href="/nosotros/"
+                    >Historias de barrio</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fw-bold" href="/nosotros/"
+                    >Caminos de Paz</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fw-bold" href="/nosotros/"
+                    >Entidades relacionadas</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
+    </header>
 
-  <!-- Logos derecha -->
-<div class="d-flex align-items-center gap-3 ms-auto logos flex-wrap">
-  <a href="/">
-    <img src="/img_Home/logo-javeriana.png" alt="Javeriana" height="40" />
-  </a>
-  <img src="/img_Home/logo-prosofi.png" alt="PROSOFI" height="40" />
-  <img src="/img_Home/logo-ojds.png" alt="Observatorio" height="40" />
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <br />
 
-  <!-- Nuevos logos (ajusta las rutas y nombres según tus carpetas) -->
-  <img src="/img_Home/logo-colegio.png" alt="Colegio Gabriel García Márquez" height="40" />
-  <img src="/img_Home/logo-umb.png" alt="UMB" height="40" />
-  <img src="/img_Home/logo-sabios.png" alt="Sabios del Territorio" height="40" />
-  <img src="/img_Home/logo-cosecha.png" alt="La Cosecha" height="40" />
-  <img src="/img_Home/logo-tunalito.png" alt="Tunalito" height="40" />
-</div>
-  </header>
+    <!-- SECCIÓN: Guía de categorías -->
+    <section class="guia-categorias">
+      <h3>Guía de categorías</h3>
+      <div class="fila-categorias">
+        <div class="categoria-guia">
+          <div
+            class="categoria-circulo"
+            style="background-color: #39c0f0"
+          ></div>
+          <span>Festival del Agua</span>
+        </div>
+        <div class="categoria-guia">
+          <div
+            class="categoria-circulo"
+            style="background-color: #27ae60"
+          ></div>
+          <span>Acceso al Agua</span>
+        </div>
+        <div class="categoria-guia">
+          <div
+            class="categoria-circulo"
+            style="background-color: #f4c542"
+          ></div>
+          <span>Cervecería</span>
+        </div>
+        <div class="categoria-guia">
+          <div
+            class="categoria-circulo"
+            style="background-color: #444444"
+          ></div>
+          <span>Intervención Institucional</span>
+        </div>
+        <div class="categoria-guia">
+          <div
+            class="categoria-circulo"
+            style="background-color: #42f4e5"
+          ></div>
+          <span>Papel de la iglesia</span>
+        </div>
+        <div class="categoria-guia">
+          <div
+            class="categoria-circulo"
+            style="background-color: #9bf442"
+          ></div>
+          <span>Hitos históricos</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<br>
+    <!-- SECCIÓN: Línea de tiempo -->
+    <!-- SECCIÓN: Línea de tiempo interactiva con reproductor -->
+    <section class="linea-tiempo-musical">
+      <div class="contenedor-general">
+        <!-- Disco selector izquierdo -->
+        <div class="selector-anios">
+          <div class="decada" id="decada-anterior">&#x25C0;</div>
+          <div class="discos-anios" id="discos-anios"></div>
+          <div class="decada" id="decada-siguiente">&#x25B6;</div>
+        </div>
 
-<!-- SECCIÓN: Guía de categorías -->
-<section class="guia-categorias">
-  <h3>Guía de categorías</h3>
-  <div class="fila-categorias">
-    <div class="categoria-guia">
-      <div class="categoria-circulo" style="background-color: #39c0f0;"></div>
-      <span>Festival del Agua</span>
-    </div>
-    <div class="categoria-guia">
-      <div class="categoria-circulo" style="background-color: #27ae60;"></div>
-      <span>Acceso al Agua</span>
-    </div>
-    <div class="categoria-guia">
-      <div class="categoria-circulo" style="background-color: #f4c542;"></div>
-      <span>Cervecería</span>
-    </div>
-    <div class="categoria-guia">
-      <div class="categoria-circulo" style="background-color: #444444;"></div>
-      <span>Intervención Institucional</span>
-    </div>
-    <div class="categoria-guia">
-      <div class="categoria-circulo" style="background-color: #42f4e5;"></div>
-      <span>Papel de la iglesia</span>
-    </div>
-    <div class="categoria-guia">
-      <div class="categoria-circulo" style="background-color: #9bf442;"></div>
-      <span>Hitos históricos</span>
-    </div>
-  </div>
-</section>
+        <!-- Reproductor a la derecha -->
+        <div class="reproductor-musical fondo-naranja">
+          <img
+            id="imagen-reproductor"
+            src="/img_Historia/radio.png"
+            alt="Imagen asociada"
+            class="imagen-reproductor"
+          />
+          <p class="fuente-imagen" id="fuente-imagen"></p>
+          <h3 id="titulo-evento">Selecciona un año</h3>
+          <p id="descripcion-evento"></p>
+          <p class="fuente-descripcion" id="fuente-descripcion"></p>
 
+          <!-- Círculos inferiores de categorías -->
+          <div class="categorias" id="categorias"></div>
+        </div>
+      </div>
+    </section>
 
-  <!-- SECCIÓN: Línea de tiempo -->
-<!-- SECCIÓN: Línea de tiempo interactiva con reproductor -->
-<section class="linea-tiempo-musical">
-  <div class="contenedor-general">
+    <script>
+      const data = {
+        1957: [
+          {
+            categoria: "",
+            color: "#f4c542",
+            descripcion:
+              "Construcción de la Cervecería\nColombo-Alemana sobre la cuenca del quebrada Yomasa - Vereda Bella Suiza por Ernesto Wersin y Weiget-Brau. (8)",
+            imagen: "/img_Historia/Cervecera.jpg",
+            fuenteImagen: "",
+            nombreFuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1959: [
+          {
+            categoria: "",
+            color: "#f4c542",
+            descripcion:
+              "Salen a la venta dos cervezas: La Alemana y Extra. (8)",
+            imagen: "/img_Historia/Cervecera.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1960: [
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "La comunida de Tiguaque recurre a nacederos, aljibes para tomar agua para el autoconsumo. En las quebradas se realizaba el lavado de la ropa. Esta práctica persiste con fuerza hasta los 90s. (20)",
+            imagen: "/img_Historia/tiguaque.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1964: [
+          {
+            categoria: "",
+            color: "#f4c542",
+            descripcion:
+              "La Cervecería Bavaria Adquiere los predios de la Cervecería Colombo-Alemana. (11)",
+            imagen: "/img_Historia/Cervecera.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1969: [
+          {
+            categoria: "",
+            color: "#42f4e5",
+            descripcion:
+              "Los habitantes de Tiguaque participaban en la Iglesia más cercana",
+            imagen: "/img_Historia/IglesiaJuanJoseRondon.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#9bf442",
+            descripcion:
+              " fue una práctica cotidiana en barrios como Las Violetas, Juan José Rondón, Villa Diana y Arrayanes, donde muchas familias lavaban la ropa a mano directamente en el agua de la quebrada",
+            imagen: "/img_Historia/BerrioLasVioletas.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1973: [
+          {
+            categoria: "",
+            color: "#f4c542",
+            descripcion:
+              "Bavaria produce cerveza de barril, Pony Malta y Costeñita. (8)",
+            imagen: "/img_Historia/BarrilCerveza.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1977: [
+          {
+            categoria: "",
+            color: "#9bf442",
+            descripcion:
+              "Se construye el colegio Las Violetas (posterior Gabriel García Márquez) por iniciativa comunitaria.",
+            imagen: "/img_Historia/col-gabrielg.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1979: [
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "Se construye el colegio Las Violetas (posterior Gabriel García Márquez) por iniciativa comunitaria.",
+            imagen: "/img_Historia/Acueducto.jpeg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#9bf442",
+            descripcion:
+              "Primera reunión en Juan José Rondón para acordar el suministro de agua para los barrios altos",
+            imagen: "/img_Historia/JuanJoseRondon.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1980: [
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "Construcción del acueducto aéreo del barrio San Pedro alimentado por la qubrada San Pedrina y Raque.\n(Es el primer acueducto comunitario de los barrios altos de Usme; los siguientes fueron terrestres.  (1)",
+            imagen: "/img_Historia/san-pedro.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1988: [
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "Los habitantes de Tiguaque conformaron una Comisión Interbarrial integrada por lideres de Juntas de Acción Comunal, mientros de la iglesia católica y antiguos trabajadores de la planta, para gestionar ante el gerente de la Cervecería Colombo-Alemana el acceso al agua de la quebrada Yomasa. Se logró el suministro de 2 pulgadas permanentes. (11)",
+            imagen: "/img_Historia/UPZFlora.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        nan: [
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "Instalación de la red de mangueras del acueducto comunitario para los barrios altos con las aguas de la quebrada Yomasa. (1)",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "El Centro de Investigaciones para el Desarrollo (CID) comienza estudios para el microacueducto, con un proceso participativo que incluyó la capacitación comunitaria como eje central. (1)",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "El centro Interdisciplinario de Estudios Regionales (CIDER) de la Universidad de los Andes participa como mediador en el proceso de construcción de la planta de tratamiento de agua potable en los barrios altos de Usme con el fin de trazar y definir acciones  encaminadas a la solución definitiva para suministrar agua potable a estas comunidades. (9)",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Realización de la tercera edición del Festival del Agua por parte de Coopbaus en el paradero de Tiguaque y primer reinado y coronación de la Reina del Agua. (3)",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "Diseño de planos y maquetas de la localización general de componentes del sistemas de producción de la planta de tratamiento a cargo de la firma ACUATECNICA LIMITADA. (9)",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#f4c542",
+            descripcion:
+              "La Cervecería Colombo-Alemana fue adquirida por el Acueducto de Bogotá, incluyendo tanto el predio como las instalaciones de la fábrica. (1)",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "Se abre el camino para acceder al agua potable. El Fondo de Desarrollo Local de Usme, en el marco del Decreto Ley 1421 de 1993 (Capítulo I), aprueba el proyecto para la instalación de la red de tuberías. El Acueducto aporta 250 millones de pesos, con miras a la construcción de plantas de tratamiento de agua. En el año 2001 se asignan $300.000.000 adicionales, recursos que fueron ejecutados por la Empresa de Acueducto y Alcantarillado de Bogotá (EAAB). (9)",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion: "Muestra cultural V festival del Agua",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion: "Muestra de danzas V Festival del agua",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Grupo musical barrio San Pedro en el V Festival del Agua",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Se consolida el festival \ndel Agua como un\n evento de asociación \ncomunitaria.  Premio cívico por una Bogotá mejor (uno de los 10 finalistas) (1)",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Actividades culturales realizadas en el V festival del Agua en las cuales participaron los niños, jóvenes, adultos y ancianos; habitantes del sector",
+            imagen: "",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1990: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "A comienzos de los 90s.\nCamino del agua. \nIniciativa comunitaria en \nJuan José Rondó.",
+            imagen: "/img_Historia/CaminoAgua.png",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "Construcción de tres tanques por parte de la comunidad para almacenar el agua (2 en Juan José Rondón, 1 en Los Arrayanes y 1 en Villa Diana) para dar inicio al funcionamiento del Acueducto Comunitario. (11)",
+            imagen: "/img_Historia/ContruccionTanq.jpeg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#f4c542",
+            descripcion:
+              "Cierre de la Cervecería Colombo-Alemana: cesa sus actividades y cierra definitivamente sus instalaciones (8)",
+            imagen: "/img_Historia/CerveceriaHoy.jpeg",
+            fuenteImagen:
+              "https://livejaverianaedu-my.sharepoint.com/:i:/g/personal/prosofi_javeriana_edu_co/ESz7HLLQgzZKgc69IpQRPHMBVrLfyUxqaU5lMZeLD4YmCA?e=7B5i9i",
+            nombreFuenteImagen: "CIERRE CERVECERIA COLOMBO ALEMANA",
+            fuenteDescripcion: "",
+          },
+        ],
+        1997: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Fundación y realización del primer Festival del Agua por parte de Coopbaus, el CID de la Universidad Nacional y la EAAB en el paradero de Tiguaque. barrios San Pedro, Villa\nDiana, Tiguaque, Juan José Rondón I y II,\nVilla Rosita, Los Arayanes y Las Violetas. (1)",
+            imagen: "/img_Historia/DiseñoAcueducto.jpeg",
+            fuenteImagen:
+              "https://livejaverianaedu-my.sharepoint.com/:i:/g/personal/prosofi_javeriana_edu_co/ER1oGo5qaatHkp6-LEhNZF4BGay-l8HULmdWttxGTbb3Xg?e=6cUkRv",
+            nombreFuenteImagen:
+              "fUNDACION Y REALIZACION DEL PRIMER FESTIVAL DEL AGUA",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "La Empresa de Acueducto y Alcantarillado de Bogotá a través de la oficina de gestión comunitaria firma un convenio con el Centro de Investigaciones para el Desarrollo (CID), de la Universidad Nacional de Colonmbia, con el propósito de realizar los primeros estudios para la construcción de un acueducto comunitario para siete barrios de la parte sur-oriental de la Localidad de Usme. (9)",
+            imagen: "/img_Historia/Empresa_de_Acueducto.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1998: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Realización de la segunda edición del Festival del Agua por parte de Coopbaus en el paradero de Tiguaque. (20)",
+            imagen: "/img_Historia/2FestivalAgua.webp",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        1999: [
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "Diseño de planos y maquetas de la Planta de Tratamiento de Agua Potable a cargo de la firma ACUATECNICA LIMITADA. (9)",
+            imagen: "/img_Historia/Planos.jpeg",
+            fuenteImagen:
+              "https://livejaverianaedu-my.sharepoint.com/:i:/g/personal/prosofi_javeriana_edu_co/EZDfzBWjLPZJiVZ2K6dzeqEBhCCwlQiWU4K3WbXdDG_duQ?e=crWkD2",
+            nombreFuenteImagen:
+              "DISEÑO DE PLANOS Y MAQUETAS DE LA PLANTA DE TRATAMIENTO DE AGUA POTABLE",
+            fuenteDescripcion: "",
+          },
+        ],
+        2000: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Panorámica del barrio Villa Rosita en la V edición del festival del agua",
+            imagen: "/img_Historia/barrioVilla.jpeg",
+            fuenteImagen:
+              "https://livejaverianaedu-my.sharepoint.com/:i:/g/personal/prosofi_javeriana_edu_co/EXWzlFZr6BNMiazBRTHpp1UBH6_lpNmOoIARtswy3z1LAQ?e=wmx4r2",
+            nombreFuenteImagen: "PANORÁMICA DEL BARRIO VILLA ROSITA EN LA V",
+            fuenteDescripcion: "",
+          },
+        ],
+        2001: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "V Festival del Agua , Coronación Reina, tiene como obejetivo mantener la integración de los habitantes.  (Barrios altos de Usme, equipo organizador, Líderes, JAC, Hermana Helena Hernández, COOPBAUS).  (23)",
+            imagen: "/img_Historia/CoronacionAgua.jpeg",
+            fuenteImagen:
+              "https://livejaverianaedu-my.sharepoint.com/personal/prosofi_javeriana_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fprosofi%5Fjaveriana%5Fedu%5Fco%2FDocuments%2F2024%5FLaFlora%2FGestionProyectos%2F2024%5FHistoriasBarrioLaFlora%2FMaterialAudiovisual%2FFotos%2FArchivo%20Fotogr%C3%A1fico%20Historias%20de%20Barrio%2FPersonas%2F35%2E%20Grupo%20de%20baile%20y%20p%C3%BAblico%20%2D%20V%20Festival%20del%20Agua%2Ejpg&parent=%2Fpersonal%2Fprosofi%5Fjaveriana%5Fedu%5Fco%2FDocuments%2F2024%5FLaFlora%2FGestionProyectos%2F2024%5FHistoriasBarrioLaFlora%2FMaterialAudiovisual%2FFotos%2FArchivo%20Fotogr%C3%A1fico%20Historias%20de%20Barrio%2FPersonas&ga=1",
+            nombreFuenteImagen: "CORONACIÓN REINA DEL AGUA",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "Inicio de la construcción de la Planta de Tratamiento de Agua Potable Yomasa y tanque de almacenamiento a cargo de la firma ACUATECNICA LIMITADA (2001-2002). (9)",
+            imagen: "/img_Historia/PlantaTratamiento.jpeg",
+            fuenteImagen:
+              "https://livejaverianaedu-my.sharepoint.com/personal/prosofi_javeriana_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fprosofi%5Fjaveriana%5Fedu%5Fco%2FDocuments%2F2024%5FLaFlora%2FGestionProyectos%2F2024%5FHistoriasBarrioLaFlora%2FMaterialAudiovisual%2FFotos%2FArchivo%20Fotogr%C3%A1fico%20Historias%20de%20Barrio%2FObjetos%2F09%2E%20PTAP%20Yomasa%20en%20construcci%C3%B3n%2Ejpg&parent=%2Fpersonal%2Fprosofi%5Fjaveriana%5Fedu%5Fco%2FDocuments%2F2024%5FLaFlora%2FGestionProyectos%2F2024%5FHistoriasBarrioLaFlora%2FMaterialAudiovisual%2FFotos%2FArchivo%20Fotogr%C3%A1fico%20Historias%20de%20Barrio%2FObjetos&ga=1",
+            nombreFuenteImagen:
+              "INICIO DE LA CONSTRUCCIÓN DE LA PLANTA DE TRATAMIENTO DE AGUA",
+            fuenteDescripcion: "",
+          },
+        ],
+        2002: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Inicio de la construcción del Parque del Agua en el barrio Juan José Rondón con mano de obra local con la financiación de las Hernanas Adoratrices y con el acompañamiento de la Hermana Ana. (1)",
+            imagen: "/img_Historia/ParqueAgua.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        2003: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "El Parque del Agua se convierte en la sede para la realización anual del Festivales del Agua. Tihuaque.  (20)",
+            imagen: "/img_Historia/ParqueAgua.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#27ae60",
+            descripcion:
+              "Inauguración de la Planta de Tratamiento de Agua Potable (PTAP) Yomasa: En colaboración con la Empresa de Acueducto y Alcantarillado de Bogotá (EAAB) y la Cooperativa de Servicios Públicos COOPBAUS, se construyó una planta de tratamiento de agua en la parte alta del barrio Las Violetas. El acto de inauguración contó con la presencia del exalcalde Enrique Peñalosa.\n\nDisolución COOPBAUS.",
+            imagen: "/img_Historia/TratamientoPlanta.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#f4c542",
+            descripcion:
+              'Bavaria liquida la sociedad "Cervecería Colombo-Alemana S.A.S.". (8)',
+            imagen: "/img_Historia/Alemana.jpg",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        2004: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Tras la disolución de COOPBAUS e Inauguración de la PTAP Yomasa, el Festival del Agua adquiere un nuevo enfoque volvado a la conservación ecológica y la memoria de la gestión del agua potable. (20)",
+            imagen: "/img_Historia/black-background.png",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        2009: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Festival del Agua \ndeclarado como \nPatrimonio Cultural por la alcaldía local del Usme y vinculado a la Red de festivales de Usme, condición que le otorga financiación anual.(Declarado por Instituto Distrital de Patrimonio Cultural (IDPC) y la Alcaldía Local de Usme) (1)",
+            imagen: "/img_Historia/black-background.png",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        2012: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Visita del exalcalde de Bogotá Gustavo Petro al Festival del Agua para promover el nuevo modelo de basuras y el cuidado del medio ambiente. (20)",
+            imagen: "/img_Historia/black-background.png",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        2020: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Suspensión del Festival del Agua y de los eventos masivos por parte de la Alcaldía Mayor de Bogotá por Pandemia por Covid 19. (20)",
+            imagen: "/img_Historia/black-background.png",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        2022: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Reapertura del Festival \ndel Agua con la vinculación de Organizaciones \nComunitarias. (7)",
+            imagen: "/img_Historia/black-background.png",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+          {
+            categoria: "",
+            color: "#f4c542",
+            descripcion:
+              "EL Cuerpo Oficial de Bomberos toma en comodato los precios de la Cervecería Colombo-Alemana pertenecientes a la EAAB, para entrenamiento de personal. (12)",
+            imagen: "/img_Historia/black-background.png",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+        2024: [
+          {
+            categoria: "",
+            color: "#39c0f0",
+            descripcion:
+              "Festival del Agua pierde temporalmente su financiación por parte de la alcaldía local y es desarrollado de manera comunitaria y autogestioanda por organizaciones comunitarias e instituciones educativas de la zona. (20)",
+            imagen: "/img_Historia/black-background.png",
+            fuenteImagen: "",
+            fuenteDescripcion: "",
+          },
+        ],
+      };
+      let aniosDisponibles = Object.keys(data);
+      let aniosPorPagina = 5;
+      let paginaActual = 0;
+      let discosContenedor = document.getElementById("discos-anios");
+      let categoriasContenedor = document.getElementById("categorias");
 
-    <!-- Disco selector izquierdo -->
-    <div class="selector-anios">
-      <div class="decada" id="decada-anterior">&#x25C0;</div>
-      <div class="discos-anios" id="discos-anios"></div>
-      <div class="decada" id="decada-siguiente">&#x25B6;</div>
-    </div>
+      function renderDiscos() {
+        discosContenedor.innerHTML = "";
+        let inicio = paginaActual * aniosPorPagina;
+        let fin = inicio + aniosPorPagina;
+        let aniosPagina = aniosDisponibles.slice(inicio, fin);
 
-    <!-- Reproductor a la derecha -->
-    <div class="reproductor-musical fondo-naranja">
-      <img id="imagen-reproductor" src="" alt="Imagen asociada" class="imagen-reproductor" />
-      <p class="fuente-imagen" id="fuente-imagen"></p>
-      <h3 id="titulo-evento">Selecciona un año</h3>
-      <p id="descripcion-evento"></p>
-      <p class="fuente-descripcion" id="fuente-descripcion"></p>
+        aniosPagina.forEach((anio, index) => {
+          let disco = document.createElement("div");
+          disco.className =
+            "disco-anio offset-" + (index % 2 === 0 ? "0" : "1");
+          disco.innerHTML = `<span>${anio}</span>`;
+          disco.onclick = () => mostrarEventos(anio);
+          discosContenedor.appendChild(disco);
+        });
+      }
 
-      <!-- Círculos inferiores de categorías -->
-      <div class="categorias" id="categorias"></div>
-    </div>
-  </div>
-</section>
+      function mostrarEventos(anio) {
+        let eventos = data[anio];
+        if (!eventos || eventos.length === 0) return;
 
-<script>
-const data = {
-  "1957": [
-    {
-      "categoria": "",
-      "color": "#f4c542",
-      "descripcion": "Construcción de la Cervecería\nColombo-Alemana sobre la cuenca del quebrada Yomasa - Vereda Bella Suiza por Ernesto Wersin y Weiget-Brau. (8)",
-      "imagen": "/img_Historia/Cervecera.jpg",
-      "fuenteImagen": "",
-      "nombreFuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1959": [
-    {
-      "categoria": "",
-      "color": "#f4c542",
-      "descripcion": "Salen a la venta dos cervezas: La Alemana y Extra. (8)",
-      "imagen": "/img_Historia/Cervecera.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1960": [
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "La comunida de Tiguaque recurre a nacederos, aljibes para tomar agua para el autoconsumo. En las quebradas se realizaba el lavado de la ropa. Esta práctica persiste con fuerza hasta los 90s. (20)",
-      "imagen": "/img_Historia/tiguaque.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1964": [
-    {
-      "categoria": "",
-      "color": "#f4c542",
-      "descripcion": "La Cervecería Bavaria Adquiere los predios de la Cervecería Colombo-Alemana. (11)",
-      "imagen": "/img_Historia/Cervecera.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1969": [
-    {
-      "categoria": "",
-      "color": "#42f4e5",
-      "descripcion": "Los habitantes de Tiguaque participaban en la Iglesia más cercana",
-      "imagen": "/img_Historia/IglesiaJuanJoseRondon.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#9bf442",
-      "descripcion": " fue una práctica cotidiana en barrios como Las Violetas, Juan José Rondón, Villa Diana y Arrayanes, donde muchas familias lavaban la ropa a mano directamente en el agua de la quebrada",
-      "imagen": "/img_Historia/BerrioLasVioletas.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-    
-  ],
-  "1973": [
-    {
-      "categoria": "",
-      "color": "#f4c542",
-      "descripcion": "Bavaria produce cerveza de barril, Pony Malta y Costeñita. (8)",
-      "imagen": "/img_Historia/BarrilCerveza.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1977": [
-    {
-      "categoria": "",
-      "color": "#9bf442",
-      "descripcion": "Se construye el colegio Las Violetas (posterior Gabriel García Márquez) por iniciativa comunitaria.",
-      "imagen": "/img_Historia/col-gabrielg.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1979": [
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "Se construye el colegio Las Violetas (posterior Gabriel García Márquez) por iniciativa comunitaria.",
-      "imagen": "/img_Historia/Acueducto.jpeg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#9bf442",
-      "descripcion": "Primera reunión en Juan José Rondón para acordar el suministro de agua para los barrios altos",
-      "imagen": "/img_Historia/JuanJoseRondon.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1980": [
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "Construcción del acueducto aéreo del barrio San Pedro alimentado por la qubrada San Pedrina y Raque.\n(Es el primer acueducto comunitario de los barrios altos de Usme; los siguientes fueron terrestres.  (1)",
-      "imagen": "/img_Historia/san-pedro.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1988": [
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "Los habitantes de Tiguaque conformaron una Comisión Interbarrial integrada por lideres de Juntas de Acción Comunal, mientros de la iglesia católica y antiguos trabajadores de la planta, para gestionar ante el gerente de la Cervecería Colombo-Alemana el acceso al agua de la quebrada Yomasa. Se logró el suministro de 2 pulgadas permanentes. (11)",
-      "imagen": "/img_Historia/UPZFlora.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "nan": [
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "Instalación de la red de mangueras del acueducto comunitario para los barrios altos con las aguas de la quebrada Yomasa. (1)",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "El Centro de Investigaciones para el Desarrollo (CID) comienza estudios para el microacueducto, con un proceso participativo que incluyó la capacitación comunitaria como eje central. (1)",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "El centro Interdisciplinario de Estudios Regionales (CIDER) de la Universidad de los Andes participa como mediador en el proceso de construcción de la planta de tratamiento de agua potable en los barrios altos de Usme con el fin de trazar y definir acciones  encaminadas a la solución definitiva para suministrar agua potable a estas comunidades. (9)",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Realización de la tercera edición del Festival del Agua por parte de Coopbaus en el paradero de Tiguaque y primer reinado y coronación de la Reina del Agua. (3)",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "Diseño de planos y maquetas de la localización general de componentes del sistemas de producción de la planta de tratamiento a cargo de la firma ACUATECNICA LIMITADA. (9)",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#f4c542",
-      "descripcion": "La Cervecería Colombo-Alemana fue adquirida por el Acueducto de Bogotá, incluyendo tanto el predio como las instalaciones de la fábrica. (1)",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "Se abre el camino para acceder al agua potable. El Fondo de Desarrollo Local de Usme, en el marco del Decreto Ley 1421 de 1993 (Capítulo I), aprueba el proyecto para la instalación de la red de tuberías. El Acueducto aporta 250 millones de pesos, con miras a la construcción de plantas de tratamiento de agua. En el año 2001 se asignan $300.000.000 adicionales, recursos que fueron ejecutados por la Empresa de Acueducto y Alcantarillado de Bogotá (EAAB). (9)",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Muestra cultural V festival del Agua",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Muestra de danzas V Festival del agua",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Grupo musical barrio San Pedro en el V Festival del Agua",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Se consolida el festival \ndel Agua como un\n evento de asociación \ncomunitaria.  Premio cívico por una Bogotá mejor (uno de los 10 finalistas) (1)",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Actividades culturales realizadas en el V festival del Agua en las cuales participaron los niños, jóvenes, adultos y ancianos; habitantes del sector",
-      "imagen": "",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1990": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "A comienzos de los 90s.\nCamino del agua. \nIniciativa comunitaria en \nJuan José Rondó.",
-      "imagen": "/img_Historia/CaminoAgua.png",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "Construcción de tres tanques por parte de la comunidad para almacenar el agua (2 en Juan José Rondón, 1 en Los Arrayanes y 1 en Villa Diana) para dar inicio al funcionamiento del Acueducto Comunitario. (11)",
-      "imagen": "/img_Historia/ContruccionTanq.jpeg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#f4c542",
-      "descripcion": "Cierre de la Cervecería Colombo-Alemana: cesa sus actividades y cierra definitivamente sus instalaciones (8)",
-      "imagen": "/img_Historia/CerveceriaHoy.jpeg",
-      "fuenteImagen": "https://livejaverianaedu-my.sharepoint.com/:i:/g/personal/prosofi_javeriana_edu_co/ESz7HLLQgzZKgc69IpQRPHMBVrLfyUxqaU5lMZeLD4YmCA?e=7B5i9i",
-      "nombreFuenteImagen": "CIERRE CERVECERIA COLOMBO ALEMANA",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1997": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Fundación y realización del primer Festival del Agua por parte de Coopbaus, el CID de la Universidad Nacional y la EAAB en el paradero de Tiguaque. barrios San Pedro, Villa\nDiana, Tiguaque, Juan José Rondón I y II,\nVilla Rosita, Los Arayanes y Las Violetas. (1)",
-      "imagen": "/img_Historia/DiseñoAcueducto.jpeg",
-      "fuenteImagen": "https://livejaverianaedu-my.sharepoint.com/:i:/g/personal/prosofi_javeriana_edu_co/ER1oGo5qaatHkp6-LEhNZF4BGay-l8HULmdWttxGTbb3Xg?e=6cUkRv",
-      "nombreFuenteImagen": "fUNDACION Y REALIZACION DEL PRIMER FESTIVAL DEL AGUA",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "La Empresa de Acueducto y Alcantarillado de Bogotá a través de la oficina de gestión comunitaria firma un convenio con el Centro de Investigaciones para el Desarrollo (CID), de la Universidad Nacional de Colonmbia, con el propósito de realizar los primeros estudios para la construcción de un acueducto comunitario para siete barrios de la parte sur-oriental de la Localidad de Usme. (9)",
-      "imagen": "/img_Historia/Empresa_de_Acueducto.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1998": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Realización de la segunda edición del Festival del Agua por parte de Coopbaus en el paradero de Tiguaque. (20)",
-      "imagen": "/img_Historia/2FestivalAgua.webp",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "1999": [
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "Diseño de planos y maquetas de la Planta de Tratamiento de Agua Potable a cargo de la firma ACUATECNICA LIMITADA. (9)",
-      "imagen": "/img_Historia/Planos.jpeg",
-      "fuenteImagen": "https://livejaverianaedu-my.sharepoint.com/:i:/g/personal/prosofi_javeriana_edu_co/EZDfzBWjLPZJiVZ2K6dzeqEBhCCwlQiWU4K3WbXdDG_duQ?e=crWkD2",
-      "nombreFuenteImagen": "DISEÑO DE PLANOS Y MAQUETAS DE LA PLANTA DE TRATAMIENTO DE AGUA POTABLE",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "2000": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Panorámica del barrio Villa Rosita en la V edición del festival del agua",
-      "imagen": "/img_Historia/barrioVilla.jpeg",
-      "fuenteImagen": "https://livejaverianaedu-my.sharepoint.com/:i:/g/personal/prosofi_javeriana_edu_co/EXWzlFZr6BNMiazBRTHpp1UBH6_lpNmOoIARtswy3z1LAQ?e=wmx4r2",
-      "nombreFuenteImagen": "PANORÁMICA DEL BARRIO VILLA ROSITA EN LA V",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "2001": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "V Festival del Agua , Coronación Reina, tiene como obejetivo mantener la integración de los habitantes.  (Barrios altos de Usme, equipo organizador, Líderes, JAC, Hermana Helena Hernández, COOPBAUS).  (23)",
-      "imagen": "/img_Historia/CoronacionAgua.jpeg",
-      "fuenteImagen": "https://livejaverianaedu-my.sharepoint.com/personal/prosofi_javeriana_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fprosofi%5Fjaveriana%5Fedu%5Fco%2FDocuments%2F2024%5FLaFlora%2FGestionProyectos%2F2024%5FHistoriasBarrioLaFlora%2FMaterialAudiovisual%2FFotos%2FArchivo%20Fotogr%C3%A1fico%20Historias%20de%20Barrio%2FPersonas%2F35%2E%20Grupo%20de%20baile%20y%20p%C3%BAblico%20%2D%20V%20Festival%20del%20Agua%2Ejpg&parent=%2Fpersonal%2Fprosofi%5Fjaveriana%5Fedu%5Fco%2FDocuments%2F2024%5FLaFlora%2FGestionProyectos%2F2024%5FHistoriasBarrioLaFlora%2FMaterialAudiovisual%2FFotos%2FArchivo%20Fotogr%C3%A1fico%20Historias%20de%20Barrio%2FPersonas&ga=1",
-      "nombreFuenteImagen": "CORONACIÓN REINA DEL AGUA",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "Inicio de la construcción de la Planta de Tratamiento de Agua Potable Yomasa y tanque de almacenamiento a cargo de la firma ACUATECNICA LIMITADA (2001-2002). (9)",
-      "imagen": "/img_Historia/PlantaTratamiento.jpeg",
-      "fuenteImagen": "https://livejaverianaedu-my.sharepoint.com/personal/prosofi_javeriana_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fprosofi%5Fjaveriana%5Fedu%5Fco%2FDocuments%2F2024%5FLaFlora%2FGestionProyectos%2F2024%5FHistoriasBarrioLaFlora%2FMaterialAudiovisual%2FFotos%2FArchivo%20Fotogr%C3%A1fico%20Historias%20de%20Barrio%2FObjetos%2F09%2E%20PTAP%20Yomasa%20en%20construcci%C3%B3n%2Ejpg&parent=%2Fpersonal%2Fprosofi%5Fjaveriana%5Fedu%5Fco%2FDocuments%2F2024%5FLaFlora%2FGestionProyectos%2F2024%5FHistoriasBarrioLaFlora%2FMaterialAudiovisual%2FFotos%2FArchivo%20Fotogr%C3%A1fico%20Historias%20de%20Barrio%2FObjetos&ga=1",
-      "nombreFuenteImagen": "INICIO DE LA CONSTRUCCIÓN DE LA PLANTA DE TRATAMIENTO DE AGUA",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "2002": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Inicio de la construcción del Parque del Agua en el barrio Juan José Rondón con mano de obra local con la financiación de las Hernanas Adoratrices y con el acompañamiento de la Hermana Ana. (1)",
-      "imagen": "/img_Historia/ParqueAgua.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "2003": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "El Parque del Agua se convierte en la sede para la realización anual del Festivales del Agua. Tihuaque.  (20)",
-      "imagen": "/img_Historia/ParqueAgua.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#27ae60",
-      "descripcion": "Inauguración de la Planta de Tratamiento de Agua Potable (PTAP) Yomasa: En colaboración con la Empresa de Acueducto y Alcantarillado de Bogotá (EAAB) y la Cooperativa de Servicios Públicos COOPBAUS, se construyó una planta de tratamiento de agua en la parte alta del barrio Las Violetas. El acto de inauguración contó con la presencia del exalcalde Enrique Peñalosa.\n\nDisolución COOPBAUS.",
-      "imagen": "/img_Historia/TratamientoPlanta.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#f4c542",
-      "descripcion": "Bavaria liquida la sociedad \"Cervecería Colombo-Alemana S.A.S.\". (8)",
-      "imagen": "/img_Historia/Alemana.jpg",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "2004": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Tras la disolución de COOPBAUS e Inauguración de la PTAP Yomasa, el Festival del Agua adquiere un nuevo enfoque volvado a la conservación ecológica y la memoria de la gestión del agua potable. (20)",
-      "imagen": "/img_Historia/black-background.png",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "2009": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Festival del Agua \ndeclarado como \nPatrimonio Cultural por la alcaldía local del Usme y vinculado a la Red de festivales de Usme, condición que le otorga financiación anual.(Declarado por Instituto Distrital de Patrimonio Cultural (IDPC) y la Alcaldía Local de Usme) (1)",
-      "imagen": "/img_Historia/black-background.png",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "2012": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Visita del exalcalde de Bogotá Gustavo Petro al Festival del Agua para promover el nuevo modelo de basuras y el cuidado del medio ambiente. (20)",
-      "imagen": "/img_Historia/black-background.png",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "2020": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Suspensión del Festival del Agua y de los eventos masivos por parte de la Alcaldía Mayor de Bogotá por Pandemia por Covid 19. (20)",
-      "imagen": "/img_Historia/black-background.png",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "2022": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Reapertura del Festival \ndel Agua con la vinculación de Organizaciones \nComunitarias. (7)",
-      "imagen": "/img_Historia/black-background.png",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    },
-    {
-      "categoria": "",
-      "color": "#f4c542",
-      "descripcion": "EL Cuerpo Oficial de Bomberos toma en comodato los precios de la Cervecería Colombo-Alemana pertenecientes a la EAAB, para entrenamiento de personal. (12)",
-      "imagen": "/img_Historia/black-background.png",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ],
-  "2024": [
-    {
-      "categoria": "",
-      "color": "#39c0f0",
-      "descripcion": "Festival del Agua pierde temporalmente su financiación por parte de la alcaldía local y es desarrollado de manera comunitaria y autogestioanda por organizaciones comunitarias e instituciones educativas de la zona. (20)",
-      "imagen": "/img_Historia/black-background.png",
-      "fuenteImagen": "",
-      "fuenteDescripcion": ""
-    }
-  ]
-};
-let aniosDisponibles = Object.keys(data);
-let aniosPorPagina = 5;
-let paginaActual = 0;
-let discosContenedor = document.getElementById("discos-anios");
-let categoriasContenedor = document.getElementById("categorias");
+        document.getElementById("titulo-evento").textContent = "";
+        document.getElementById("descripcion-evento").textContent = "";
+        document.getElementById("fuente-imagen").textContent = "";
+        document.getElementById("fuente-descripcion").textContent = "";
+        document.getElementById("imagen-reproductor").src = "";
+        categoriasContenedor.innerHTML = "";
 
-function renderDiscos() {
-  discosContenedor.innerHTML = "";
-  let inicio = paginaActual * aniosPorPagina;
-  let fin = inicio + aniosPorPagina;
-  let aniosPagina = aniosDisponibles.slice(inicio, fin);
+        eventos.forEach((ev) => {
+          let cat = document.createElement("div");
+          cat.className = "categoria-disco";
+          cat.style.backgroundColor = ev.color;
+          cat.innerHTML = `<small>${anio}</small><div class='ronda'></div><p>${ev.categoria}</p>`;
+          cat.onclick = () => mostrarDetalle(ev);
+          categoriasContenedor.appendChild(cat);
+        });
 
-  aniosPagina.forEach((anio, index) => {
-    let disco = document.createElement("div");
-    disco.className = "disco-anio offset-" + (index % 2 === 0 ? "0" : "1");
-    disco.innerHTML = `<span>${anio}</span>`;
-    disco.onclick = () => mostrarEventos(anio);
-    discosContenedor.appendChild(disco);
-  });
-}
+        mostrarDetalle(eventos[0]);
+      }
 
-function mostrarEventos(anio) {
-  let eventos = data[anio];
-  if (!eventos || eventos.length === 0) return;
+      function mostrarDetalle(ev) {
+        document.getElementById("titulo-evento").textContent = ev.categoria;
+        document.getElementById("descripcion-evento").textContent =
+          ev.descripcion;
+        const fuenteImagenElem = document.getElementById("fuente-imagen");
+        if (ev.fuenteImagen && ev.nombreFuenteImagen) {
+          fuenteImagenElem.innerHTML = `<a href="${ev.fuenteImagen}" target="_blank">${ev.nombreFuenteImagen}</a>`;
+        } else {
+          fuenteImagenElem.innerHTML = "";
+        }
+        document.getElementById("fuente-descripcion").textContent =
+          ev.fuenteDescripcion;
+        document.getElementById("imagen-reproductor").src = ev.imagen;
+      }
 
-  document.getElementById("titulo-evento").textContent = "";
-  document.getElementById("descripcion-evento").textContent = "";
-  document.getElementById("fuente-imagen").textContent = "";
-  document.getElementById("fuente-descripcion").textContent = "";
-  document.getElementById("imagen-reproductor").src = "";
-  categoriasContenedor.innerHTML = "";
+      document.getElementById("decada-anterior").onclick = () => {
+        if (paginaActual > 0) {
+          paginaActual--;
+          renderDiscos();
+        }
+      };
 
-  eventos.forEach(ev => {
-    let cat = document.createElement("div");
-    cat.className = "categoria-disco";
-    cat.style.backgroundColor = ev.color;
-    cat.innerHTML = `<small>${anio}</small><div class='ronda'></div><p>${ev.categoria}</p>`;
-    cat.onclick = () => mostrarDetalle(ev);
-    categoriasContenedor.appendChild(cat);
-  });
+      document.getElementById("decada-siguiente").onclick = () => {
+        if ((paginaActual + 1) * aniosPorPagina < aniosDisponibles.length) {
+          paginaActual++;
+          renderDiscos();
+        }
+      };
 
-  mostrarDetalle(eventos[0]);
-}
+      renderDiscos();
+    </script>
 
-function mostrarDetalle(ev) {
-  document.getElementById("titulo-evento").textContent = ev.categoria;
-  document.getElementById("descripcion-evento").textContent = ev.descripcion;
-  const fuenteImagenElem = document.getElementById("fuente-imagen");
-  if (ev.fuenteImagen && ev.nombreFuenteImagen) {
-    fuenteImagenElem.innerHTML = `<a href="${ev.fuenteImagen}" target="_blank">${ev.nombreFuenteImagen}</a>`;
-  } else {
-    fuenteImagenElem.innerHTML = "";
-  }
-  document.getElementById("fuente-descripcion").textContent = ev.fuenteDescripcion;
-  document.getElementById("imagen-reproductor").src = ev.imagen;
-}
+    <!-- SECCIÓN: Patrocinadores -->
+    <section class="patrocinadores text-center py-5">
+      <div class="container">
+        <h3 class="mb-4">Patrocinadores</h3>
+        <div
+          class="d-flex flex-wrap justify-content-center align-items-center gap-4"
+        >
+          <a href="https://www.javeriana.edu.co/inicio">
+            <img
+              src="/img_Home/logo-javeriana.png"
+              alt="Javeriana"
+              height="60"
+            />
+          </a>
+          <a href="https://www.javeriana.edu.co/compromiso-social/prosofi">
+            <img src="/img_Home/logo-prosofi.png" alt="PROSOFI" height="60" />
+          </a>
 
-document.getElementById("decada-anterior").onclick = () => {
-  if (paginaActual > 0) {
-    paginaActual--;
-    renderDiscos();
-  }
-};
+          <a
+            href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn3aY7GLFKTVq84cifF6yRU2aA9kJtT3_IGOFDNEVJ-fWRy2cG3D02CU3e7m8_aem_PrF34RsMLsQMoUTrqtzNTA"
+          >
+            <img src="/img_Home/logo-ojds.png" alt="Observatorio" height="60" />
+            <img
+              src="/img_Home/logo-colegio.png"
+              alt="Colegio Gabriel García Márquez"
+              height="60"
+            />
+          </a>
 
-document.getElementById("decada-siguiente").onclick = () => {
-  if ((paginaActual + 1) * aniosPorPagina < aniosDisponibles.length) {
-    paginaActual++;
-    renderDiscos();
-  }
-};
+          <img src="/img_Home/logo-umb.png" alt="UMB" height="60" />
+          <img
+            src="/img_Home/logo-sabios.png"
+            alt="Sabios del Territorio"
+            height="60"
+          />
+          <img src="/img_Home/logo-cosecha.png" alt="La Cosecha" height="60" />
+          <img src="/img_Home/logo-tunalito.png" alt="Tunalito" height="60" />
+        </div>
+      </div>
+    </section>
 
-renderDiscos();
-</script>
+    <!-- SECCIÓN: Enlaces -->
+    <section class="enlaces-informacion text-center py-5">
+      <h4 class="mb-4">Ingresa a estos sitios para conocer más de La Flora</h4>
+      <div class="d-flex flex-wrap justify-content-center gap-5">
+        <a
+          href="https://upz52laflora.wixsite.com/laflorausme/multimedia"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/img_Home/upz-la-flora.png"
+            alt="UPZ 52 - La Flora"
+            height="80"
+            class="link-image"
+          />
+        </a>
+        <a
+          href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAAadypQLjKo3c4SXbo4lwP5BD0n_uQ2kKyQuPT4VOOl_FAdlq3dRmAXXwitOaOA_aem_HDdLCXPBKeeC2aWKtRK28A"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/img_Home/observatorio-desigualdades.png"
+            alt="Observatorio Javeriano"
+            height="80"
+            class="link-image"
+          />
+        </a>
+      </div>
+    </section>
 
-
-  
-  <!-- SECCIÓN: Enlaces -->
-<section class="enlaces-informacion text-center py-5">
-    <h4 class="mb-4">Ingresa a estos sitios para conocer más de La Flora</h4>
-    <div class="d-flex flex-wrap justify-content-center gap-5">
-      <a href="https://upz52laflora.wixsite.com/laflorausme/multimedia" target="_blank" rel="noopener noreferrer">
-        <img src="/img_Home/upz-la-flora.png" alt="UPZ 52 - La Flora" height="80" class="link-image" />
-      </a>
-      <a href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAAadypQLjKo3c4SXbo4lwP5BD0n_uQ2kKyQuPT4VOOl_FAdlq3dRmAXXwitOaOA_aem_HDdLCXPBKeeC2aWKtRK28A" target="_blank" rel="noopener noreferrer">
-        <img src="/img_Home/observatorio-desigualdades.png" alt="Observatorio Javeriano" height="80" class="link-image" />
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER institucional -->
-<footer class="footer-javeriana">
-    <img src="/img_Home/footer-javeriana.png" alt="Footer institucional Javeriana" class="img-fluid w-100" />
-  </footer>
-
-</body>
+    <!-- FOOTER institucional -->
+    <footer class="footer-javeriana">
+      <img
+        src="/img_Home/footer-javeriana.png"
+        alt="Footer institucional Javeriana"
+        class="img-fluid w-100"
+      />
+    </footer>
+  </body>
 </html>

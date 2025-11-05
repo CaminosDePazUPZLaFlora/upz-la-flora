@@ -12,16 +12,16 @@
     />
 
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="/css/contar.css" />
+    <link rel="stylesheet" href="/css/mapa.css" />
   </head>
   <body>
     <!-- ENCABEZADO -->
     <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
       <div class="container-fluid">
-        <!-- Título principal -->
-        <h1 class="navbar-brand fw-bold mb-0">
-          Historias y Caminos de Barrio
-        </h1>
+        <!-- Botón naranja izquierdo -->
+        <a class="btn btn-contar-historia me-3" href="/contar/"
+          >CONTAR MI HISTORIA</a
+        >
 
         <!-- Botón responsive -->
         <button
@@ -39,39 +39,30 @@
           id="menu-principal"
         >
           <ul class="navbar-nav mb-2 mb-lg-0">
-            <!-- Botón CONTAR MI HISTORIA -->
-            <li class="nav-item">
-              <a class="btn btn-contar-historia me-3 fw-bold" href="/contar/"
-                >CONTAR MI HISTORIA</a
-              >
-            </li>
-
             <!-- Inicio -->
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/">Inicio</a>
+              <a class="nav-link" href="/">Inicio</a>
             </li>
 
             <!-- Murales -->
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle fw-bold"
+                class="nav-link dropdown-toggle"
                 href="#"
                 id="menu-murales"
                 data-bs-toggle="dropdown"
                 >Ruta de la Memoria</a
               >
               <ul class="dropdown-menu menu-desplegable">
-                <li>
-                  <a class="dropdown-item fw-bold" href="/autores/">Murales</a>
-                </li>
-                <li><a class="dropdown-item fw-bold" href="/mapa/">Mapa</a></li>
+                <li><a class="dropdown-item" href="/autores/">Murales</a></li>
+                <li><a class="dropdown-item" href="/mapa/">Mapa</a></li>
               </ul>
             </li>
 
             <!-- Archivos -->
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle fw-bold"
+                class="nav-link dropdown-toggle"
                 href="#"
                 id="menu-archivos"
                 data-bs-toggle="dropdown"
@@ -79,30 +70,24 @@
               >
               <ul class="dropdown-menu menu-desplegable">
                 <li>
-                  <a class="dropdown-item fw-bold" href="/entrevistas/"
-                    >Entrevistas</a
-                  >
+                  <a class="dropdown-item" href="/entrevistas/">Entrevistas</a>
                 </li>
-                <li>
-                  <a class="dropdown-item fw-bold" href="/informacion/"
-                    >Datos</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="/informacion/">Datos</a></li>
               </ul>
             </li>
 
             <!-- Otros enlaces -->
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/historia/">Historia</a>
+              <a class="nav-link" href="/historia/">Historia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/datos/">Datos demográficos</a>
+              <a class="nav-link" href="/datos/">Datos demográficos</a>
             </li>
 
             <!-- Acerca de -->
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle fw-bold"
+                class="nav-link dropdown-toggle"
                 href="#"
                 id="menu-nosotros"
                 data-bs-toggle="dropdown"
@@ -110,17 +95,15 @@
               >
               <ul class="dropdown-menu menu-desplegable">
                 <li>
-                  <a class="dropdown-item fw-bold" href="/nosotros/"
+                  <a class="dropdown-item" href="/nosotros/"
                     >Historias de barrio</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item fw-bold" href="/nosotros/"
-                    >Caminos de Paz</a
-                  >
+                  <a class="dropdown-item" href="/nosotros/">Caminos de Paz</a>
                 </li>
                 <li>
-                  <a class="dropdown-item fw-bold" href="/nosotros/"
+                  <a class="dropdown-item" href="/nosotros/"
                     >Entidades relacionadas</a
                   >
                 </li>
@@ -136,97 +119,28 @@
 
     <br />
 
-    <!-- SECCIÓN: Formulario para contar historia -->
-    <section class="py-5 bg-light">
+    <!-- SECCIÓN: Mapa Interactivo -->
+    <section class="seccion-mapa-interactivo py-5 text-center bg-light">
       <div class="container">
-        <label for="historia" class="form-label fw-bold"
-          >Escribe tu historia aquí:</label
-        >
-        <div class="input-group">
-          <textarea
-            class="form-control"
-            id="historia"
-            rows="4"
-            placeholder="Escribe algo bonito..."
-          ></textarea>
-          <button class="btn btn-secondary" type="button" id="btnEnviar">
-            <span style="font-size: 1.5rem">⬆️</span>
-          </button>
+        <h2 class="mb-4 fw-bold">Mapa Interactivo de Usme</h2>
+        <p class="mb-4">
+          Haz clic sobre los puntos para conocer más sobre cada mural y su
+          autor.
+        </p>
+
+        <div class="mapa-responsive rounded border shadow">
+          <iframe
+            src="https://www.google.com/maps/d/u/0/embed?mid=1NiPhwWWYg4oflgoOaDXMuFx_laXAw2Y&ehbc=2E312F"
+            width="100%"
+            height="500"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
         </div>
       </div>
     </section>
-
-    <!-- SECCIÓN: Comentarios mostrados -->
-    <section class="py-5 text-white bg-naranja">
-      <div class="container">
-        <div id="historias" class="d-flex flex-column gap-4">
-          <div class="d-flex align-items-start gap-3">
-            <span class="fs-1">👤</span>
-            <p class="mb-0">
-              Hola me llamo Loren y soy parte de la comunidad. Soy una niña de
-              16 años que va al colegio...
-            </p>
-          </div>
-          <div class="d-flex align-items-start gap-3">
-            <span class="fs-1">👤</span>
-            <p class="mb-0">
-              Buenas tardes, soy el señor Andrés y soy un señor de 76 años que
-              vive cerca de Tihuaque...
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN: Imagen decorativa inferior -->
-    <section>
-      <img
-        src="/img_Contar/flora.png"
-        alt="Decoración historias"
-        class="img-fluid w-100"
-      />
-    </section>
-
-    <!-- JS para mostrar nueva historia -->
-    <script>
-      document
-        .getElementById("btnEnviar")
-        .addEventListener("click", function () {
-          const texto = document.getElementById("historia").value.trim();
-          if (texto !== "") {
-            const contenedor = document.getElementById("historias");
-            const nuevaHistoria = document.createElement("div");
-            nuevaHistoria.className = "d-flex align-items-start gap-3";
-            nuevaHistoria.innerHTML = `
-          <span class="fs-1">👤</span>
-          <p class="mb-0">${texto}</p>
-        `;
-            contenedor.prepend(nuevaHistoria);
-            document.getElementById("historia").value = "";
-          }
-        });
-    </script>
-
-    <section class="seccion-apoyo">
-      <!-- Franja superior amarilla -->
-      <div
-        class="franja-amarilla text-center text-white d-flex justify-content-end align-items-center"
-      >
-        <h2 class="fw-bold m-0">
-          Apoya nuestra pagina con <br />
-          tus ideas
-        </h2>
-      </div>
-
-      <!-- Imagen decorativa central (una sola imagen) -->
-      <div class="contenedor-imagen">
-        <img
-          src="/img_Contar/apoyo-final.png"
-          alt="Imagen apoyo visual"
-          class="img-apoyo"
-        />
-      </div>
-
 
     <!-- SECCIÓN: Patrocinadores -->
     <section
@@ -235,7 +149,7 @@
     >
       <h4 class="mb-4">Patrocinadores</h4>
       <div
-        class="d-flex flex-wrap justify-content-center align-items-center gap-4"
+        class="d-flex flex-wrap justify-content-end align-items-center gap-4"
       >
         <a href="/">
           <img src="/img_Home/logo-javeriana.png" alt="Javeriana" height="60" />
@@ -261,7 +175,7 @@
     <!-- SECCIÓN: Enlaces -->
     <section class="enlaces-informacion text-center py-5">
       <h4 class="mb-4">Ingresa a estos sitios para conocer más de La Flora</h4>
-      <div class="d-flex flex-wrap justify-content-center gap-5">
+      <div class="d-flex flex-wrap justify-content-end gap-5">
         <a
           href="https://upz52laflora.wixsite.com/laflorausme/multimedia"
           target="_blank"
