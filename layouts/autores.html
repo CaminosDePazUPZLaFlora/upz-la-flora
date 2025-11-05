@@ -12,7 +12,7 @@
     />
 
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="/css/autores.css?v=2.0" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/autores.css?v=2.0" />
   </head>
   <body>
     <!-- ENCABEZADO -->
@@ -39,14 +39,14 @@
           <ul class="navbar-nav mb-2 mb-lg-0">
             <!-- Botón CONTAR MI HISTORIA -->
             <li class="nav-item">
-              <a class="btn btn-contar-historia me-3 fw-bold" href="/contar/"
+              <a class="btn btn-contar-historia me-3 fw-bold" href="{{ .Site.BaseURL }}contar/"
                 >CONTAR MI HISTORIA</a
               >
             </li>
 
             <!-- Inicio -->
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/">Inicio</a>
+              <a class="nav-link fw-bold" href="{{ .Site.BaseURL }}">Inicio</a>
             </li>
 
             <!-- Murales -->
@@ -60,9 +60,9 @@
               >
               <ul class="dropdown-menu menu-desplegable">
                 <li>
-                  <a class="dropdown-item fw-bold" href="/autores/">Murales</a>
+                  <a class="dropdown-item fw-bold" href="{{ .Site.BaseURL }}autores/">Murales</a>
                 </li>
-                <li><a class="dropdown-item fw-bold" href="/mapa/">Mapa</a></li>
+                <li><a class="dropdown-item fw-bold" href="{{ .Site.BaseURL }}mapa/">Mapa</a></li>
               </ul>
             </li>
 
@@ -77,12 +77,12 @@
               >
               <ul class="dropdown-menu menu-desplegable">
                 <li>
-                  <a class="dropdown-item fw-bold" href="/entrevistas/"
+                  <a class="dropdown-item fw-bold" href="{{ .Site.BaseURL }}entrevistas/"
                     >Entrevistas</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item fw-bold" href="/informacion/"
+                  <a class="dropdown-item fw-bold" href="{{ .Site.BaseURL }}informacion/"
                     >Datos</a
                   >
                 </li>
@@ -91,10 +91,10 @@
 
             <!-- Otros enlaces -->
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/historia/">Historia</a>
+              <a class="nav-link fw-bold" href="{{ .Site.BaseURL }}historia/">Historia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/datos/">Datos demográficos</a>
+              <a class="nav-link fw-bold" href="{{ .Site.BaseURL }}datos/">Datos demográficos</a>
             </li>
 
             <!-- Acerca de -->
@@ -108,17 +108,17 @@
               >
               <ul class="dropdown-menu menu-desplegable">
                 <li>
-                  <a class="dropdown-item fw-bold" href="/nosotros/"
+                  <a class="dropdown-item fw-bold" href="{{ .Site.BaseURL }}nosotros/"
                     >Historias de barrio</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item fw-bold" href="/nosotros/"
+                  <a class="dropdown-item fw-bold" href="{{ .Site.BaseURL }}nosotros/"
                     >Caminos de Paz</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item fw-bold" href="/nosotros/"
+                  <a class="dropdown-item fw-bold" href="{{ .Site.BaseURL }}nosotros/"
                     >Entidades relacionadas</a
                   >
                 </li>
@@ -176,7 +176,7 @@
                   <div class="carousel-main-image">
                     <img
                       id="currentImage"
-                      src="/img_Murales/Mural1Agua.jpg"
+                      src="{{ .Site.BaseURL }}img_Murales/Mural1Agua.jpg"
                       alt="Mural"
                       class="img-fluid"
                     />
@@ -243,7 +243,7 @@
                       <h6 class="mb-3">Descripción de Audio</h6>
                       <audio id="muralAudio" controls class="w-100">
                         <source
-                          src="/audio/audio1MuralAgua.mp3"
+                          src="{{ .Site.BaseURL }}audio/audio1MuralAgua.mp3"
                           type="audio/mpeg"
                         />
                         Tu navegador no soporta el elemento de audio.
@@ -268,34 +268,34 @@
         >
           <a href="https://www.javeriana.edu.co/inicio">
             <img
-              src="/img_Home/logo-javeriana.png"
+              src="{{ .Site.BaseURL }}img_Home/logo-javeriana.png"
               alt="Javeriana"
               height="60"
             />
           </a>
           <a href="https://www.javeriana.edu.co/compromiso-social/prosofi">
-            <img src="/img_Home/logo-prosofi.png" alt="PROSOFI" height="60" />
+            <img src="{{ .Site.BaseURL }}img_Home/logo-prosofi.png" alt="PROSOFI" height="60" />
           </a>
 
           <a
             href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn3aY7GLFKTVq84cifF6yRU2aA9kJtT3_IGOFDNEVJ-fWRy2cG3D02CU3e7m8_aem_PrF34RsMLsQMoUTrqtzNTA"
           >
-            <img src="/img_Home/logo-ojds.png" alt="Observatorio" height="60" />
+            <img src="{{ .Site.BaseURL }}img_Home/logo-ojds.png" alt="Observatorio" height="60" />
             <img
-              src="/img_Home/logo-colegio.png"
+              src="{{ .Site.BaseURL }}img_Home/logo-colegio.png"
               alt="Colegio Gabriel García Márquez"
               height="60"
             />
           </a>
 
-          <img src="/img_Home/logo-umb.png" alt="UMB" height="60" />
+          <img src="{{ .Site.BaseURL }}img_Home/logo-umb.png" alt="UMB" height="60" />
           <img
-            src="/img_Home/logo-sabios.png"
+            src="{{ .Site.BaseURL }}img_Home/logo-sabios.png"
             alt="Sabios del Territorio"
             height="60"
           />
-          <img src="/img_Home/logo-cosecha.png" alt="La Cosecha" height="60" />
-          <img src="/img_Home/logo-tunalito.png" alt="Tunalito" height="60" />
+          <img src="{{ .Site.BaseURL }}img_Home/logo-cosecha.png" alt="La Cosecha" height="60" />
+          <img src="{{ .Site.BaseURL }}img_Home/logo-tunalito.png" alt="Tunalito" height="60" />
         </div>
       </div>
     </section>
@@ -310,7 +310,7 @@
           rel="noopener noreferrer"
         >
           <img
-            src="/img_Home/upz-la-flora.png"
+            src="{{ .Site.BaseURL }}img_Home/upz-la-flora.png"
             alt="UPZ 52 - La Flora"
             height="80"
             class="link-image"
@@ -322,7 +322,7 @@
           rel="noopener noreferrer"
         >
           <img
-            src="/img_Home/observatorio-desigualdades.png"
+            src="{{ .Site.BaseURL }}img_Home/observatorio-desigualdades.png"
             alt="Observatorio Javeriano"
             height="80"
             class="link-image"
@@ -334,7 +334,7 @@
     <!-- FOOTER institucional -->
     <footer class="footer-javeriana">
       <img
-        src="/img_Home/footer-javeriana.png"
+        src="{{ .Site.BaseURL }}img_Home/footer-javeriana.png"
         alt="Footer institucional Javeriana"
         class="img-fluid w-100"
       />
@@ -342,70 +342,73 @@
 
     <!-- JavaScript for Carousel Functionality -->
     <script>
+      // Base URL for assets (needed for GitHub Pages deployment)
+      const baseURL = "{{ .Site.BaseURL }}";
+      
       // Mural data - You can easily add more murals here
       const muralsData = [
         {
           id: 1,
-          image: "/img_Murales/Mural1Agua.jpg",
+          image: baseURL + "img_Murales/Mural1Agua.jpg",
           title: "El Agua",
           description:
             "El mural 'El Agua' representa la importancia vital del agua en la comunidad de La Flora. A través de tonos azules y verdes, esta obra artística celebra el recurso más preciado del barrio y su conexión con la vida cotidiana de sus habitantes.",
           author: "Colectivo Artístico La Flora",
           location:
             "Carrera 5 Este # 52-38 Sur, pared exterior del antiguo almacén 'La Cosecha', frente al parque El Tunalito (Usme).",
-          audio: "/audio/audio1MuralAgua.mp3",
+          audio: baseURL + "audio/audio1MuralAgua.mp3",
         },
         {
           id: 2,
-          image: "/img_Murales/Mural2HuertaCamellosa.jpg",
+          image: baseURL + "img_Murales/Mural2HuertaCamellosa.jpg",
           title: "Huerta Camellosa",
           description:
             "Un vibrante mural que representa las historias y testimonios de los habitantes de La Flora. Utilizando técnicas de collage y pintura mural, este trabajo artístico da voz a las experiencias cotidianas y los sueños de la comunidad.",
           author: "Colectivo Muralista La Flora",
           location:
             "Calle 68 Sur # 3-15, muro lateral de la Biblioteca Comunitaria",
-          audio: "/audio/mural2.mp3",
+          audio: baseURL + "audio/mural2.mp3",
         },
         {
           id: 3,
-          image: "/img_Murales/Mural3MiBarrioMiCasa.jpg",
+          image: baseURL + "img_Murales/Mural3MiBarrioMiCasa.jpg",
           title: "Mi Barrio, Mi Casa",
           description:
             "Una obra que celebra la conexión profunda entre los habitantes y su territorio. A través de elementos naturales y símbolos ancestrales, este mural cuenta la historia de resistencia y pertenencia de la comunidad de La Flora.",
           author: "María Esperanza García",
           location:
             "Diagonal 67 Sur # 5A-20, fachada del Centro Cultural Comunitario",
-          audio: "/audio/mural3.mp3",
+          audio: baseURL + "audio/mural3.mp3",
         },
         {
           id: 4,
-          image: "/img_Murales/Mural4.jpg",
+          image: baseURL + "img_Murales/Mural4.jpg",
           title: "Comunidad y Esperanza",
           description:
             "Este mural refleja la unión y la esperanza de la comunidad de La Flora. Con colores vibrantes y figuras que representan la diversidad cultural del barrio, la obra invita a la reflexión sobre la importancia de trabajar juntos por un futuro mejor.",
           author: "Artista Comunitario",
           location: "Avenida Boyacá # 45-67, muro del Centro Comunitario",
-          audio: "/audio/mural4.mp3",
+          audio: baseURL + "audio/mural4.mp3",
         },
         {
           id: 5,
-          image: "{{ .Site.BaseURL }}img_Murales/Mural5Colibri.jpg",
+          image: baseURL + "img_Murales/Mural5Colibri.jpg",
           title: "El Colibrí",
           description:
             "Una hermosa representación de la fauna local, donde el colibrí simboliza la libertad y la belleza natural que aún persiste en el territorio urbano de La Flora. Esta obra invita a proteger y valorar la biodiversidad del sector.",
           author: "Natalia Rodríguez",
           location: "Carrera 7 # 58-23, muro del parque infantil",
-          audio: "/audio/mural5.mp3",
+          audio: baseURL + "audio/mural5.mp3",
         },
         {
           id: 6,
-          image: "{{ .Site.BaseURL }}img_Murales/Mural6Arrayanes.jpg",
+          image: baseURL + "img_Murales/Mural6Arrayanes.jpg",
           title: "Arrayanes",
           description:
             "Los arrayanes, árboles nativos de la región, son el tema central de este mural que busca reconectar a la comunidad con sus raíces ambientales. La obra destaca la importancia de preservar las especies nativas en el entorno urbano.",
           author: "Grupo Ecológico La Flora",
           location: "Diagonal 63 Sur # 4A-12, muro de la escuela primaria",
-          audio: "/audio/mural6.mp3",
+          audio: baseURL + "audio/mural6.mp3",
         },
       ];
 
