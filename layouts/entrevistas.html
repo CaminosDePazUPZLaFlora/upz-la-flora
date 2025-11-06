@@ -13,65 +13,104 @@
 </head>
 <body>
 
-  <!-- ENCABEZADO -->
-  <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
-    <div class="container-fluid">
-      <!-- Título principal -->
-      <h1 class="navbar-brand fw-bold mb-0">Historias y Caminos de Barrio</h1>
+    <!-- ENCABEZADO -->
+    <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
+      <div class="container-fluid">
+        <!-- Título principal -->
+        <h1 class="navbar-brand fw-bold mb-0">Historias y Caminos de Barrio</h1>
 
-      <!-- Botón responsive -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <!-- Botón responsive -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu-principal"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <!-- Menú de navegación -->
-      <div class="collapse navbar-collapse justify-content-end" id="menu-principal">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <!-- Botón CONTAR MI HISTORIA -->
-          <li class="nav-item">
-            <a class="btn btn-contar-historia me-3 fw-bold" href="/contar/">CONTAR MI HISTORIA</a>
-          </li>
-          
-          <!-- Inicio -->
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="/">Inicio</a>
-          </li>
+        <!-- Menú de navegación (estilo conservado) -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="menu-principal"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <!-- Botón CONTAR MI HISTORIA (primero) -->
+            <li class="nav-item">
+              <a class="btn btn-contar-historia me-3 fw-bold" href="/contar/"
+                >CONTAR MI HISTORIA</a
+              >
+            </li>
 
-          <!-- Murales -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-murales" data-bs-toggle="dropdown">Ruta de la Memoria</a>
-            <ul class="dropdown-menu menu-desplegable">
-              <li><a class="dropdown-item fw-bold" href="/autores/">Murales</a></li>
-              <li><a class="dropdown-item fw-bold" href="/mapa/">Mapa</a></li>
-            </ul>
-          </li>
+            <!-- Inicio -->
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/">Inicio</a>
+            </li>
 
-          <!-- Archivos -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-archivos" data-bs-toggle="dropdown">Archivos</a>
-            <ul class="dropdown-menu menu-desplegable">
-              <li><a class="dropdown-item fw-bold" href="/entrevistas/">Entrevistas</a></li>
-              <li><a class="dropdown-item fw-bold" href="/informacion/">Datos</a></li>
-            </ul>
-          </li>
+            <!-- Ruta de la Memoria (dropdown restored) -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-bold"
+                href="#"
+                id="menu-murales"
+                data-bs-toggle="dropdown"
+                >Ruta de la Memoria</a
+              >
+              <ul
+                class="dropdown-menu menu-desplegable"
+                aria-labelledby="menu-murales"
+              >
+                <li>
+                  <a class="dropdown-item fw-bold" href="/autores/">Murales</a>
+                </li>
+                <li><a class="dropdown-item fw-bold" href="/mapa/">Mapa</a></li>
+              </ul>
+            </li>
 
-          <!-- Otros enlaces -->
-          <li class="nav-item"><a class="nav-link fw-bold" href="/historia/">Historia</a></li>
-          <li class="nav-item"><a class="nav-link fw-bold" href="/datos/">Datos demográficos</a></li>
+            <!-- Historia (dropdown con 3 ítems) -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-bold"
+                href="#"
+                id="menu-historia"
+                data-bs-toggle="dropdown"
+                >Historia</a
+              >
+              <ul
+                class="dropdown-menu menu-desplegable"
+                aria-labelledby="menu-historia"
+              >
+                <li>
+                  <a class="dropdown-item fw-bold" href="/historia/"
+                    >Linea de Tiempo</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fw-bold" href="/entrevistas/"
+                    >Entrevistas</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fw-bold" href="/informacion/"
+                    >Datos</a
+                  >
+                </li>
+              </ul>
+            </li>
 
-       <!-- Acerca de -->
-       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-nosotros" data-bs-toggle="dropdown">Acerca de nosotros</a>
-        <ul class="dropdown-menu menu-desplegable">
-          <li><a class="dropdown-item fw-bold" href="/nosotros/">Historias de barrio</a></li>
-          <li><a class="dropdown-item fw-bold" href="/nosotros/">Caminos de Paz</a></li>
-          <li><a class="dropdown-item fw-bold" href="/nosotros/">Entidades relacionadas</a></li>
-        </ul>
-      </li>
-        </ul>
+            <!-- Estadísticas -->
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/datos/">Estadísticas</a>
+            </li>
+
+            <!-- Cartografía -->
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/mapa/">Cartografía</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
