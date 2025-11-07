@@ -86,3 +86,93 @@
     width: 100%;
     height: auto;
   }
+
+/* Dashboard de Estadísticas */
+.dashboard-estadisticas {
+  background-color: #f9f9f9;
+  padding-top: 2rem;
+}
+
+/* Tarjetas de Métricas */
+.card-metrica {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.card-metrica:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-metrica-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.card-metrica-content {
+  flex: 1;
+}
+
+.card-metrica-valor {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.card-metrica-label {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Tarjetas de Gráficos */
+.card-grafico {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-grafico-titulo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card-grafico canvas {
+  max-height: 300px;
+  width: 100% !important;
+  height: 300px !important;
+}
+
+/* Asegurar que ambos gráficos tengan la misma altura */
+#graficoBarras,
+#graficoPastel {
+  height: 300px !important;
+  max-height: 300px !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-metrica {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .card-metrica-valor {
+    font-size: 1.5rem;
+  }
+}
