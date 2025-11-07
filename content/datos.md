@@ -1,5 +1,5 @@
 ---
-title: "Datos"
+title: "Estadísticas"
 url: "/datos/"
 layout: "datos"
 ---

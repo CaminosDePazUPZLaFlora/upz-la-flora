@@ -1,5 +1,5 @@
 ---
-title: "Autores"
+title: "Murales"
 url: "/autores/"
-layout: "autores"
+layout: "murales"
 ---
