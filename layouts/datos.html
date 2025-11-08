@@ -11,6 +11,9 @@
       rel="stylesheet"
     />
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="/upz-la-flora/css/datos.css" />
   </head>
@@ -134,8 +137,83 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <br />
     <br />
+    
+    <!-- SECCIÓN: Dashboard de Estadísticas -->
+    <section class="dashboard-estadisticas py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Dashboard de Estadísticas</h2>
+        
+        <!-- Tarjetas de Métricas Principales -->
+        <div class="row g-4 mb-5">
+          <div class="col-md-3 col-sm-6">
+            <div class="card-metrica">
+              <div class="card-metrica-icon">👥</div>
+              <div class="card-metrica-content">
+                <h3 class="card-metrica-valor" id="metrica-poblacion">-</h3>
+                <p class="card-metrica-label">Población Total</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card-metrica">
+              <div class="card-metrica-icon">🏠</div>
+              <div class="card-metrica-content">
+                <h3 class="card-metrica-valor" id="metrica-viviendas">-</h3>
+                <p class="card-metrica-label">Viviendas</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card-metrica">
+              <div class="card-metrica-icon">📈</div>
+              <div class="card-metrica-content">
+                <h3 class="card-metrica-valor" id="metrica-crecimiento">-</h3>
+                <p class="card-metrica-label">Crecimiento %</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card-metrica">
+              <div class="card-metrica-icon">🗺️</div>
+              <div class="card-metrica-content">
+                <h3 class="card-metrica-valor" id="metrica-area">-</h3>
+                <p class="card-metrica-label">Área (km²)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gráficos -->
+        <div class="row g-2">
+          <!-- Gráfico de Barras -->
+          <div class="col-lg-6">
+            <div class="card-grafico">
+              <h4 class="card-grafico-titulo">Distribución por Barrios</h4>
+              <canvas id="graficoBarras"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico de Pastel -->
+          <div class="col-lg-6">
+            <div class="card-grafico">
+              <h4 class="card-grafico-titulo">Composición Demográfica</h4>
+              <canvas id="graficoPastel"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico de Líneas -->
+          <div class="col-lg-12">
+            <div class="card-grafico">
+              <h4 class="card-grafico-titulo">Evolución Temporal</h4>
+              <canvas id="graficoLineas"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECCIÓN: Mapa Demográfico -->
-    <section class="seccion-mapa text-center py-5 bg-light">
+    <section class="seccion-mapa text-center py-5">
       <div class="container">
         <h2 class="mb-4">Datos Demográficos</h2>
         <img
@@ -255,5 +333,118 @@
         class="img-fluid w-100"
       />
     </footer>
+
+    <!-- Script para inicializar gráficos -->
+    <script>
+      // Cargar datos desde JSON estático
+      const datosPath = '/upz-la-flora/data/estadisticas.json';
+      
+      fetch(datosPath)
+        .then(response => response.json())
+        .then(datos => {
+          // Actualizar métricas
+          document.getElementById('metrica-poblacion').textContent = 
+            datos.metricas.poblacion.toLocaleString() || '-';
+          document.getElementById('metrica-viviendas').textContent = 
+            datos.metricas.viviendas.toLocaleString() || '-';
+          document.getElementById('metrica-crecimiento').textContent = 
+            datos.metricas.crecimiento + '%' || '-';
+          document.getElementById('metrica-area').textContent = 
+            datos.metricas.area || '-';
+
+          // Inicializar gráficos
+          inicializarGraficos(datos);
+        })
+        .catch(error => {
+          console.error('Error cargando datos:', error);
+          // Usar datos placeholder si falla
+          inicializarGraficos({
+            barrios: { labels: [], datos: [] },
+            demografia: { labels: [], datos: [] },
+            evolucion: { labels: [], datos: [] }
+          });
+        });
+
+      function inicializarGraficos(datos) {
+        // Gráfico de Barras
+        const ctxBarras = document.getElementById('graficoBarras');
+        if (ctxBarras && datos.barrios && datos.barrios.datos.length > 0) {
+          new Chart(ctxBarras, {
+            type: 'bar',
+            data: {
+              labels: datos.barrios.labels,
+              datasets: [{
+                label: 'Población',
+                data: datos.barrios.datos,
+                backgroundColor: '#f36e23',
+                borderColor: '#d45a1a',
+                borderWidth: 1
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  display: false
+                }
+              }
+            }
+          });
+        }
+
+        // Gráfico de Pastel
+        const ctxPastel = document.getElementById('graficoPastel');
+        if (ctxPastel && datos.demografia && datos.demografia.datos.length > 0) {
+          new Chart(ctxPastel, {
+            type: 'pie',
+            data: {
+              labels: datos.demografia.labels,
+              datasets: [{
+                data: datos.demografia.datos,
+                backgroundColor: [
+                  '#f36e23',
+                  '#ff8c42',
+                  '#ffa366',
+                  '#ffb88c'
+                ]
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              aspectRatio: 1,
+              plugins: {
+                legend: {
+                  position: 'bottom'
+                }
+              }
+            }
+          });
+        }
+
+        // Gráfico de Líneas
+        const ctxLineas = document.getElementById('graficoLineas');
+        if (ctxLineas && datos.evolucion && datos.evolucion.datos.length > 0) {
+          new Chart(ctxLineas, {
+            type: 'line',
+            data: {
+              labels: datos.evolucion.labels,
+              datasets: [{
+                label: 'Evolución',
+                data: datos.evolucion.datos,
+                borderColor: '#f36e23',
+                backgroundColor: 'rgba(243, 110, 35, 0.1)',
+                tension: 0.4
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: true
+            }
+          });
+        }
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,29 @@
+{
+  "metricas": {
+    "poblacion": 18155,
+    "viviendas": 6395,
+    "crecimiento": 4.79,
+    "area": 0
+  },
+  "barrios": {
+    "labels": [
+      "Tihuaque",
+      "Las Violetas",
+      "Los Arrayanes",
+      "San Pedro",
+      "Villa Rosita",
+      "Juan Jose Rondon I",
+      "Villa Diana",
+      "Resto UPZ (Urbano)"
+    ],
+    "datos": [88, 402, 1159, 1222, 1731, 1885, 3628, 8040]
+  },
+  "demografia": {
+    "labels": ["Hombres", "Mujeres"],
+    "datos": [8965, 9190]
+  },
+  "evolucion": {
+    "labels": ["2020", "2021", "2022", "2023", "2024"],
+    "datos": [15000, 16000, 17000, 17500, 18155]
+  }
+}
