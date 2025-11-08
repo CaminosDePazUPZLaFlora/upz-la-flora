@@ -1,32 +1,32 @@
 /* Fondo del encabezado */
 .encabezado {
-    background-color: #ffffff;
-    border-bottom: 3px solid #000;
-  }
-  
-  /* Botón naranja */
-  .btn-contar-historia {
-    background-color: #f36e23;
-    color: white;
-    border-radius: 20px;
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-  
-  /* Menú desplegable oscuro */
-  .menu-desplegable {
-    background-color: #1a1a1a;
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item {
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item:hover {
-    background-color: #444;
-  }
-  
+  background-color: #ffffff;
+  border-bottom: 3px solid #000;
+}
+
+/* Botón naranja */
+.btn-contar-historia {
+  background-color: #f36e23;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 6px 14px;
+}
+
+/* Menú desplegable oscuro */
+.menu-desplegable {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.menu-desplegable .dropdown-item {
+  color: white;
+}
+
+.menu-desplegable .dropdown-item:hover {
+  background-color: #444;
+}
+
 /* Logos del header */
 .logos {
   max-width: 100%;
@@ -39,50 +39,176 @@
   object-fit: contain;
 }
 
-  /*-------*/
-/*-------*/
+/* ============ ESTILOS GLOBALES - IGUAL A MURALES ============ */
+body {
+  background-color: #e79362;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* ============ DASHBOARD DE ESTADÍSTICAS ============ */
+.dashboard-estadisticas {
+  background-color: #e79362;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.dashboard-estadisticas h2 {
+  color: #f7f7f7;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 5px 5px 5px rgba(255, 94, 0, 0.5);
+}
+
+/* Tarjetas de Métricas - mantener blancas */
+.card-metrica {
+  background: white !important;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.card-metrica:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-metrica-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.card-metrica-content {
+  flex: 1;
+}
+
+.card-metrica-valor {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.card-metrica-label {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Tarjetas de Gráficos - mantener blancas */
+.card-grafico {
+  background: white !important;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-grafico-titulo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card-grafico canvas {
+  max-height: 300px;
+  width: 100% !important;
+  height: 300px !important;
+}
+
+#graficoBarras,
+#graficoPastel {
+  height: 300px !important;
+  max-height: 300px !important;
+}
+
+/* ============ OTRAS SECCIONES ============ */
 .seccion-mapa {
-    background-color: #f5f5f5;
-  }
-  
-  .enlace-archivo {
-    font-size: 1.1rem;
-    color: #0077cc;
-    text-decoration: underline;
-  }
-  
-  .enlace-archivo:hover {
-    color: #f36e23;
-    text-decoration: none;
-  }
+  background-color: #e79362 !important;
+  color: #333;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 
-  /*-------*/
-/*-------*/
-  /* Enlaces institucionales */
+.seccion-mapa h2 {
+  color: #f7f7f7;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 5px 5px 5px rgba(255, 94, 0, 0.5);
+}
+
+/* Asegurar que el contenedor no tenga fondo blanco */
+.seccion-mapa .container {
+  background-color: transparent !important;
+}
+
+.enlace-archivo {
+  font-size: 1.1rem;
+  color: #0077cc;
+  text-decoration: underline;
+}
+
+.enlace-archivo:hover {
+  color: #f36e23;
+  text-decoration: none;
+}
+
+.seccion-archivos {
+  background-color: #e79362;
+  color: #333;
+}
+
+.patrocinadores {
+  background-color: #ffffff;
+  color: #333;
+}
+
 .enlaces-informacion {
-    background-color: #eeeeee;
-    color: #333;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-  
-  .enlaces-informacion img {
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-    background-color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-  }
-  /*-------*/
-/*-------*/
+  background-color: #eeeeee;
+  color: #333;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
 
-/* Footer Javeriana */
+.enlaces-informacion img {
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
 .footer-javeriana {
-    margin-top: 0;
-    background-color: #000;
+  margin-top: 0;
+  background-color: #000;
+}
+
+.footer-javeriana img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-metrica {
+    flex-direction: column;
+    text-align: center;
   }
   
-  .footer-javeriana img {
-    display: block;
-    width: 100%;
-    height: auto;
+  .card-metrica-valor {
+    font-size: 1.5rem;
   }
+
+  .dashboard-estadisticas h2 {
+    font-size: 2rem;
+  }
+}
