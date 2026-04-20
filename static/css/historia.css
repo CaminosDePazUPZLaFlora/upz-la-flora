@@ -273,22 +273,16 @@
 }
 
 /*-------*/
-/* Enlaces institucionales */
-.enlaces-informacion {
-  background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
-  color: #333;
-  padding: clamp(3rem, 7vw, 5rem) 0;
+/* Guía de categorías — shimmer bar encima */
+.guia-categorias {
+  position: relative;
 }
-
-.enlaces-informacion img {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  background-color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.enlaces-informacion img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(243, 110, 35, 0.2);
+.guia-categorias::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--verde, #1B5E20), var(--cian, #26C6DA), #4CAF50, var(--cian, #26C6DA));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
 }

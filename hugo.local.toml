@@ -1,0 +1,12 @@
+# Configuración local de desarrollo — sobreescribe hugo.toml para el entorno local
+# Este archivo NO se sube a Git (está en .gitignore)
+
+# Usar localhost en vez de la URL de producción
+baseURL = 'http://localhost:1313/upz-la-flora/'
+
+# Desactivar canonifyURLs en local para que los assets se carguen bien
+canonifyURLs = false
+
+# Modo de entorno de desarrollo
+[params]
+  env = "development"

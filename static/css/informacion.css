@@ -1,109 +1,154 @@
-/* Fondo del encabezado */
-.encabezado {
-    background-color: #ffffff;
-    border-bottom: 3px solid #000;
-  }
-  
-  /* Botón naranja */
-  .btn-contar-historia {
-    background-color: #f36e23;
-    color: white;
-    border-radius: 20px;
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-  
-  /* Menú desplegable oscuro */
-  .menu-desplegable {
-    background-color: #1a1a1a;
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item {
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item:hover {
-    background-color: #444;
-  }
-  
- /* Logos del header */
-.logos {
-  max-width: 100%;
-  flex-wrap: wrap;
-  justify-content: end;
+/* =============================================
+   INFORMACION.CSS — Información · UPZ La Flora
+   Paleta "Territorio Vivo": Verde #1B5E20 · Cian #26C6DA
+   NOTA: variables y navbar cubiertos por global-nav.css
+   ============================================= */
+
+body {
+  background-color: var(--blanco);
 }
 
-.logos img {
-  max-height: 40px;
-  object-fit: contain;
+/* =========== SECCIÓN DATOS (HERO) =========== */
+.seccion-datos {
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(38,198,218,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(38,198,218,0.12) 0%, transparent 50%),
+    linear-gradient(160deg, var(--verde-oscuro) 0%, var(--verde) 55%, var(--verde-medio) 100%);
+  color: var(--blanco-puro);
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  position: relative;
+  overflow: hidden;
 }
-/*------------------*/
-/*------------------*/
 
+.seccion-datos::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -80px;
+  width: clamp(200px, 35vw, 380px);
+  height: clamp(200px, 35vw, 380px);
+  border-radius: 50%;
+  border: 50px solid rgba(38,198,218,0.10);
+  pointer-events: none;
+}
 
-  .seccion-datos {
-    background-color: #f36e23; /* naranja intenso */
-    color: white;
-  }
-  
-  .seccion-datos h2 {
-    font-weight: 700;
-  }
-  
-  .seccion-datos .texto-descripcion {
-    max-width: 1000px;
-    margin: 0 auto;
-    line-height: 2.5;
-  }
+.seccion-datos::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
+}
 
+.seccion-datos h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 900;
+  color: var(--blanco-puro);
+  letter-spacing: -0.02em;
+}
 
-/*------------------*/
-/*------------------*/
+.seccion-datos h2::after {
+  content: '';
+  display: block;
+  width: 60px; height: 4px;
+  background: linear-gradient(90deg, var(--cian), var(--cian-claro));
+  border-radius: 99px;
+  margin: 0.5rem auto 0;
+}
 
-  .seccion-informacion {
-    background-color: #f8f9fa;
-    color: #212529;
-  }
-  
-  .seccion-informacion h2,
-  .seccion-informacion h3 {
-    color: #343a40;
-  }
-  
-  .seccion-informacion p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
+.texto-descripcion {
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  line-height: 1.85;
+  opacity: 0.92;
+  max-width: 780px;
+  margin: 0 auto;
+}
 
-  /*------------------*/
-/*------------------*/
-  /* Enlaces institucionales */
-.enlaces-informacion {
-    background-color: #eeeeee;
-    color: #333;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-  
-  .enlaces-informacion img {
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-    background-color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-  }
+/* =========== SECCIÓN INFORMACIÓN =========== */
+.seccion-informacion {
+  background: var(--blanco);
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  position: relative;
+}
 
-  /*-------*/
-/*-------*/
+.seccion-informacion::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
+}
 
-/* Footer Javeriana */
-.footer-javeriana {
-    margin-top: 0;
-    background-color: #000;
-  }
-  
-  .footer-javeriana img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+.seccion-informacion h2 {
+  font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+  font-weight: 900;
+  color: var(--verde);
+  letter-spacing: -0.02em;
+}
+
+.seccion-informacion h2::after {
+  content: '';
+  display: block;
+  width: 55px; height: 4px;
+  background: linear-gradient(90deg, var(--cian), transparent);
+  border-radius: 99px;
+  margin: 0.5rem auto 0;
+}
+
+.seccion-informacion h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  color: var(--verde-medio);
+  margin-bottom: 1rem;
+}
+
+.seccion-informacion p {
+  font-size: clamp(0.92rem, 2vw, 1.05rem);
+  line-height: 1.8;
+  color: #3a5a3a;
+}
+
+/* =========== TABLA =========== */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--gris-suave);
+  box-shadow: var(--shadow-card);
+}
+
+.table thead.table-dark {
+  background: linear-gradient(135deg, var(--verde-oscuro), var(--verde)) !important;
+}
+
+.table thead th {
+  background: transparent !important;
+  color: var(--blanco-puro) !important;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  letter-spacing: 0.5px !important;
+  padding: 1rem 0.75rem !important;
+  border-color: rgba(38,198,218,0.25) !important;
+}
+
+.table tbody tr {
+  transition: var(--transition);
+}
+
+.table tbody tr:hover {
+  background: rgba(38, 198, 218, 0.08) !important;
+}
+
+.table tbody td {
+  padding: 0.75rem !important;
+  font-size: 0.9rem;
+  color: #3a5a3a;
+  border-color: var(--gris-suave) !important;
+  vertical-align: middle;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(232, 245, 233, 0.5) !important;
+}

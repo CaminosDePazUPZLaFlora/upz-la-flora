@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UPZ La Flora</title>
+    <title>Estadísticas | Caminos para la Paz y Memoria – UPZ La Flora</title>
+    <meta name="description" content="Dashboard con estadísticas de población, vivienda y demografía de la UPZ La Flora, Usme. Datos actualizados del territorio." />
 
-    <!-- Bootstrap -->
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,7 +42,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menú de navegación (estilo conservado) -->
+        <!-- Menú de navegación -->
         <div
           class="collapse navbar-collapse justify-content-end"
           id="menu-principal"
@@ -50,17 +50,19 @@
           <ul class="navbar-nav mb-2 mb-lg-0">
             <!-- Botón CONTAR MI HISTORIA (primero) -->
             <li class="nav-item">
-              <a class="btn btn-contar-historia me-3 fw-bold" href="/contar/"
+              <a
+                class="btn btn-contar-historia me-3 fw-bold"
+                href="/upz-la-flora/contar/"
                 >CONTAR MI HISTORIA</a
               >
             </li>
 
             <!-- Inicio -->
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/">Inicio</a>
+              <a class="nav-link fw-bold" href="/upz-la-flora/">Inicio</a>
             </li>
 
-            <!-- Ruta de la Memoria (dropdown restored) -->
+            <!-- Ruta de la Memoria (dropdown) -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle fw-bold"
@@ -74,15 +76,17 @@
                 aria-labelledby="menu-murales"
               >
                 <li>
-                  <a class="dropdown-item fw-bold" href="/autores/">Murales</a>
+                  <a class="dropdown-item fw-bold" href="/upz-la-flora/autores/">Murales</a>
                 </li>
                 <li>
-                  <a class="dropdown-item fw-bold" href="/mapa/">Mapa</a>
+                  <a class="dropdown-item fw-bold" href="/upz-la-flora/mapa/"
+                    >Mapa</a
+                  >
                 </li>
               </ul>
             </li>
 
-            <!-- Historia (dropdown con 3 ítems) -->
+            <!-- Historia (dropdown) -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle fw-bold"
@@ -96,27 +100,27 @@
                 aria-labelledby="menu-historia"
               >
                 <li>
-                  <a class="dropdown-item fw-bold" href="/historia/"
+                  <a class="dropdown-item fw-bold" href="/upz-la-flora/historia/"
                     >Línea de Tiempo</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item fw-bold" href="/entrevistas/"
+                  <a class="dropdown-item fw-bold" href="/upz-la-flora/entrevistas/"
                     >Entrevistas</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item fw-bold" href="/informacion/"
+                  <a class="dropdown-item fw-bold" href="/upz-la-flora/informacion/"
                     >Información</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item fw-bold" href="/material-audiovisual/"
+                  <a class="dropdown-item fw-bold" href="/upz-la-flora/material-audiovisual/"
                     >Material Audiovisual</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item fw-bold" href="/revision-documental/"
+                  <a class="dropdown-item fw-bold" href="/upz-la-flora/revision-documental/"
                     >Revisión Documental</a
                   >
                 </li>
@@ -125,35 +129,48 @@
 
             <!-- Estadísticas -->
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/datos/">Estadísticas</a>
+              <a class="nav-link fw-bold" href="/upz-la-flora/datos/">Estadísticas</a>
             </li>
 
             <!-- Cartografía -->
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/cartografia/">Cartografía</a>
+              <a class="nav-link fw-bold" href="/upz-la-flora/cartografia/"
+                >Cartografía</a
+              >
             </li>
 
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/nosotros/">Sobre Nosotros</a>
+              <a class="nav-link fw-bold" href="/upz-la-flora/nosotros/"
+                >Sobre Nosotros</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </header>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <br />
-    <br />
+
+    <!-- HERO de página -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-badge">Datos · Territorio · Comunidad</span>
+        <h2>Dashboard de Estadísticas</h2>
+        <p>Explora los datos de población, vivienda y demografía de la UPZ La Flora y los barrios altos de Usme.</p>
+      </div>
+    </section>
+    <div class="shimmer-bar"></div>
 
     <!-- SECCIÓN: Dashboard de Estadísticas -->
     <section class="dashboard-estadisticas py-5">
       <div class="container">
-        <h2 class="text-center mb-5">Dashboard de Estadísticas</h2>
+        <h2 class="text-center mb-5 fade-in-up">Dashboard de Estadísticas</h2>
 
         <!-- Tarjetas de Métricas Principales -->
         <div class="row g-4 mb-5">
           <div class="col-md-3 col-sm-6">
-            <div class="card-metrica">
+            <div class="card-metrica fade-in-up">
               <div class="card-metrica-icon">👥</div>
               <div class="card-metrica-content">
                 <h3 class="card-metrica-valor" id="metrica-poblacion">-</h3>
@@ -162,7 +179,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
-            <div class="card-metrica">
+            <div class="card-metrica fade-in-up">
               <div class="card-metrica-icon">🏠</div>
               <div class="card-metrica-content">
                 <h3 class="card-metrica-valor" id="metrica-viviendas">-</h3>
@@ -171,50 +188,45 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
-            <div class="card-metrica">
+            <div class="card-metrica fade-in-up">
               <div class="card-metrica-icon">📈</div>
               <div class="card-metrica-content">
                 <h3 class="card-metrica-valor" id="metrica-crecimiento">-</h3>
-                <p class="card-metrica-label">Crecimiento %</p>
+                <p class="card-metrica-label">Crecimiento</p>
               </div>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
-            <div class="card-metrica">
-              <div class="card-metrica-icon">🗺️</div>
+            <div class="card-metrica fade-in-up">
+              <div class="card-metrica-icon">📍</div>
               <div class="card-metrica-content">
                 <h3 class="card-metrica-valor" id="metrica-area">-</h3>
-                <p class="card-metrica-label">Área (km²)</p>
+                <p class="card-metrica-label">Área</p>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Gráficos -->
-        <div class="row g-2">
-          <!-- Gráfico de Barras -->
+        <div class="row g-4">
           <div class="col-lg-6">
-            <div class="card-grafico">
-              <h4 class="card-grafico-titulo">Distribución por Barrios</h4>
+            <div class="card-grafico fade-in-up">
+              <h4 class="card-grafico-titulo">Población por Barrio</h4>
               <div style="position: relative; height: 400px">
                 <canvas id="graficoBarras"></canvas>
               </div>
             </div>
           </div>
-
-          <!-- Gráfico de Pastel -->
           <div class="col-lg-6">
-            <div class="card-grafico">
-              <h4 class="card-grafico-titulo">Composición Demográfica</h4>
+            <div class="card-grafico fade-in-up">
+              <h4 class="card-grafico-titulo">Distribución Demográfica</h4>
               <div style="position: relative; height: 400px">
                 <canvas id="graficoPastel"></canvas>
               </div>
             </div>
           </div>
-
-          <!-- Gráfico de Líneas -->
           <div class="col-lg-12">
-            <div class="card-grafico">
+            <div class="card-grafico fade-in-up">
               <h4 class="card-grafico-titulo">Evolución Poblacional</h4>
               <div style="position: relative; height: 400px">
                 <canvas id="graficoLineas"></canvas>
@@ -226,57 +238,24 @@
     </section>
 
     <!-- SECCIÓN: Aliados -->
-    <section class="patrocinadores text-center py-5">
-      <div class="container">
+    <section class="patrocinadores text-center">
+      <div class="container py-5">
+        <p style="color: rgba(38,198,218,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">INSTITUCIONES &amp; ORGANIZACIONES</p>
         <h3 class="mb-4">Aliados</h3>
-        <div
-          class="d-flex flex-wrap justify-content-center align-items-center gap-4"
-        >
-          <a href="https://www.javeriana.edu.co/inicio">
-            <img
-              src="/upz-la-flora/img_Home/logo-javeriana.png"
-              alt="Javeriana"
-              height="60"
-            />
+        <div class="d-flex flex-wrap justify-content-center align-items-stretch gap-3 gap-md-4 mt-3">
+          <a href="https://www.javeriana.edu.co/inicio" target="_blank" rel="noopener noreferrer" aria-label="Pontificia Universidad Javeriana">
+            <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-javeriana.png" alt="Javeriana" height="55" loading="lazy" /></div>
           </a>
-          <a href="https://www.javeriana.edu.co/compromiso-social/prosofi">
-            <img
-              src="/upz-la-flora/img_Home/logo-prosofi.png"
-              alt="PROSOFI"
-              height="60"
-            />
+          <a href="https://www.javeriana.edu.co/compromiso-social/prosofi" target="_blank" rel="noopener noreferrer" aria-label="PROSOFI">
+            <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-prosofi.png" alt="PROSOFI" height="55" loading="lazy" /></div>
           </a>
-
-          <a
-            href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn3aY7GLFKTVq84cifF6yRU2aA9kJtT3_IGOFDNEVJ-fWRy2cG3D02CU3e7m8_aem_PrF34RsMLsQMoUTrqtzNTA"
-          >
-            <img
-              src="/upz-la-flora/img_Home/logo-ojds.png"
-              alt="Observatorio"
-              height="60"
-            />
-            <img
-              src="/upz-la-flora/img_Home/logo-colegio.png"
-              alt="Colegio Gabriel García Márquez"
-              height="60"
-            />
+          <a href="https://sensolabjaveriana.wixsite.com/observatorio-javeria" target="_blank" rel="noopener noreferrer" aria-label="Observatorio Javeriano">
+            <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-ojds.png" alt="Observatorio" height="55" loading="lazy" /></div>
           </a>
-
-          <img
-            src="/upz-la-flora/img_Home/logo-umb.png"
-            alt="UMB"
-            height="60"
-          />
-          <img
-            src="/upz-la-flora/img_Home/logo-sabios.png"
-            alt="Sabios del Territorio"
-            height="60"
-          />
-          <img
-            src="/upz-la-flora/img_Home/logo-tunalito.png"
-            alt="Tunalito"
-            height="60"
-          />
+          <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-colegio.png" alt="Colegio Gabriel García Márquez" height="55" loading="lazy" /></div>
+          <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-umb.png" alt="UMB" height="55" loading="lazy" /></div>
+          <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-sabios.png" alt="Sabios del Territorio" height="55" loading="lazy" /></div>
+          <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-tunalito.png" alt="Tunalito" height="55" loading="lazy" /></div>
         </div>
       </div>
     </section>
@@ -295,10 +274,11 @@
             alt="UPZ 52 - La Flora"
             height="80"
             class="link-image"
+            loading="lazy"
           />
         </a>
         <a
-          href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAAadypQLjKo3c4SXbo4lwP5BD0n_uQ2kKyQuPT4VOOl_FAdlq3dRmAXXwitOaOA_aem_HDdLCXPBKeeC2aWKtRK28A"
+          href="https://sensolabjaveriana.wixsite.com/observatorio-javeria"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -307,20 +287,23 @@
             alt="Observatorio Javeriano"
             height="80"
             class="link-image"
+            loading="lazy"
           />
         </a>
       </div>
     </section>
+
     <!-- FOOTER institucional -->
     <footer class="footer-javeriana">
       <img
         src="/upz-la-flora/img_Home/footer-javeriana.png"
         alt="Footer institucional Javeriana"
         class="img-fluid w-100"
+        loading="lazy"
       />
     </footer>
 
-    <!-- Script para inicializar gráficos -->
+    <!-- JavaScript Gráficos -->
     <script>
       // Cargar datos desde JSON estático
       const datosPath = "/upz-la-flora/data/estadisticas.json";
@@ -360,39 +343,46 @@
         // Gráfico de Barras
         const ctxBarras = document.getElementById("graficoBarras");
         if (ctxBarras && datos.barrios && datos.barrios.datos.length > 0) {
-          // Destruir gráfico anterior si existe
-          if (chartBarras) {
-            chartBarras.destroy();
-          }
+          if (chartBarras) { chartBarras.destroy(); }
           chartBarras = new Chart(ctxBarras, {
             type: "bar",
             data: {
               labels: datos.barrios.labels,
-              datasets: [
-                {
-                  label: "Población",
-                  data: datos.barrios.datos,
-                  backgroundColor: "#f36e23",
-                  borderColor: "#d45a1a",
-                  borderWidth: 1,
-                },
-              ],
+              datasets: [{
+                label: "Población",
+                data: datos.barrios.datos,
+                backgroundColor: [
+                  'rgba(27,94,32,0.85)',
+                  'rgba(38,198,218,0.85)',
+                  'rgba(46,125,50,0.85)',
+                  'rgba(128,222,234,0.85)',
+                  'rgba(76,175,80,0.85)',
+                  'rgba(0,151,167,0.85)',
+                  'rgba(13,59,18,0.85)',
+                  'rgba(38,198,218,0.7)',
+                  'rgba(27,94,32,0.7)',
+                  'rgba(46,125,50,0.7)',
+                  'rgba(0,151,167,0.7)',
+                  'rgba(76,175,80,0.7)',
+                ],
+                borderColor: 'transparent',
+                borderRadius: 8,
+                borderWidth: 0,
+              }],
             },
             options: {
               responsive: true,
               maintainAspectRatio: false,
-              animation: {
-                duration: 0,
-              },
+              animation: { duration: 600 },
               plugins: {
-                legend: {
-                  display: false,
-                },
+                legend: { display: false },
+                tooltip: {
+                  callbacks: { label: (ctx) => ctx.dataset.label + ': ' + ctx.raw.toLocaleString('es-CO') }
+                }
               },
               scales: {
-                y: {
-                  beginAtZero: true,
-                },
+                y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+                x: { grid: { display: false } }
               },
             },
           });
@@ -400,36 +390,36 @@
 
         // Gráfico de Pastel
         const ctxPastel = document.getElementById("graficoPastel");
-        if (
-          ctxPastel &&
-          datos.demografia &&
-          datos.demografia.datos.length > 0
-        ) {
-          // Destruir gráfico anterior si existe
-          if (chartPastel) {
-            chartPastel.destroy();
-          }
+        if (ctxPastel && datos.demografia && datos.demografia.datos.length > 0) {
+          if (chartPastel) { chartPastel.destroy(); }
           chartPastel = new Chart(ctxPastel, {
             type: "pie",
             data: {
               labels: datos.demografia.labels,
-              datasets: [
-                {
-                  data: datos.demografia.datos,
-                  backgroundColor: ["#f36e23", "#ff8c42", "#ffa366", "#ffb88c"],
-                },
-              ],
+              datasets: [{
+                data: datos.demografia.datos,
+                backgroundColor: [
+                  'rgba(27,94,32,0.9)',
+                  'rgba(38,198,218,0.9)',
+                  'rgba(46,125,50,0.85)',
+                  'rgba(128,222,234,0.85)',
+                ],
+                borderColor: '#fff',
+                borderWidth: 3,
+              }],
             },
             options: {
               responsive: true,
               maintainAspectRatio: false,
-              animation: {
-                duration: 0,
-              },
+              animation: { duration: 600 },
               plugins: {
                 legend: {
                   position: "bottom",
+                  labels: { padding: 16, font: { family: 'Outfit', size: 13 } }
                 },
+                tooltip: {
+                  callbacks: { label: (ctx) => ctx.label + ': ' + ctx.raw + '%' }
+                }
               },
             },
           });
@@ -438,39 +428,65 @@
         // Gráfico de Líneas
         const ctxLineas = document.getElementById("graficoLineas");
         if (ctxLineas && datos.evolucion && datos.evolucion.datos.length > 0) {
-          // Destruir gráfico anterior si existe
-          if (chartLineas) {
-            chartLineas.destroy();
-          }
+          if (chartLineas) { chartLineas.destroy(); }
           chartLineas = new Chart(ctxLineas, {
             type: "line",
             data: {
               labels: datos.evolucion.labels,
-              datasets: [
-                {
-                  label: "Evolución",
-                  data: datos.evolucion.datos,
-                  borderColor: "#f36e23",
-                  backgroundColor: "rgba(243, 110, 35, 0.1)",
-                  tension: 0.4,
-                },
-              ],
+              datasets: [{
+                label: "Evolución",
+                data: datos.evolucion.datos,
+                borderColor: '#26C6DA',
+                backgroundColor: 'rgba(38,198,218,0.12)',
+                pointBackgroundColor: '#1B5E20',
+                pointBorderColor: '#26C6DA',
+                pointRadius: 5,
+                pointHoverRadius: 8,
+                tension: 0.4,
+                fill: true,
+              }],
             },
             options: {
               responsive: true,
               maintainAspectRatio: false,
-              animation: {
-                duration: 0,
+              animation: { duration: 600 },
+              plugins: {
+                legend: { display: false },
+                tooltip: {
+                  callbacks: { label: (ctx) => ctx.dataset.label + ': ' + ctx.raw.toLocaleString('es-CO') }
+                }
               },
               scales: {
-                y: {
-                  beginAtZero: true,
-                },
+                y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+                x: { grid: { display: false } }
               },
             },
           });
         }
       }
+    </script>
+
+    <!-- Script animaciones de scroll -->
+    <script>
+      const navbar = document.querySelector('.encabezado');
+      if (navbar) {
+        window.addEventListener('scroll', function() {
+          navbar.style.padding = window.scrollY > 40 ? '4px 12px' : '';
+          navbar.style.boxShadow = window.scrollY > 40 ? '0 4px 20px rgba(0,0,0,0.12)' : '';
+        });
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.card-metrica, .card-grafico, .logo-card').forEach(function(el) {
+        el.classList.add('fade-in-up');
+        observer.observe(el);
+      });
     </script>
   </body>
 </html>

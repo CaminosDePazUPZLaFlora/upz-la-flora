@@ -1,101 +1,111 @@
-/* Fondo del encabezado */
-.encabezado {
-    background-color: #ffffff;
-    border-bottom: 3px solid #000;
-  }
-  
-  /* Botón naranja */
-  .btn-contar-historia {
-    background-color: #f36e23;
-    color: white;
-    border-radius: 20px;
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-  
-  /* Menú desplegable oscuro */
-  .menu-desplegable {
-    background-color: #1a1a1a;
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item {
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item:hover {
-    background-color: #444;
-  }
-  
-/* Logos del header */
-.logos {
-  max-width: 100%;
-  flex-wrap: wrap;
-  justify-content: end;
+/* =============================================
+   ENTREVISTAS.CSS — Entrevistas · UPZ La Flora
+   Paleta "Territorio Vivo": Verde #1B5E20 · Cian #26C6DA
+   NOTA: variables y navbar cubiertos por global-nav.css
+   ============================================= */
+
+body {
+  background-color: var(--blanco);
 }
 
-.logos img {
-  max-height: 40px;
-  object-fit: contain;
+/* =========== HERO DE SECCIÓN =========== */
+.seccion-entrevistas {
+  background: var(--blanco);
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+  position: relative;
 }
 
-/*-------*/
-.card.entrevista {
-  padding: 1rem;
-  height: auto;
-  min-height: unset;
+.seccion-entrevistas::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
 }
 
-.card.entrevista h5 {
-  font-size: 1.1rem;
-  color: #d35400; /* naranja */
-  margin-bottom: 0.5rem;
+.seccion-entrevistas h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 900;
+  color: var(--verde);
+  letter-spacing: -0.02em;
 }
 
-.card.entrevista p {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+.seccion-entrevistas h2::after {
+  content: '';
+  display: block;
+  width: 60px; height: 4px;
+  background: linear-gradient(90deg, var(--cian), var(--cian-claro));
+  border-radius: 99px;
+  margin: 0.5rem auto 0;
 }
 
-.card.entrevista audio {
-  margin-bottom: 0.5rem;
+/* =========== TARJETAS DE ENTREVISTA =========== */
+.card {
+  border: 2px solid var(--gris-suave) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: var(--transition) !important;
+  background: var(--blanco-puro) !important;
+  position: relative;
+  overflow: hidden;
 }
 
-.card.entrevista .btn {
-  font-size: 0.85rem;
-  padding: 6px 12px;
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--verde), var(--cian));
+  border-radius: 99px 99px 0 0;
 }
 
+.card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--shadow-verde) !important;
+  border-color: rgba(38,198,218,0.3) !important;
+}
 
-/*-------*/
-  /* Enlaces institucionales */
-.enlaces-informacion {
-    background-color: #eeeeee;
-    color: #333;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-  
-  .enlaces-informacion img {
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-    background-color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-  }
-  /*-------*/
-/*-------*/
+.card-title {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 700;
+  color: var(--verde);
+}
 
-/* Footer Javeriana */
-.footer-javeriana {
-    margin-top: 0;
-    background-color: #000;
-  }
-  
-  .footer-javeriana img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+.card-text {
+  font-size: clamp(0.82rem, 1.8vw, 0.92rem);
+  color: #4a6a4a;
+  font-style: italic;
+  line-height: 1.55;
+}
 
-  
- 
+.card .small {
+  color: var(--cian-oscuro) !important;
+  font-weight: 600 !important;
+}
+
+/* =========== AUDIO PLAYER =========== */
+audio {
+  accent-color: var(--cian);
+  border-radius: 99px;
+  filter: none;
+}
+
+/* =========== BOTÓN TRANSCRIPCIÓN =========== */
+.btn-outline-primary {
+  color: var(--verde) !important;
+  border-color: var(--verde) !important;
+  font-weight: 600 !important;
+  border-radius: 50px !important;
+  font-size: 0.85rem !important;
+  transition: var(--transition) !important;
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(135deg, var(--verde) 0%, var(--verde-medio) 100%) !important;
+  color: var(--blanco-puro) !important;
+  border-color: transparent !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(27,94,32,0.3) !important;
+}

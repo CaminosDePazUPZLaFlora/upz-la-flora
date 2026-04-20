@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UPZ La Flora</title>
+    <title>Sobre Nosotros | Caminos para la Paz y Memoria – UPZ La Flora</title>
+    <meta name="description" content="Conoce al equipo de investigadores, colaboradores y la comunidad de La Flora que hacen posible el proyecto Caminos para la Paz y Memoria TYWA-KHE." />
 
-    <!-- Bootstrap -->
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,11 +25,9 @@
     <!-- ENCABEZADO -->
     <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
       <div class="container-fluid">
-        <!-- Título principal -->
         <h1 class="navbar-brand fw-bold mb-0">
           Caminos para la Paz y Memoria "TYWA-KHE"
         </h1>
-        <!-- Botón responsive -->
         <button
           class="navbar-toggler"
           type="button"
@@ -39,100 +37,39 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menú de navegación (estilo conservado) -->
         <div
           class="collapse navbar-collapse justify-content-end"
           id="menu-principal"
         >
           <ul class="navbar-nav mb-2 mb-lg-0">
-            <!-- Botón CONTAR MI HISTORIA (primero) -->
             <li class="nav-item">
-              <a class="btn btn-contar-historia me-3 fw-bold" href="/contar/"
+              <a class="btn btn-contar-historia me-3 fw-bold" href="/upz-la-flora/contar/"
                 >CONTAR MI HISTORIA</a
               >
             </li>
-
-            <!-- Inicio -->
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="/">Inicio</a>
+              <a class="nav-link fw-bold" href="/upz-la-flora/">Inicio</a>
             </li>
-
-            <!-- Ruta de la Memoria (dropdown restored) -->
             <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle fw-bold"
-                href="#"
-                id="menu-murales"
-                data-bs-toggle="dropdown"
-                >Ruta de la Memoria</a
-              >
-              <ul
-                class="dropdown-menu menu-desplegable"
-                aria-labelledby="menu-murales"
-              >
-                <li>
-                  <a class="dropdown-item fw-bold" href="/autores/">Murales</a>
-                </li>
-                <li>
-                  <a class="dropdown-item fw-bold" href="/mapa/">Mapa</a>
-                </li>
+              <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-murales" data-bs-toggle="dropdown">Ruta de la Memoria</a>
+              <ul class="dropdown-menu menu-desplegable" aria-labelledby="menu-murales">
+                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/autores/">Murales</a></li>
+                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/mapa/">Mapa</a></li>
               </ul>
             </li>
-
-            <!-- Historia (dropdown con 3 ítems) -->
             <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle fw-bold"
-                href="#"
-                id="menu-historia"
-                data-bs-toggle="dropdown"
-                >Historia</a
-              >
-              <ul
-                class="dropdown-menu menu-desplegable"
-                aria-labelledby="menu-historia"
-              >
-                <li>
-                  <a class="dropdown-item fw-bold" href="/historia/"
-                    >Línea de Tiempo</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item fw-bold" href="/entrevistas/"
-                    >Entrevistas</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item fw-bold" href="/informacion/"
-                    >Información</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item fw-bold" href="/material-audiovisual/"
-                    >Material Audiovisual</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item fw-bold" href="/revision-documental/"
-                    >Revisión Documental</a
-                  >
-                </li>
+              <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-historia" data-bs-toggle="dropdown">Historia</a>
+              <ul class="dropdown-menu menu-desplegable" aria-labelledby="menu-historia">
+                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/historia/">Línea de Tiempo</a></li>
+                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/entrevistas/">Entrevistas</a></li>
+                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/informacion/">Información</a></li>
+                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/material-audiovisual/">Material Audiovisual</a></li>
+                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/revision-documental/">Revisión Documental</a></li>
               </ul>
             </li>
-
-            <!-- Estadísticas -->
-            <li class="nav-item">
-              <a class="nav-link fw-bold" href="/datos/">Estadísticas</a>
-            </li>
-
-            <!-- Cartografía -->
-            <li class="nav-item">
-              <a class="nav-link fw-bold" href="/cartografia/">Cartografía</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link fw-bold" href="/nosotros/">Sobre Nosotros</a>
-            </li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/datos/">Estadísticas</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/cartografia/">Cartografía</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/nosotros/">Sobre Nosotros</a></li>
           </ul>
         </div>
       </div>
@@ -141,9 +78,19 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- HERO de página -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-badge">Comunidad · Equipo · Territorio</span>
+        <h1>Sobre Nosotros</h1>
+        <p>Conoce al equipo y la comunidad que hacen posible el proyecto Caminos para la Paz y Memoria TYWA-KHE en la UPZ La Flora.</p>
+      </div>
+    </section>
+    <div class="shimmer-bar"></div>
+
     <!-- SECCIÓN: Acerca de Nosotros -->
-    <section id="acerca-nosotros" class="acerca-de-nosotros text-white">
-      <div class="container py-5">
+    <section id="acerca-nosotros" class="acerca-de-nosotros py-5">
+      <div class="container">
         <h2 class="titulo-seccion">Acerca de nosotros</h2>
         <p>
           Historias de barrio es un proyecto realizado por PROSOFI que trata de
@@ -155,14 +102,13 @@
         </p>
       </div>
     </section>
+
     <!-- SECCIÓN: Caminos de paz Tywa Khe -->
-    <section id="caminos-paz" class="caminos-paz-memoria text-white">
-      <div
-        class="container py-5 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4"
-      >
+    <section id="caminos-paz" class="caminos-paz-memoria py-5">
+      <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
         <div class="col-lg-7">
           <p>
-            Caminos para la paz y la memoria ‘Tywa Khe’’, un museo abierto que
+            Caminos para la paz y la memoria 'Tywa Khe'', un museo abierto que
             busca plasmar esas historias en murales comunitarios, integrando
             arte, tecnología y participación social para fortalecer la identidad
             territorial, promover el diálogo intergeneracional y resignificar el
@@ -174,25 +120,22 @@
             src="/upz-la-flora/img_Nosotros/mural-paz.jpg"
             alt="Mural Caminos para la paz"
             class="img-fluid rounded sombra-img"
+            loading="lazy"
           />
         </div>
       </div>
     </section>
 
     <!-- SECCIÓN: Colaboradores -->
-    <section
-      id="colaboradores"
-      class="colaboradores text-white text-center py-5"
-    >
+    <section id="colaboradores" class="colaboradores text-center py-5">
       <h2 class="titulo-seccion mb-5">Colaboradores</h2>
-      <div
-        class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-5"
-      >
+      <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-5">
         <div class="colaborador">
           <img
             src="/upz-la-flora/img_Nosotros/escudo-colegio.png"
             alt="Colegio Gabriel García Márquez"
             class="img-colaborador"
+            loading="lazy"
           />
           <div class="etiqueta-colaborador">
             Colegio Gabriel<br />García Márquez
@@ -204,6 +147,7 @@
             src="/upz-la-flora/img_Nosotros/montana-resiste.png"
             alt="La montaña resiste"
             class="img-colaborador"
+            loading="lazy"
           />
           <div class="etiqueta-colaborador">La montaña<br />resiste</div>
         </div>
@@ -213,6 +157,7 @@
             src="/upz-la-flora/img_Nosotros/comaba.png"
             alt="La combaquinta"
             class="img-colaborador"
+            loading="lazy"
           />
           <div class="etiqueta-colaborador">La combaquinta</div>
         </div>
@@ -220,18 +165,17 @@
     </section>
 
     <!-- SECCIÓN: Participantes -->
-    <section class="participantes text-white py-5">
-      <div
-        class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4"
-      >
+    <section class="participantes py-5">
+      <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
         <img
           src="/upz-la-flora/img_Nosotros/foto-participantes.png"
           alt="Participantes"
           class="img-fluid col-lg-5 sombra-img"
+          loading="lazy"
         />
 
         <div class="col-lg-6 text-center text-lg-start">
-          <h3 class="titulo-seccion text-white mb-3">
+          <h3 class="titulo-seccion mb-3">
             Conoce quienes han participado en este proyecto durante estos años
           </h3>
           <div class="row text-center participantes-lista mt-4">
@@ -246,57 +190,24 @@
     </section>
 
     <!-- SECCIÓN: Aliados -->
-    <section class="patrocinadores text-center py-5">
-      <div class="container">
+    <section class="patrocinadores text-center">
+      <div class="container py-5">
+        <p style="color: rgba(38,198,218,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">INSTITUCIONES &amp; ORGANIZACIONES</p>
         <h3 class="mb-4">Aliados</h3>
-        <div
-          class="d-flex flex-wrap justify-content-center align-items-center gap-4"
-        >
-          <a href="https://www.javeriana.edu.co/inicio">
-            <img
-              src="/upz-la-flora/img_Home/logo-javeriana.png"
-              alt="Javeriana"
-              height="60"
-            />
+        <div class="d-flex flex-wrap justify-content-center align-items-stretch gap-3 gap-md-4 mt-3">
+          <a href="https://www.javeriana.edu.co/inicio" target="_blank" rel="noopener noreferrer">
+            <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-javeriana.png" alt="Javeriana" height="55" loading="lazy" /></div>
           </a>
-          <a href="https://www.javeriana.edu.co/compromiso-social/prosofi">
-            <img
-              src="/upz-la-flora/img_Home/logo-prosofi.png"
-              alt="PROSOFI"
-              height="60"
-            />
+          <a href="https://www.javeriana.edu.co/compromiso-social/prosofi" target="_blank" rel="noopener noreferrer">
+            <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-prosofi.png" alt="PROSOFI" height="55" loading="lazy" /></div>
           </a>
-
-          <a
-            href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn3aY7GLFKTVq84cifF6yRU2aA9kJtT3_IGOFDNEVJ-fWRy2cG3D02CU3e7m8_aem_PrF34RsMLsQMoUTrqtzNTA"
-          >
-            <img
-              src="/upz-la-flora/img_Home/logo-ojds.png"
-              alt="Observatorio"
-              height="60"
-            />
-            <img
-              src="/upz-la-flora/img_Home/logo-colegio.png"
-              alt="Colegio Gabriel García Márquez"
-              height="60"
-            />
+          <a href="https://sensolabjaveriana.wixsite.com/observatorio-javeria" target="_blank" rel="noopener noreferrer">
+            <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-ojds.png" alt="Observatorio" height="55" loading="lazy" /></div>
           </a>
-
-          <img
-            src="/upz-la-flora/img_Home/logo-umb.png"
-            alt="UMB"
-            height="60"
-          />
-          <img
-            src="/upz-la-flora/img_Home/logo-sabios.png"
-            alt="Sabios del Territorio"
-            height="60"
-          />
-          <img
-            src="/upz-la-flora/img_Home/logo-tunalito.png"
-            alt="Tunalito"
-            height="60"
-          />
+          <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-colegio.png" alt="Colegio Gabriel García Márquez" height="55" loading="lazy" /></div>
+          <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-umb.png" alt="UMB" height="55" loading="lazy" /></div>
+          <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-sabios.png" alt="Sabios del Territorio" height="55" loading="lazy" /></div>
+          <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-tunalito.png" alt="Tunalito" height="55" loading="lazy" /></div>
         </div>
       </div>
     </section>
@@ -305,40 +216,41 @@
     <section class="enlaces-informacion text-center py-5">
       <h4 class="mb-4">Ingresa a estos sitios para conocer más de La Flora</h4>
       <div class="d-flex flex-wrap justify-content-center gap-5">
-        <a
-          href="https://upz52laflora.wixsite.com/laflorausme/multimedia"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/upz-la-flora/img_Home/upz-la-flora.png"
-            alt="UPZ 52 - La Flora"
-            height="80"
-            class="link-image"
-          />
+        <a href="https://upz52laflora.wixsite.com/laflorausme/multimedia" target="_blank" rel="noopener noreferrer">
+          <img src="/upz-la-flora/img_Home/upz-la-flora.png" alt="UPZ 52 - La Flora" height="80" class="link-image" loading="lazy" />
         </a>
-        <a
-          href="https://sensolabjaveriana.wixsite.com/observatorio-javeria?fbclid=PAZXh0bgNhZW0CMTEAAadypQLjKo3c4SXbo4lwP5BD0n_uQ2kKyQuPT4VOOl_FAdlq3dRmAXXwitOaOA_aem_HDdLCXPBKeeC2aWKtRK28A"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/upz-la-flora/img_Home/observatorio-desigualdades.png"
-            alt="Observatorio Javeriano"
-            height="80"
-            class="link-image"
-          />
+        <a href="https://sensolabjaveriana.wixsite.com/observatorio-javeria" target="_blank" rel="noopener noreferrer">
+          <img src="/upz-la-flora/img_Home/observatorio-desigualdades.png" alt="Observatorio Javeriano" height="80" class="link-image" loading="lazy" />
         </a>
       </div>
     </section>
 
     <!-- FOOTER institucional -->
     <footer class="footer-javeriana">
-      <img
-        src="/upz-la-flora/img_Nosotros/footer-javeriana.png"
-        alt="Footer institucional Javeriana"
-        class="img-fluid w-100"
-      />
+      <img src="/upz-la-flora/img_Home/footer-javeriana.png" alt="Footer institucional Javeriana" class="img-fluid w-100" loading="lazy" />
     </footer>
+
+    <!-- Script animaciones de scroll -->
+    <script>
+      const navbar = document.querySelector('.encabezado');
+      if (navbar) {
+        window.addEventListener('scroll', function() {
+          navbar.style.padding = window.scrollY > 40 ? '4px 12px' : '';
+          navbar.style.boxShadow = window.scrollY > 40 ? '0 4px 20px rgba(0,0,0,0.12)' : '';
+        });
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.colaborador, .logo-card, section > .container').forEach(function(el) {
+        el.classList.add('fade-in-up');
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>
