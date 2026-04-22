@@ -33,7 +33,7 @@ body {
 
 /* Padding top para navbar fixed */
 body {
-  padding-top: 72px;
+  padding-top: 0;
 }
 
 /* =========== ANIMACIONES =========== */
@@ -174,7 +174,7 @@ body {
 
 /* Mobile navbar */
 @media (max-width: 991px) {
-  body { padding-top: 64px !important; }
+  body { padding-top: 0 !important; }
 
   .navbar-collapse.show,
   .navbar-collapse.collapsing {
@@ -214,6 +214,7 @@ body {
   position: relative;
   overflow: hidden;
   text-align: center;
+  margin-top: -20px;
 }
 
 .page-hero::before {

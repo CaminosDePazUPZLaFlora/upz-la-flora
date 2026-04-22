@@ -29,7 +29,7 @@
 body {
   font-family: 'Outfit', 'Inter', sans-serif;
   background-color: var(--blanco);
-  padding-top: 72px;
+  padding-top: 0;
   overflow-x: hidden;
   color: var(--texto-oscuro);
 }
@@ -168,7 +168,7 @@ body {
 
 /* MOBILE NAVBAR */
 @media (max-width: 991px) {
-  body { padding-top: 64px; }
+  body { padding-top: 0; }
 
   .navbar-collapse.show,
   .navbar-collapse.collapsing {
@@ -208,6 +208,7 @@ body {
   position: relative;
   overflow: hidden;
   padding: clamp(3.5rem, 9vw, 7rem) 0;
+  margin-top: 0;
 }
 
 /* Onda cian decorativa superior */
@@ -719,7 +720,7 @@ body {
 
 /* ---------- MOBILE EXTRAS ---------- */
 @media (max-width: 768px) {
-  body { padding-top: 64px; }
+  body { padding-top: 0; }
 
   .imagenes-horizontales {
     flex-direction: column !important;
