@@ -10,11 +10,8 @@ body {
 
 /* =========== SECCIÓN ACERCA DE NOSOTROS =========== */
 .acerca-de-nosotros {
-  background:
-    radial-gradient(ellipse at 80% 10%, rgba(38,198,218,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 10% 90%, rgba(38,198,218,0.12) 0%, transparent 50%),
-    linear-gradient(160deg, var(--verde-oscuro) 0%, var(--verde) 55%, var(--verde-medio) 100%);
-  color: var(--blanco-puro);
+  background: var(--blanco-puro);
+  color: var(--texto-oscuro);
   padding: clamp(3.5rem, 8vw, 6rem) 0;
   position: relative;
   overflow: hidden;
@@ -27,14 +24,14 @@ body {
   width: clamp(200px, 35vw, 380px);
   height: clamp(200px, 35vw, 380px);
   border-radius: 50%;
-  border: 50px solid rgba(38,198,218,0.10);
+  border: 50px solid rgba(38,198,218,0.05); /* Lighter cian border for light bg */
   pointer-events: none;
 }
 
 .acerca-de-nosotros .titulo-seccion {
   font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   font-weight: 900;
-  color: var(--blanco-puro);
+  color: var(--verde);
   margin-bottom: 1.5rem;
 }
 
@@ -50,7 +47,7 @@ body {
 .acerca-de-nosotros p {
   font-size: clamp(0.95rem, 2.2vw, 1.1rem);
   line-height: 1.85;
-  opacity: 0.92;
+  opacity: 0.9;
 }
 
 /* =========== CAMINOS DE PAZ TYWA KHE =========== */
@@ -77,6 +74,7 @@ body {
   font-size: clamp(0.95rem, 2.2vw, 1.1rem);
   line-height: 1.85;
   opacity: 0.92;
+  color: var(--blanco-puro);
 }
 
 .sombra-img {
