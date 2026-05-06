@@ -20,35 +20,43 @@
 <body>
     <!-- ENCABEZADO -->
     <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold mb-0" href="/upz-la-flora/">Caminos para la Paz y Memoria</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
-          aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="menu-principal">
-          <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
-            <li class="nav-item">
-              <a class="btn btn-contar-historia me-2 fw-bold" href="/upz-la-flora/contar/">CONTAR MI HISTORIA</a>
-            </li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/autores/">Ruta de Murales</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-historia"
-                data-bs-toggle="dropdown" aria-expanded="false">Historia</a>
-              <ul class="dropdown-menu menu-desplegable" aria-labelledby="menu-historia">
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/historia/">L&#237;nea de Tiempo</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/entrevistas/">Entrevistas</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/informacion/">Informaci&#243;n</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/material-audiovisual/">Material Audiovisual</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/revision-documental/">Revisi&#243;n Documental</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/datos/">Estad&#237;sticas</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/nosotros/">Sobre Nosotros</a></li>
-          </ul>
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold mb-0" href="/upz-la-flora/">Caminos para la Paz y Memoria</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
+                aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="menu-principal">
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="btn btn-contar-historia me-2 fw-bold" href="/upz-la-flora/contar/">CONTAR MI
+                            HISTORIA</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/autores/">Ruta de Murales</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-historia"
+                            data-bs-toggle="dropdown" aria-expanded="false">Historia</a>
+                        <ul class="dropdown-menu menu-desplegable" aria-labelledby="menu-historia">
+                            <li><a class="dropdown-item fw-bold" href="/upz-la-flora/historia/">L&#237;nea de Tiempo</a>
+                            </li>
+                            <li><a class="dropdown-item fw-bold" href="/upz-la-flora/entrevistas/">Entrevistas</a></li>
+                            <li><a class="dropdown-item fw-bold" href="/upz-la-flora/informacion/">Informaci&#243;n</a>
+                            </li>
+                            <li><a class="dropdown-item fw-bold" href="/upz-la-flora/material-audiovisual/">Material
+                                    Audiovisual</a></li>
+                            <li><a class="dropdown-item fw-bold" href="/upz-la-flora/revision-documental/">Revisi&#243;n
+                                    Documental</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/datos/">Estad&#237;sticas</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/nosotros/">Sobre Nosotros</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </header>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -84,10 +92,7 @@
 
                             <!-- Main image and indicators container -->
                             <div class="carousel-image-container">
-                                <div class="carousel-main-image">
-                                    <img id="currentImage" src="/upz-la-flora/img_Murales/Mural1Agua.jpg" alt="Mural"
-                                        class="img-fluid" />
-                                </div>
+                                <div class="carousel-main-image" id="currentImageContainer"></div>
                                 <br />
                                 <div class="carousel-indicators" id="indicators"></div>
                             </div>
@@ -124,6 +129,7 @@
                                             <source src="/upz-la-flora/audio/audio1MuralAgua.mp3" />
                                             Tu navegador no soporta el elemento de audio.
                                         </audio>
+                                        <div id="authorImageContainer" class="mt-4"></div>
                                     </div>
                                 </div>
                             </div>
@@ -263,12 +269,23 @@
             },
             {
                 id: 7,
-                image: "/upz-la-flora/img_Murales/Mural7.jpg",
+                image: "/upz-la-flora/gif_murales/opMural7.gif",
                 title: "Luchas por el Agua",
                 description: "El mural representa la historia de la relación entre la comunidad y el agua a lo largo del tiempo. A través de diferentes escenas marcadas por décadas (1951, 1976, años 80, 1990, 2003), muestra la evolución del territorio: desde la vida campesina y la conexión con la naturaleza, pasando por procesos de urbanización e industrialización, hasta llegar a conflictos sociales y ambientales relacionados con el acceso y la defensa del agua. También resalta la organización comunitaria y la resistencia frente a problemáticas como la contaminación, el crecimiento urbano y la desigualdad en los recursos. En general, el mural transmite un mensaje de memoria, identidad y lucha colectiva por la protección del agua como recurso vital.",
                 author: "Goruz y Bone",
                 location: "",
-                audio: "/upz-la-flora/audio/audioMural7.mp3"
+                audio: "/upz-la-flora/audio/audioMural7.mp3",
+                authorImage: "/upz-la-flora/img_Autores/artistasM7.jpg"
+            },
+            {
+                id: 8,
+                image: "/upz-la-flora/gif_murales/opMural8.gif",
+                title: "Lugares de Memoria",
+                description: "En los murales que representa la historia y la memoria de la comunidad, combinando elementos de la naturaleza, lugares emblemáticos y escenas de la vida cotidiana. También incluye referencias a momentos difíciles, como el conflicto armado, mostrando su impacto, transmitiendo identidad, cultura y resiliencia del territorio a través del arte.",
+                author: "César",
+                location: "",
+                audio: "/upz-la-flora/audio/audioM8.mp3",
+                authorImage: "/upz-la-flora/img_Autores/artistaM8.jpg"
             },
         ];
 
@@ -282,8 +299,19 @@
 
         function updateSlide() {
             const mural = muralsData[currentSlide];
-            document.getElementById("currentImage").src = mural.image;
-            document.getElementById("currentImage").alt = mural.title;
+            const container = document.getElementById("currentImageContainer");
+            container.innerHTML = "";
+
+            // Crear imagen (funciona para JPG y GIF)
+            const img = document.createElement("img");
+            img.src = mural.image;
+            img.alt = mural.title;
+            img.className = "img-fluid";
+            img.style.width = "100%";
+            img.style.height = "auto";
+            img.style.display = "block";
+            container.appendChild(img);
+
             document.getElementById("muralTitle").textContent = mural.title;
             document.getElementById("muralDescription").textContent = mural.description;
             document.getElementById("authorName").textContent = mural.author;
@@ -291,6 +319,18 @@
             const audioElement = document.getElementById("muralAudio");
             audioElement.src = mural.audio;
             audioElement.load();
+
+            // Agregar imagen de autores si existe
+            const authorImageContainer = document.getElementById("authorImageContainer");
+            authorImageContainer.innerHTML = "";
+            if (mural.authorImage) {
+                const authorImg = document.createElement("img");
+                authorImg.src = mural.authorImage;
+                authorImg.alt = "Imagen de autores - " + mural.title;
+                authorImg.className = "img-fluid rounded";
+                authorImg.style.maxWidth = "100%";
+                authorImageContainer.appendChild(authorImg);
+            }
             updateURL();
             updateIndicators();
             updateNavigationButtons();
