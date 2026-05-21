@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mapa de la Ruta | Caminos para la Paz y Memoria – UPZ La Flora</title>
-    <meta name="description" content="Mapa interactivo de la Ruta de la Memoria en La Flora, Usme. Descubre la ubicación de los murales y puntos históricos del territorio." />
+    <title>Motiv-ARCHE | Caminos para la Paz y Memoria – UPZ La Flora</title>
+    <meta name="description" content="Motiv-ARCHE: herramienta digital interactiva para enriquecer la experiencia de la ruta comunitaria con contenidos multimedia en la UPZ La Flora, Usme, Bogotá." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/upz-la-flora/css/global-nav.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/upz-la-flora/css/mapa.css" />
+    <link rel="stylesheet" href="/upz-la-flora/css/global-nav.css" />
+    <link rel="stylesheet" href="/upz-la-flora/css/app-motiv-arche.css" />
   </head>
   <body>
     <!-- ENCABEZADO -->
@@ -50,31 +50,137 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- HERO de página -->
-    <section class="page-hero">
-      <div class="container">
-        <span class="page-hero-badge">Territorio · Murales · Lugares</span>
-        <h1>Mapa de la Ruta de la Memoria</h1>
-        <p>Explora el mapa interactivo y descubre la ubicación de los murales, acueductos comunitarios y puntos históricos del territorio de La Flora.</p>
+    <!-- ========================
+         SECCIÓN HERO MOTIV-ARCHE
+    ========================= -->
+    <section id="motiv-arche" class="motiv-hero">
+      <div class="motiv-hero-content">
+
+        <div class="motiv-hero-text">
+          <span class="motiv-hero-badge">Herramienta Digital</span>
+          <h2>Motiv-ARCHE en la Ruta de la Memoria</h2>
+
+          <p>
+            Motiv-ARCHE es una herramienta digital que permite enriquecer la experiencia
+            de la ruta comunitaria con contenidos interactivos como imágenes, audios,
+            videos, sitios web y otros recursos asociados a puntos de interés del territorio.
+          </p>
+
+          <p>
+            En el contexto de <strong>Caminos para la Paz y Memoria "TYWA-KHE"</strong>,
+            esta aplicación fortalece la apropiación del territorio y la participación de la comunidad,
+            permitiendo conectar los relatos, murales y lugares significativos con experiencias digitales.
+          </p>
+
+          <div class="motiv-hero-buttons">
+            <a href="https://motivarch.online/register.php" target="_blank" class="motiv-btn motiv-btn-white">
+              Crear cuenta
+            </a>
+            <a href="https://motivarch.online/ayuda.php" target="_blank" class="motiv-btn motiv-btn-outline">
+              Ver guía de uso
+            </a>
+          </div>
+        </div>
+
+        <div class="motiv-hero-card">
+          <h3>¿Qué puedes hacer?</h3>
+          <p>Con Motiv-ARCHE puedes interactuar con contenidos digitales del recorrido:</p>
+          <ul>
+            <li>Explorar puntos de interés</li>
+            <li>Acceder a audios, imágenes y videos</li>
+            <li>Relacionar contenidos con lugares de memoria</li>
+            <li>Fortalecer la experiencia del recorrido comunitario</li>
+          </ul>
+        </div>
+
       </div>
     </section>
-    <div class="shimmer-bar"></div>
 
-    <!-- SECCIÓN: Mapa Interactivo -->
-    <section class="seccion-mapa-interactivo py-5 text-center">
-      <div class="container">
-        <h2 class="mb-3 fw-bold" style="color:var(--verde);">Mapa Interactivo de Usme</h2>
-        <p class="mb-4" style="color:#5a7a5a;">Haz clic sobre los puntos para conocer más sobre cada mural y su autor.</p>
-        <div class="mapa-responsive rounded border shadow" style="border-color: rgba(38,198,218,0.3) !important; border-radius: 18px !important; overflow: hidden; box-shadow: 0 12px 40px rgba(27,94,32,0.15) !important;">
-          <iframe
-            src="https://www.google.com/maps/d/u/0/embed?mid=1NiPhwWWYg4oflgoOaDXMuFx_laXAw2Y&ehbc=2E312F"
-            width="100%"
-            height="520"
-            style="border: 0; display: block;"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
+    <!-- Shimmer separator -->
+    <div class="motiv-shimmer"></div>
+
+    <!-- ===========================
+         SECCIÓN INFORMATIVA
+    ============================ -->
+    <section class="motiv-info">
+      <h2>¿Cómo usar Motiv-ARCHE?</h2>
+      <p class="motiv-info-intro">
+        Puedes crear tu propia cuenta para acceder a la plataforma, o si prefieres,
+        también puedes ingresar con el usuario genérico habilitado para visitantes.
+      </p>
+
+      <div class="motiv-cards">
+
+        <div class="motiv-card">
+          <h3>1. Crear una cuenta</h3>
+          <p>
+            Si deseas registrarte personalmente en la plataforma, sigue estos pasos:
+          </p>
+          <ol>
+            <li>Ingresa al enlace de registro.</li>
+            <li>Completa tus datos personales.</li>
+            <li>Crea una contraseña.</li>
+            <li>Confirma tu registro en la plataforma.</li>
+          </ol>
+          <p style="margin-top:15px;">
+            Registro oficial:<br>
+            <a href="https://motivarch.online/register.php" target="_blank">
+              https://motivarch.online/register.php
+            </a>
+          </p>
         </div>
+
+        <div class="motiv-card">
+          <h3>2. Consultar la guía</h3>
+          <p>
+            Si necesitas apoyo para aprender a usar la herramienta, puedes consultar la guía oficial,
+            donde se explica cómo navegar por la aplicación y cómo interactuar con los contenidos.
+          </p>
+          <p style="margin-top:15px;">
+            Guía de ayuda:<br>
+            <a href="https://motivarch.online/ayuda.php" target="_blank">
+              https://motivarch.online/ayuda.php
+            </a>
+          </p>
+        </div>
+
+        <div class="motiv-card">
+          <h3>3. Uso dentro del proyecto</h3>
+          <p>
+            Esta herramienta apoya el reconocimiento del territorio mediante una experiencia
+            digital complementaria que puede integrarse con puntos de memoria, relatos de la comunidad
+            y recursos audiovisuales de la ruta.
+          </p>
+          <ul>
+            <li>Recorridos comunitarios</li>
+            <li>Relatos históricos</li>
+            <li>Memoria territorial</li>
+            <li>Contenidos multimedia</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="motiv-credentials">
+        <h3>Acceso genérico para visitantes</h3>
+        <p>
+          Para las personas que no puedan o no quieran crear una cuenta,
+          se ha dispuesto un acceso genérico de visitante:
+        </p>
+
+        <div class="credencial-dato">
+          <strong>Correo:</strong> visitante@motivarch.online
+        </div>
+
+        <div class="credencial-dato">
+          <strong>Contraseña:</strong> visitante
+        </div>
+
+        <p class="motiv-footer-note">
+          Estas credenciales permiten el acceso básico a la plataforma como visitante.
+          Si deseas una experiencia más personalizada o participar con tu propia cuenta,
+          se recomienda realizar el registro directamente en el sitio web oficial.
+        </p>
       </div>
     </section>
 
@@ -108,26 +214,14 @@
       </div>
     </section>
 
-
-
     <!-- Script animaciones de scroll -->
     <script>
       const navbar = document.querySelector('.encabezado');
-      if (navbar) {
-        window.addEventListener('scroll', function() {
-          navbar.style.padding = window.scrollY > 40 ? '4px 12px' : '';
-          navbar.style.boxShadow = window.scrollY > 40 ? '0 4px 20px rgba(0,0,0,0.12)' : '';
-        });
-      }
+      if (navbar) window.addEventListener('scroll', function() { navbar.style.padding = window.scrollY > 40 ? '4px 12px' : ''; });
       var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-        });
+        entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
       }, { threshold: 0.1 });
-      document.querySelectorAll('.logo-card, section > .container').forEach(function(el) {
-        el.classList.add('fade-in-up');
-        obs.observe(el);
-      });
+      document.querySelectorAll('.logo-card, .motiv-card, .motiv-credentials, .motiv-info h2, .motiv-info-intro').forEach(function(el) { el.classList.add('fade-in-up'); obs.observe(el); });
     </script>
   </body>
 </html>
