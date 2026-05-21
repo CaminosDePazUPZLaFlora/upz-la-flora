@@ -1,100 +1,70 @@
-/* Fondo del encabezado */
-.encabezado {
-  background-color: #ffffff;
-  border-bottom: 3px solid #000;
-}
+/* =============================================
+   HISTORIA.CSS — Línea de Tiempo · UPZ La Flora
+   ============================================= */
 
-/* Botón naranja */
-.btn-contar-historia {
-  background-color: #f36e23;
-  color: white;
-  border-radius: 20px;
-  font-size: 12px;
-  padding: 6px 14px;
-}
-
-/* Menú desplegable oscuro */
-.menu-desplegable {
-  background-color: #1a1a1a;
-  color: white;
-}
-
-.menu-desplegable .dropdown-item {
-  color: white;
-}
-
-.menu-desplegable .dropdown-item:hover {
-  background-color: #444;
-}
-
-/* Logos del header */
-.logos {
-  max-width: 100%;
-  flex-wrap: wrap;
-  justify-content: end;
-}
-
-.logos img {
-  max-height: 40px;
-  object-fit: contain;
-}
+/* NOTA: El navbar y footer son cubiertos por global-nav.css */
 
 /*------------------*/
 /* Guía de categorías de discos */
 .guia-categorias {
-  background-color: #fff;
-  padding: 2rem 1rem;
+  background: linear-gradient(180deg, #fff 0%, #E8F5E9 100%);
+  padding: clamp(1.5rem, 4vw, 2.5rem) 1rem;
   text-align: center;
 }
 
 .guia-categorias h3 {
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
   margin-bottom: 1.5rem;
-  font-weight: bold;
-  color: #333;
+  font-weight: 700;
+  color: #1B5E20;
 }
 
 .guia-categorias .fila-categorias {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .guia-categorias .categoria-guia {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100px;
+  width: 90px;
 }
 
 .guia-categorias .categoria-circulo {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   margin-bottom: 0.5rem;
   border: 2px solid #fff;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease;
+}
+
+.guia-categorias .categoria-circulo:hover {
+  transform: scale(1.1);
 }
 
 .guia-categorias span {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: #444;
   text-align: center;
+  font-weight: 500;
 }
 /*------------------*/
 
 
 /* Línea de tiempo */
-
 .linea-tiempo-musical {
-  background-image: url('/img_Historia/Cervecera.jpg'); /* ✔️ sin /static */
+  background-image: url('/upz-la-flora/img_Historia/Cervecera.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  padding: 3rem 1rem;
-  font-family: Arial, sans-serif;
+  padding: clamp(2rem, 5vw, 3rem) 1rem;
+  font-family: 'Outfit', Arial, sans-serif;
   justify-content: center;
 }
 
@@ -102,7 +72,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(43, 43, 43, 0.4); /* ✅ Menos opacidad */
+  background-color: rgba(43, 43, 43, 0.45);
   z-index: 0;
 }
 
@@ -115,136 +85,186 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
-/* Estilo de los discos en curva */
+/* Selector de años */
 .selector-anios {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 160px;
+  width: clamp(80px, 15vw, 160px);
   position: relative;
 }
 
 .discos-anios {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: clamp(12px, 3vw, 30px);
   position: relative;
 }
 
 .disco-anio {
-  width: 80px;
-  height: 80px;
-  background-color: #bb3f00;
+  width: clamp(56px, 10vw, 80px);
+  height: clamp(56px, 10vw, 80px);
+  background: linear-gradient(135deg, #1B5E20 0%, #0D3B12 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: clamp(0.65rem, 1.5vw, 0.9rem);
   color: white;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(27, 94, 32, 0.35);
   cursor: pointer;
   position: relative;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid rgba(38, 198, 218, 0.2);
 }
 
 .disco-anio:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(27, 94, 32, 0.45);
+  border-color: rgba(38, 198, 218, 0.5);
 }
 
 .decada {
   cursor: pointer;
-  font-size: 24px;
-  color: #ffffff;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  color: #26C6DA;
   background-color: transparent;
   border: none;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+}
+.decada:hover {
+  transform: scale(1.15);
+  color: #80DEEA;
 }
 
 /* Reproductor */
 .reproductor-musical {
-  background-color: #e98d42;
-  border-radius: 12px;
-  padding: 2rem;
+  background: linear-gradient(145deg, #0D3B12 0%, #1B5E20 60%, #2E7D32 100%);
+  border-radius: 20px;
+  padding: clamp(1.25rem, 3vw, 2rem);
   max-width: 700px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 40px rgba(13, 59, 18, 0.4), 0 0 0 1px rgba(38, 198, 218, 0.2);
 }
 
 .imagen-reproductor {
   max-width: 100%;
-  max-height: 280px;
-  border-radius: 10px;
+  max-height: clamp(160px, 35vw, 280px);
+  border-radius: 12px;
   margin-bottom: 1rem;
   object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .fuente-imagen,
 .fuente-descripcion {
-  font-size: 0.85rem;
-  color: #333;
-  margin: 0.5rem 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0.4rem 0;
+}
+
+.fuente-imagen a {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 #titulo-evento {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 700;
   color: #ffffff;
 }
 
 #descripcion-evento {
-  color: #ffffff;
-   font-weight: bold;
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
   margin-bottom: 1rem;
-  
+  line-height: 1.6;
 }
 
 .categorias {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
   margin-top: 1rem;
   flex-wrap: wrap;
 }
 
 .categoria-disco {
   border-radius: 50%;
-  width: 90px;
-  height: 90px;
+  width: clamp(60px, 12vw, 90px);
+  height: clamp(60px, 12vw, 90px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: clamp(0.6rem, 1.5vw, 0.75rem);
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   color: rgb(255, 255, 255);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .categoria-disco .ronda {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background-color: white;
   border-radius: 50%;
-  margin: 6px 0;
+  margin: 4px 0;
 }
 
 .categoria-disco:hover {
-  transform: scale(1.1);
+  transform: scale(1.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
+/* Mobile: línea de tiempo apilada */
+@media (max-width: 640px) {
+  .contenedor-general {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .selector-anios {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
 
+  .discos-anios {
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
+  .disco-anio {
+    width: 52px;
+    height: 52px;
+    font-size: 0.65rem;
+  }
 
-/*------------------*/
+  .decada {
+    display: flex;
+    align-items: center;
+  }
+
+  .reproductor-musical {
+    max-width: 95%;
+  }
+}
+
 /*------------------*/
 .fondo-verde {
-  background-color: #009688; /* Verde turquesa */
+  background: linear-gradient(135deg, #009688, #00796b);
 }
 
 .imagen-tiempo {
@@ -252,33 +272,17 @@
   border-radius: 15px;
 }
 
-  /*-------*/
 /*-------*/
-/* Enlaces institucionales */
-.enlaces-informacion {
-  background-color: #eeeeee;
-  color: #333;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+/* Guía de categorías — shimmer bar encima */
+.guia-categorias {
+  position: relative;
 }
-
-.enlaces-informacion img {
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-  background-color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-}
-/*-------*/
-/*-------*/
-
-/* Footer Javeriana */
-.footer-javeriana {
-  margin-top: 0;
-  background-color: #000;
-}
-
-.footer-javeriana img {
-  display: block;
-  width: 100%;
-  height: auto;
+.guia-categorias::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--verde, #1B5E20), var(--cian, #26C6DA), #4CAF50, var(--cian, #26C6DA));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
 }

@@ -1,122 +1,135 @@
-/* Fondo del encabezado */
-.encabezado {
-  background-color: #ffffff;
-  border-bottom: 3px solid #000;
-}
+/* =============================================
+   DATOS.CSS — Dashboard de Estadísticas · UPZ La Flora
+   Paleta "Territorio Vivo": Verde #1B5E20 · Cian #26C6DA
+   NOTA: variables y navbar cubiertos por global-nav.css
+   ============================================= */
 
-/* Botón naranja */
-.btn-contar-historia {
-  background-color: #f36e23;
-  color: white;
-  border-radius: 20px;
-  font-size: 12px;
-  padding: 6px 14px;
-}
-
-/* Menú desplegable oscuro */
-.menu-desplegable {
-  background-color: #1a1a1a;
-  color: white;
-}
-
-.menu-desplegable .dropdown-item {
-  color: white;
-}
-
-.menu-desplegable .dropdown-item:hover {
-  background-color: #444;
-}
-
-/* Logos del header */
-.logos {
-  max-width: 100%;
-  flex-wrap: wrap;
-  justify-content: end;
-}
-
-.logos img {
-  max-height: 40px;
-  object-fit: contain;
-}
-
-/* ============ ESTILOS GLOBALES - IGUAL A MURALES ============ */
+/* ============ BODY / FONDO ============ */
 body {
-  background-color: #e79362;
-  font-family: Arial, sans-serif;
-  color: #333;
+  background-color: var(--blanco);
+  color: var(--texto-oscuro);
 }
 
-/* ============ DASHBOARD DE ESTADÍSTICAS ============ */
+/* ============ DASHBOARD ============ */
 .dashboard-estadisticas {
-  background-color: #e79362;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  background:
+    linear-gradient(180deg, var(--gris-suave) 0%, var(--blanco) 100%);
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  position: relative;
+}
+
+.dashboard-estadisticas::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
 }
 
 .dashboard-estadisticas h2 {
-  color: #f7f7f7;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 5px 5px 5px rgba(255, 94, 0, 0.5);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 900;
+  color: var(--verde);
+  letter-spacing: -0.02em;
 }
 
-/* Tarjetas de Métricas - mantener blancas */
+.dashboard-estadisticas h2::after {
+  content: '';
+  display: block;
+  width: 60px; height: 4px;
+  background: linear-gradient(90deg, var(--cian), var(--cian-claro));
+  border-radius: 99px;
+  margin: 0.5rem auto 0;
+}
+
+/* ============ TARJETAS DE MÉTRICAS ============ */
 .card-metrica {
-  background: white !important;
-  border-radius: 12px;
+  background: var(--blanco-puro);
+  border-radius: var(--radius);
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-card);
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: var(--transition);
   height: 100%;
+  border: 2px solid var(--gris-suave);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-metrica::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--cian), var(--verde));
+  border-radius: 99px 0 0 99px;
 }
 
 .card-metrica:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-verde);
+  border-color: rgba(38,198,218,0.3);
 }
 
 .card-metrica-icon {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   flex-shrink: 0;
 }
 
-.card-metrica-content {
-  flex: 1;
-}
+.card-metrica-content { flex: 1; }
 
 .card-metrica-valor {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--verde);
   margin: 0;
 }
 
 .card-metrica-label {
-  color: #666;
+  color: #5a7a5a;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 500;
 }
 
-/* Tarjetas de Gráficos - mantener blancas */
+/* ============ TARJETAS DE GRÁFICOS ============ */
 .card-grafico {
-  background: white !important;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--blanco-puro);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
   min-height: 300px;
   display: flex;
   flex-direction: column;
+  border: 2px solid var(--gris-suave);
+  transition: var(--transition);
+}
+
+.card-grafico:hover {
+  box-shadow: 0 8px 32px rgba(27,94,32,0.12);
+  border-color: rgba(38,198,218,0.25);
 }
 
 .card-grafico-titulo {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--verde);
+  margin-bottom: 1.25rem;
   text-align: center;
+}
+
+.card-grafico-titulo::after {
+  content: '';
+  display: block;
+  width: 40px; height: 3px;
+  background: linear-gradient(90deg, var(--cian), transparent);
+  border-radius: 99px;
+  margin: 0.3rem auto 0;
 }
 
 .card-grafico canvas {
@@ -131,84 +144,16 @@ body {
   max-height: 300px !important;
 }
 
-/* ============ OTRAS SECCIONES ============ */
-.seccion-mapa {
-  background-color: #e79362 !important;
-  color: #333;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.seccion-mapa h2 {
-  color: #f7f7f7;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 5px 5px 5px rgba(255, 94, 0, 0.5);
-}
-
-/* Asegurar que el contenedor no tenga fondo blanco */
-.seccion-mapa .container {
-  background-color: transparent !important;
-}
-
-.enlace-archivo {
-  font-size: 1.1rem;
-  color: #0077cc;
-  text-decoration: underline;
-}
-
-.enlace-archivo:hover {
-  color: #f36e23;
-  text-decoration: none;
-}
-
-.seccion-archivos {
-  background-color: #e79362;
-  color: #333;
-}
-
-.patrocinadores {
-  background-color: #ffffff;
-  color: #333;
-}
-
-.enlaces-informacion {
-  background-color: #eeeeee;
-  color: #333;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.enlaces-informacion img {
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-  background-color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-}
-
-.footer-javeriana {
-  margin-top: 0;
-  background-color: #000;
-}
-
-.footer-javeriana img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* Responsive */
+/* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
   .card-metrica {
     flex-direction: column;
     text-align: center;
   }
-  
-  .card-metrica-valor {
-    font-size: 1.5rem;
-  }
 
-  .dashboard-estadisticas h2 {
-    font-size: 2rem;
-  }
+  .card-metrica::before { display: none; }
+
+  .card-metrica-valor { font-size: 1.5rem; }
+
+  .dashboard-estadisticas h2 { font-size: 1.6rem; }
 }

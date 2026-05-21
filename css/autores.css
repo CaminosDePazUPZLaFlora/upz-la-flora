@@ -1,61 +1,60 @@
-/* Fondo del encabezado */
-.encabezado {
-  background-color: #ffffff;
-  border-bottom: 3px solid #000;
+/* =============================================
+   AUTORES.CSS — Murales / Material Audiovisual / Cartografía
+   Paleta "Territorio Vivo": Verde #1B5E20 · Cian #26C6DA
+   NOTA: variables y navbar cubiertos por global-nav.css
+   ============================================= */
+
+body {
+  background-color: var(--blanco);
 }
 
-/* Botón naranja */
-.btn-contar-historia {
-  background-color: #f36e23;
-  color: white;
-  border-radius: 20px;
-  font-size: 12px;
-  padding: 6px 14px;
-}
-
-/* Menú desplegable oscuro */
-.menu-desplegable {
-  background-color: #1a1a1a;
-  color: white;
-}
-
-.menu-desplegable .dropdown-item {
-  color: white;
-}
-
-.menu-desplegable .dropdown-item:hover {
-  background-color: #444;
-}
-
-/* Logos del header */
-.logos {
-  max-width: 100%;
-  flex-wrap: wrap;
-  justify-content: end;
-}
-
-.logos img {
-  max-height: 40px;
-  object-fit: contain;
-}
-
-/* ============ CAROUSEL STYLES ============ */
+/* ============ CAROUSEL SECTION ============ */
 .murales-carousel {
-  background-color: #e79362;
-  min-height: 80vh;
+  background: linear-gradient(180deg, var(--gris-suave) 0%, var(--blanco) 100%);
+  min-height: 60vh;
+  padding: clamp(2rem, 5vw, 4rem) 0;
+  position: relative;
 }
 
+.murales-carousel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
+}
+
+/* Título de carousel */
+.carousel-main-title {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 900;
+  color: var(--verde);
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+}
+
+.carousel-main-title::after {
+  content: '';
+  display: block;
+  width: 60px; height: 4px;
+  background: linear-gradient(90deg, var(--cian), var(--cian-claro));
+  border-radius: 99px;
+  margin: 0.5rem auto 0;
+}
+
+/* ============ CAROUSEL CONTAINER ============ */
 .carousel-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 24px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* Carousel image and indicators container */
 .carousel-image-container {
   display: flex;
   flex-direction: column;
@@ -74,30 +73,39 @@
   height: auto;
   max-height: 600px;
   object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(27,94,32,0.2), 0 0 0 4px rgba(38,198,218,0.15);
+  transition: var(--transition);
 }
 
+.carousel-main-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 56px rgba(27,94,32,0.28), 0 0 0 6px rgba(38,198,218,0.25);
+}
+
+/* ============ ARROWS ============ */
 .carousel-arrow {
-  background: #333;
+  background: linear-gradient(135deg, var(--verde) 0%, var(--verde-oscuro) 100%);
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(27,94,32,0.3);
   position: relative;
   z-index: 10;
+  flex-shrink: 0;
 }
 
 .carousel-arrow:hover {
-  background: #f36e23;
-  transform: scale(1.1);
+  background: linear-gradient(135deg, var(--cian) 0%, var(--cian-oscuro) 100%);
+  transform: scale(1.12);
+  box-shadow: var(--shadow-cian);
 }
 
 .carousel-arrow:disabled {
@@ -106,192 +114,124 @@
   transform: none;
 }
 
-.carousel-arrow svg {
-  pointer-events: none;
-}
-
-/* Carousel Indicators */
+/* ============ INDICATORS ============ */
 .carousel-indicators {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .indicator {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   border: none;
-  background: #ccc;
+  background: rgba(27,94,32,0.25);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .indicator.active {
-  background: #703600;
-  transform: scale(1.2);
+  background: var(--cian);
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(38,198,218,0.5);
 }
 
 .indicator:hover {
-  background: #999;
+  background: var(--verde-medio);
 }
 
-/* Mural Info Section */
+/* ============ MURAL INFO ============ */
 .mural-info {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
+  background: var(--blanco-puro);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  margin-top: 2rem;
+  border: 2px solid var(--gris-suave);
+  transition: var(--transition);
+}
+
+.mural-info:hover {
+  border-color: rgba(38,198,218,0.3);
+  box-shadow: 0 8px 32px rgba(27,94,32,0.12);
 }
 
 .mural-info h4 {
-  color: #333;
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 800;
+  color: var(--verde);
+}
+
+.mural-info h4::after {
+  content: '';
+  display: block;
+  width: 40px; height: 3px;
+  background: linear-gradient(90deg, var(--cian), transparent);
+  border-radius: 99px;
+  margin-top: 0.4rem;
 }
 
 .mural-info p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #555;
+  font-size: clamp(0.92rem, 2vw, 1.05rem);
+  line-height: 1.8;
+  color: #3a5a3a;
   text-align: justify;
 }
 
 .author-info,
 .location-info {
-  font-size: 1rem;
-  color: #666;
-  margin-top: 15px;
+  font-size: 0.92rem;
+  color: #5a7a5a;
+  margin-top: 0.75rem;
 }
 
 .author-info strong,
 .location-info strong {
-  color: #333;
+  color: var(--verde);
+  font-weight: 700;
 }
 
-/* Audio Player */
+/* ============ AUDIO PLAYER ============ */
 .audio-player {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
-  border: 2px solid #e2c9ba;
+  background: var(--gris-suave);
+  padding: 1.25rem;
+  border-radius: 14px;
+  border: 2px solid rgba(38,198,218,0.2);
 }
 
 .audio-player h6 {
-  color: #333;
-  margin-bottom: 15px;
+  color: var(--verde);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
-.audio-player audio {
+audio {
+  accent-color: var(--cian);
   max-width: 100%;
 }
 
-/* Responsive Design */
+/* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
   .carousel-container {
-    gap: 15px;
+    gap: 14px;
     max-width: 95%;
   }
 
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-  }
+  .carousel-arrow { width: 42px; height: 42px; }
 
-  .carousel-main-image {
-    max-width: 500px;
-  }
+  .carousel-main-image { max-width: 500px; }
+  .carousel-main-image img { max-height: 320px; }
 
-  .carousel-main-image img {
-    max-height: 300px;
-  }
-
-  .mural-info {
-    padding: 20px;
-  }
-
-  .mural-info h4 {
-    font-size: 1.5rem;
-  }
+  .mural-info { padding: 1.25rem; }
 }
 
 @media (max-width: 576px) {
-  .carousel-container {
-    gap: 10px;
-  }
-
-  .carousel-arrow {
-    width: 35px;
-    height: 35px;
-  }
-
-  .carousel-main-image {
-    max-width: 400px;
-  }
-
-  .carousel-main-image img {
-    max-height: 250px;
-  }
-
-  .indicator {
-    width: 10px;
-    height: 10px;
-  }
-
-  .audio-player {
-    padding: 15px;
-  }
-}
-
-/* Enlaces institucionales */
-.enlaces-informacion {
-  background-color: #eeeeee;
-  color: #333;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.enlaces-informacion img {
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-  background-color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-/* Link hover effects for images */
-.enlaces-informacion a {
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.enlaces-informacion a:hover {
-  transform: translateY(-5px);
-}
-
-.enlaces-informacion a:hover img {
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
-  transform: scale(1.05);
-}
-
-/* Footer Javeriana */
-.footer-javeriana {
-  margin-top: 0;
-  background-color: #000;
-}
-
-.footer-javeriana img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.carousel-main-title {
-  color: #f7f7f7;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 5px 5px 5px rgb(255, 94, 0);
-  margin-bottom: 0;
+  .carousel-container { gap: 8px; }
+  .carousel-arrow { width: 36px; height: 36px; }
+  .carousel-main-image { max-width: 100%; }
+  .carousel-main-image img { max-height: 260px; }
+  .indicator { width: 8px; height: 8px; }
 }

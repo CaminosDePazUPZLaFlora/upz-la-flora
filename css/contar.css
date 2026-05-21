@@ -1,137 +1,140 @@
-/* Fondo del encabezado */
-.encabezado {
-    background-color: #ffffff;
-    border-bottom: 3px solid #000;
-  }
-  
-  /* Botón naranja */
-  .btn-contar-historia {
-    background-color: #f36e23;
-    color: white;
-    border-radius: 20px;
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-  
-  /* Menú desplegable oscuro */
-  .menu-desplegable {
-    background-color: #1a1a1a;
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item {
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item:hover {
-    background-color: #444;
-  }
-  
-/* Logos del header */
-.logos {
-  max-width: 100%;
-  flex-wrap: wrap;
-  justify-content: end;
+/* =============================================
+   CONTAR.CSS — Contar Mi Historia · UPZ La Flora
+   Paleta "Territorio Vivo": Verde #1B5E20 · Cian #26C6DA
+   NOTA: variables y navbar cubiertos por global-nav.css
+   ============================================= */
+
+body {
+  background-color: var(--blanco);
 }
 
-.logos img {
-  max-height: 40px;
-  object-fit: contain;
+/* =========== SECCIÓN FORMULARIO =========== */
+section.py-5.bg-light {
+  background:
+    linear-gradient(180deg, var(--gris-suave) 0%, var(--blanco) 100%) !important;
+  padding: clamp(3rem, 7vw, 5rem) 0 !important;
+  position: relative;
 }
-/*------------------*/
-/*------------------*/
 
+section.py-5.bg-light::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
+}
 
-  .bg-naranja {
-    background-color: #f36e23;
-  }
-  
-  textarea {
-    resize: none;
-    font-size: 1rem;
-  }
-  
-  #historias p {
-    font-size: 1.1rem;
-  }
-  
-  #btnEnviar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
-    font-size: 1.2rem;
-  }
-  
+section.py-5.bg-light .form-label {
+  color: var(--verde);
+  font-weight: 700;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  letter-spacing: -0.01em;
+}
 
-  /*-------*/
-/*-------*/
-/* Contenedor general */
+/* =========== TEXTAREA =========== */
+.form-control {
+  border: 2px solid rgba(27,94,32,0.25) !important;
+  border-radius: 14px !important;
+  background: var(--blanco-puro) !important;
+  color: var(--texto-oscuro) !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1rem !important;
+  transition: var(--transition) !important;
+  padding: 1rem !important;
+  resize: vertical;
+}
+
+.form-control:focus {
+  border-color: var(--cian) !important;
+  box-shadow: 0 0 0 3px rgba(38,198,218,0.2) !important;
+  outline: none !important;
+}
+
+/* =========== BOTÓN ENVIAR =========== */
+.btn-secondary {
+  background: linear-gradient(135deg, var(--cian) 0%, var(--cian-oscuro) 100%) !important;
+  border: none !important;
+  border-radius: 0 14px 14px 0 !important;
+  padding: 0 1.5rem !important;
+  transition: var(--transition) !important;
+  color: var(--blanco-puro) !important;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, var(--verde) 0%, var(--verde-oscuro) 100%) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* =========== SECCIÓN HISTORIAS =========== */
+.bg-naranja {
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(38,198,218,0.18) 0%, transparent 55%),
+    linear-gradient(160deg, var(--verde-oscuro) 0%, var(--verde) 55%, var(--verde-medio) 100%) !important;
+  color: var(--blanco-puro) !important;
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  position: relative;
+}
+
+.bg-naranja::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
+}
+
+/* Tarjeta de historia individual */
+.bg-naranja .d-flex.align-items-start {
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  border: 1px solid rgba(38,198,218,0.2);
+  transition: var(--transition);
+}
+
+.bg-naranja .d-flex.align-items-start:hover {
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(38,198,218,0.4);
+  transform: translateX(4px);
+}
+
+.bg-naranja p {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  line-height: 1.75;
+  opacity: 0.95;
+}
+
+/* =========== SECCIÓN APOYO =========== */
 .seccion-apoyo {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Franja superior amarilla */
-  .franja-amarilla {
-    background-color: #f9a825;
-    height: 160px;
-  }
-  
-  /* Imagen decorativa unificada */
-  .contenedor-imagen {
-    width: 100%;
-  }
-  
-  .img-apoyo {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  /* Franja inferior verde */
-  .franja-verde {
-    background-color: #66bb6a;
-    height: 150px;
-  }
-  
-  /* Icono GitHub */
-  .icono-github {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-  }
-  
+  position: relative;
+}
 
-   /*-------*/
-/*-------*/
-  /* Enlaces institucionales */
-.enlaces-informacion {
-    background-color: #eeeeee;
-    color: #333;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-  
-  .enlaces-informacion img {
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-    background-color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-  }
-  /*-------*/
-/*-------*/
+.franja-amarilla {
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(38,198,218,0.12) 0%, transparent 55%),
+    linear-gradient(145deg, var(--cian-oscuro) 0%, var(--cian) 50%, #4DD0E1 100%);
+  padding: clamp(2.5rem, 6vw, 4rem) 2rem;
+}
 
-/* Footer Javeriana */
-.footer-javeriana {
-    margin-top: 0;
-    background-color: #000;
-  }
-  
-  .footer-javeriana img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+.franja-amarilla h2 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 900;
+  color: var(--verde-oscuro);
+  letter-spacing: -0.02em;
+}
+
+.contenedor-imagen {
+  background: var(--blanco);
+  text-align: center;
+}
+
+.img-apoyo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

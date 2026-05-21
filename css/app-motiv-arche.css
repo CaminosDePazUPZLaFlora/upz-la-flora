@@ -1,0 +1,449 @@
+/* =============================================
+   APP-MOTIV-ARCHE.CSS — Estilos para la página Motiv-ARCHE
+   Paleta "Territorio Vivo" — Verde · Cian · Blanco
+   ============================================= */
+
+/* =========== HERO SECTION =========== */
+.motiv-hero {
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(38,198,218,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(38,198,218,0.15) 0%, transparent 50%),
+    linear-gradient(160deg, var(--verde-oscuro) 0%, var(--verde) 55%, var(--verde-medio) 100%);
+  color: var(--blanco-puro);
+  padding: clamp(5rem, 10vw, 7rem) 8% clamp(3.5rem, 8vw, 5rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.motiv-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -100px;
+  width: clamp(220px, 38vw, 420px);
+  height: clamp(220px, 38vw, 420px);
+  border-radius: 50%;
+  border: 55px solid rgba(38,198,218,0.08);
+  pointer-events: none;
+}
+
+.motiv-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -70px;
+  left: -70px;
+  width: clamp(180px, 30vw, 340px);
+  height: clamp(180px, 30vw, 340px);
+  border-radius: 50%;
+  border: 45px solid rgba(38,198,218,0.06);
+  pointer-events: none;
+}
+
+.motiv-hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.motiv-hero-text {
+  flex: 1 1 600px;
+}
+
+.motiv-hero-badge {
+  display: inline-block;
+  background: rgba(38,198,218,0.2);
+  border: 1px solid rgba(38,198,218,0.5);
+  color: var(--cian-claro);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 99px;
+  margin-bottom: 1rem;
+  animation: fadeSlideUp 0.5s ease both;
+}
+
+.motiv-hero-text h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 25px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  animation: fadeSlideUp 0.7s 0.05s ease both;
+}
+
+.motiv-hero-text h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cian), var(--cian-claro));
+  border-radius: 99px;
+  margin-top: 0.75rem;
+}
+
+.motiv-hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  max-width: 760px;
+  margin-bottom: 18px;
+  opacity: 0.92;
+  animation: fadeSlideUp 0.8s 0.1s ease both;
+}
+
+.motiv-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 28px;
+  animation: fadeSlideUp 0.9s 0.15s ease both;
+}
+
+.motiv-btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.motiv-btn-white {
+  background: var(--blanco-puro);
+  color: var(--verde);
+  border: 2px solid var(--blanco-puro);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+}
+
+.motiv-btn-white:hover {
+  background: transparent;
+  color: var(--blanco-puro);
+  border-color: var(--blanco-puro);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+}
+
+.motiv-btn-outline {
+  background: transparent;
+  color: var(--blanco-puro);
+  border: 2px solid rgba(255,255,255,0.6);
+}
+
+.motiv-btn-outline:hover {
+  background: var(--blanco-puro);
+  color: var(--verde);
+  border-color: var(--blanco-puro);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+}
+
+/* =========== HERO CARD =========== */
+.motiv-hero-card {
+  flex: 1 1 320px;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(38,198,218,0.3);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeSlideUp 1s 0.2s ease both;
+  transition: all 0.35s ease;
+}
+
+.motiv-hero-card:hover {
+  border-color: rgba(38,198,218,0.55);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+.motiv-hero-card h3 {
+  font-size: 1.55rem;
+  margin-bottom: 18px;
+  font-weight: 800;
+  color: var(--cian-claro);
+}
+
+.motiv-hero-card p {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 15px;
+  opacity: 0.92;
+}
+
+.motiv-hero-card ul {
+  padding-left: 18px;
+  line-height: 1.85;
+  list-style: none;
+}
+
+.motiv-hero-card ul li {
+  margin-bottom: 10px;
+  opacity: 0.92;
+  position: relative;
+  padding-left: 22px;
+}
+
+.motiv-hero-card ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--cian);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* =========== INFO SECTION =========== */
+.motiv-info {
+  background:
+    radial-gradient(ellipse at 90% 10%, rgba(38,198,218,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 5% 90%, rgba(27,94,32,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, var(--gris-suave) 0%, var(--blanco) 100%);
+  padding: clamp(3rem, 8vw, 5rem) 8%;
+}
+
+.motiv-info h2 {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
+  color: var(--verde);
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.motiv-info h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cian), var(--cian-claro));
+  border-radius: 99px;
+  margin: 0.6rem auto 0;
+}
+
+.motiv-info-intro {
+  text-align: center;
+  max-width: 950px;
+  margin: 0 auto 40px auto;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--texto-oscuro);
+}
+
+/* =========== CARDS GRID =========== */
+.motiv-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.motiv-card {
+  background: var(--blanco-puro);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(27,94,32,0.08);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.motiv-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cian), var(--verde-claro));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.motiv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-verde);
+  border-color: rgba(38,198,218,0.25);
+}
+
+.motiv-card:hover::after {
+  transform: scaleX(1);
+}
+
+.motiv-card h3 {
+  font-size: 1.3rem;
+  color: var(--verde);
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.motiv-card p,
+.motiv-card li {
+  font-size: 0.98rem;
+  color: var(--texto-oscuro);
+  line-height: 1.75;
+}
+
+.motiv-card ul,
+.motiv-card ol {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.motiv-card ol li {
+  margin-bottom: 6px;
+}
+
+.motiv-card ul li {
+  margin-bottom: 6px;
+  list-style: none;
+  position: relative;
+  padding-left: 18px;
+}
+
+.motiv-card ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--cian);
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.motiv-card a {
+  color: var(--cian-oscuro);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.motiv-card a:hover {
+  color: var(--verde);
+  border-bottom-color: var(--cian);
+}
+
+/* =========== CREDENTIALS BOX =========== */
+.motiv-credentials {
+  background: var(--blanco-puro);
+  border-left: 6px solid var(--cian);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-top: 10px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.35s ease;
+}
+
+.motiv-credentials:hover {
+  box-shadow: var(--shadow-cian);
+  transform: translateY(-3px);
+}
+
+.motiv-credentials h3 {
+  color: var(--verde);
+  margin-bottom: 14px;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.motiv-credentials p {
+  line-height: 1.85;
+  margin-bottom: 14px;
+  color: var(--texto-oscuro);
+}
+
+.credencial-dato {
+  background: var(--gris-suave);
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin: 10px 0;
+  font-size: 1rem;
+  color: var(--texto-oscuro);
+  border: 1px solid rgba(27,94,32,0.12);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.credencial-dato:hover {
+  border-color: rgba(38,198,218,0.4);
+  box-shadow: 0 2px 12px rgba(38,198,218,0.12);
+  transform: translateX(4px);
+}
+
+.credencial-dato strong {
+  color: var(--verde);
+  font-weight: 700;
+  min-width: 95px;
+}
+
+.motiv-footer-note {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: rgba(13,59,18,0.65);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+/* =========== SHIMMER SEPARATOR =========== */
+.motiv-shimmer {
+  height: 6px;
+  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
+}
+
+/* =========== RESPONSIVE =========== */
+@media (max-width: 992px) {
+  .motiv-hero-text h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .motiv-hero-content {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .motiv-hero {
+    padding: clamp(4rem, 8vw, 5rem) 6% clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .motiv-info {
+    padding: clamp(2.5rem, 6vw, 3.5rem) 6%;
+  }
+
+  .motiv-hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .motiv-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .motiv-hero-card {
+    max-width: 100%;
+  }
+
+  .credencial-dato {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .credencial-dato strong {
+    min-width: auto;
+  }
+}

@@ -1,170 +1,758 @@
-/* Fondo del encabezado */
+/* =============================================
+   HOME.CSS — Paleta "Territorio Vivo" · UPZ La Flora
+   Verde bosque #1B5E20 · Cian #26C6DA · Blanco #F5F5F5
+   ============================================= */
+
+/* ---------- VARIABLES DE DISEÑO ---------- */
+:root {
+  --verde:          #1B5E20;
+  --verde-oscuro:   #0D3B12;
+  --verde-medio:    #2E7D32;
+  --verde-claro:    #4CAF50;
+  --cian:           #26C6DA;
+  --cian-oscuro:    #0097A7;
+  --cian-claro:     #80DEEA;
+  --blanco:         #F5F5F5;
+  --blanco-puro:    #FFFFFF;
+  --gris-suave:     #E8F5E9;
+  --texto-claro:    rgba(255,255,255,0.92);
+  --texto-oscuro:   #0D3B12;
+
+  --shadow-verde:   0 8px 32px rgba(27, 94, 32, 0.35);
+  --shadow-cian:    0 8px 32px rgba(38, 198, 218, 0.35);
+  --shadow-card:    0 4px 20px rgba(0,0,0,0.10);
+  --transition:     all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius:         16px;
+}
+
+/* ---------- BASE ---------- */
+body {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  background-color: var(--blanco);
+  padding-top: 0;
+  overflow-x: hidden;
+  color: var(--texto-oscuro);
+}
+
+/* ---------- ANIMACIONES ---------- */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes ripple-cian {
+  0%   { box-shadow: 0 0 0 0 rgba(38, 198, 218, 0.45); }
+  70%  { box-shadow: 0 0 0 14px rgba(38, 198, 218, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(38, 198, 218, 0); }
+}
+
+@keyframes shimmer-line {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ---------- NAVBAR ---------- */
 .encabezado {
-    background-color: #ffffff;
-    border-bottom: 3px solid #000;
-  }
-  
-  /* Botón naranja */
-  .btn-contar-historia {
-    background-color: #f36e23;
-    color: white;
-    border-radius: 20px;
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-  
-  /* Menú desplegable oscuro */
-  .menu-desplegable {
-    background-color: #1a1a1a;
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item {
-    color: white;
-  }
-  
-  .menu-desplegable .dropdown-item:hover {
-    background-color: #444;
-  }
-  
-/* Logos del header */
-.logos {
-  max-width: 100%;
-  flex-wrap: wrap;
-  justify-content: end;
+  background: rgba(245, 245, 245, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 2px solid rgba(27, 94, 32, 0.18);
+  box-shadow: 0 2px 24px rgba(13, 59, 18, 0.08);
+  transition: var(--transition);
 }
 
-.logos img {
-  max-height: 40px;
-  object-fit: contain;
+.encabezado .navbar-brand {
+  font-size: clamp(0.72rem, 2vw, 1rem);
+  font-weight: 800;
+  color: var(--verde) !important;
+  line-height: 1.2;
+  max-width: 220px;
 }
-/*------------------*/
-/*------------------*/
-  /* INTRO PROYECTO */
-.intro-proyecto {
-    background-color: #f36e23;
-    color: white;
-  }
-  
-  .subtitulo {
-    font-size: 2.5rem;
-    font-weight: 400;
-  }
-  
-  .titulo-display {
-    font-size: 2.9rem;
-    font-weight: 700;
-    margin: 1rem 0;
-  }
-  
-  .descripcion-intro {
-    font-size: 2rem;
-    line-height: 1.6;
-  }
-  
 
-  
-/* Collage intermedio */
-.collage-intermedio {
-    background: #b2ebf2; /* fondo azul claro unificado */
-    padding-top: 3rem;
-    padding-bottom: 4rem;
+@media (max-width: 575px) {
+  .encabezado .navbar-brand { display: none; }
+}
+
+/* Toggler verde bosque */
+.navbar-toggler {
+  border: 2px solid rgba(27, 94, 32, 0.45);
+  border-radius: 8px;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231B5E20' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.encabezado .nav-link {
+  color: var(--verde-oscuro) !important;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.encabezado .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--cian);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.encabezado .nav-link:hover {
+  color: var(--verde) !important;
+  background: rgba(27, 94, 32, 0.07);
+}
+
+.encabezado .nav-link:hover::after {
+  width: 70%;
+}
+
+/* BOTÓN CONTAR MI HISTORIA */
+.btn-contar-historia {
+  background: linear-gradient(135deg, var(--cian) 0%, var(--cian-oscuro) 100%);
+  color: var(--blanco-puro) !important;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 9px 20px;
+  border: none;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(38, 198, 218, 0.4);
+  animation: ripple-cian 2.2s infinite;
+  text-transform: uppercase;
+}
+
+.btn-contar-historia:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-cian);
+  animation: none;
+  color: var(--blanco-puro) !important;
+}
+
+/* MENÚ DESPLEGABLE */
+.menu-desplegable {
+  background: linear-gradient(145deg, var(--verde-oscuro), var(--verde));
+  border: 1px solid rgba(38, 198, 218, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.menu-desplegable .dropdown-item {
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  padding: 0.55rem 1.25rem;
+  transition: var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.menu-desplegable .dropdown-item:hover {
+  background: rgba(38, 198, 218, 0.18);
+  color: var(--cian-claro);
+  border-left-color: var(--cian);
+  padding-left: 1.5rem;
+}
+
+/* MOBILE NAVBAR */
+@media (max-width: 991px) {
+  body { padding-top: 0; }
+
+  .navbar-collapse.show,
+  .navbar-collapse.collapsing {
+    background: rgba(245, 245, 245, 0.99);
+    border-top: 2px solid rgba(27, 94, 32, 0.12);
+    border-radius: 0 0 18px 18px;
+    padding: 1rem;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
   }
-  
-  .img-historia {
-    max-width: 250px;
-    height: auto;
-  }
-  
-  .img-historia-central {
-    max-width: 550px;  /* Más grande */
-    height: auto;
-    z-index: 2;
-  }
-  /* FRASE DESTACADA */
-  .frase-destacada {
-    background-color: #f9a825;
-  }
-  
-  .frase-destacada h2 {
-    font-size: 2.3rem;
-    font-weight: 700;
-  }
-  
-  .frase-destacada .resaltado {
-    color: white;
-  }
-  
-/*------------------*/
-/*------------------*/
-  .slider-demografico {
-    background-color: #f4c5b6; /* Color similar al que mostraste */
-  }
-  
-  .img-slider {
-    max-width: 500px;
-    height: auto;
-    border: 6px solid #f36e23;
+
+  .encabezado .nav-link {
+    padding: 0.65rem 1rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  }
-  
-/*------------------*/
-/*------------------*/
-
-  /* SECCIÓN: ¿Qué es el proyecto? */
-.que-es-proyecto {
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .bg-naranja {
-    background-color: #f36e23;
-  }
-  
-  .bg-claro {
-    background-color: #f5f2f0;
-  }
-  
-  .titulo-proyecto {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1.4;
-    text-align: left;
-  }
-  
-  .descripcion-proyecto {
-    font-size: 1.3rem;
-    line-height: 1.5;
+    margin-bottom: 2px;
+    border-left: 3px solid transparent;
   }
 
-  /*------------------*/
-/*------------------*/
-  /* Enlaces institucionales */
-.enlaces-informacion {
-    background-color: #eeeeee;
-    color: #333;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-  
-  .enlaces-informacion img {
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-    background-color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+  .encabezado .nav-link:hover {
+    border-left-color: var(--cian);
+    background: rgba(27, 94, 32, 0.06);
   }
 
-  /*-------*/
-/*-------*/
-
-/* Footer Javeriana */
-.footer-javeriana {
-    margin-top: 0;
-    background-color: #000;
-  }
-  
-  .footer-javeriana img {
+  .btn-contar-historia {
     display: block;
-    width: 100%;
-    height: auto;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
+}
+
+/* ---------- HERO / INTRO ---------- */
+.intro-proyecto {
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(38,198,218,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(38,198,218,0.12) 0%, transparent 50%),
+    linear-gradient(160deg, var(--verde-oscuro) 0%, var(--verde) 55%, var(--verde-medio) 100%);
+  color: var(--blanco-puro);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.5rem, 9vw, 7rem) 0;
+  margin-top: 0;
+}
+
+/* Onda cian decorativa superior */
+.intro-proyecto::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: clamp(220px, 40vw, 460px);
+  height: clamp(220px, 40vw, 460px);
+  border-radius: 50%;
+  border: 60px solid rgba(38,198,218,0.12);
+  pointer-events: none;
+}
+
+/* Onda cian inferior izquierda */
+.intro-proyecto::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -60px;
+  width: clamp(180px, 30vw, 360px);
+  height: clamp(180px, 30vw, 360px);
+  border-radius: 50%;
+  border: 40px solid rgba(38,198,218,0.08);
+  pointer-events: none;
+}
+
+/* Línea cian decorativa vertical */
+.intro-proyecto .container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 4px;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, var(--cian), transparent);
+  border-radius: 99px;
+}
+
+.titulo-display {
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0.75rem 0 1.25rem;
+  animation: fadeSlideUp 0.8s ease both;
+}
+
+/* Subrayado cian bajo el titulo */
+.titulo-display::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cian), var(--cian-claro));
+  border-radius: 99px;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .titulo-display::after { margin: 0.75rem auto 0; }
+}
+
+.subtitulo {
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+}
+
+.descripcion-intro {
+  font-size: clamp(0.92rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  opacity: 0.9;
+  animation: fadeSlideUp 0.9s 0.1s ease both;
+}
+
+/* Badge cian sobre el texto */
+.intro-proyecto .badge-territorio {
+  display: inline-block;
+  background: rgba(38,198,218,0.2);
+  border: 1px solid rgba(38,198,218,0.5);
+  color: var(--cian-claro);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 99px;
+  margin-bottom: 0.75rem;
+}
+
+.intro-proyecto .img-fluid {
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.3), 0 0 0 4px rgba(38,198,218,0.25);
+  animation: fadeSlideUp 0.9s 0.2s ease both;
+  transition: var(--transition);
+}
+
+.intro-proyecto .img-fluid:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35), 0 0 0 6px rgba(38,198,218,0.35);
+}
+
+/* ---------- COLLAGE INTERMEDIO ---------- */
+.collage-intermedio {
+  background: var(--blanco);
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  position: relative;
+}
+
+/* Franja de color superior del collage */
+.collage-intermedio::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
+}
+
+.collage-intermedio .container::before {
+  content: 'Territorio · Memoria · Comunidad';
+  display: block;
+  text-align: center;
+  font-size: clamp(0.65rem, 1.5vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--verde-medio);
+  margin-bottom: 2rem;
+  opacity: 0.7;
+}
+
+.img-historia {
+  width: clamp(100px, 25vw, 250px);
+  height: auto;
+  border-radius: 14px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-card);
+  border: 3px solid var(--gris-suave);
+}
+
+.img-historia:hover {
+  transform: scale(1.06) translateY(-6px);
+  box-shadow: var(--shadow-verde);
+  border-color: rgba(27,94,32,0.3);
+}
+
+.img-historia-central {
+  width: clamp(180px, 50vw, 540px);
+  height: auto;
+  z-index: 2;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(27,94,32,0.2), 0 0 0 6px rgba(38,198,218,0.15);
+  transition: var(--transition);
+}
+
+.img-historia-central:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 24px 64px rgba(27,94,32,0.28), 0 0 0 8px rgba(38,198,218,0.25);
+}
+
+/* ---------- FRASE DESTACADA ---------- */
+.frase-destacada {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(27,94,32,0.15) 0%, transparent 60%),
+    linear-gradient(135deg, var(--cian-oscuro) 0%, var(--cian) 50%, #4DD0E1 100%);
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Forma verde bosque decorativa */
+.frase-destacada::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(27,94,32,0.18);
+  pointer-events: none;
+}
+
+.frase-destacada::after {
+  content: '"';
+  position: absolute;
+  bottom: -40px;
+  left: 4%;
+  font-size: clamp(8rem, 18vw, 14rem);
+  font-weight: 900;
+  color: rgba(255,255,255,0.12);
+  line-height: 1;
+  font-family: Georgia, serif;
+  pointer-events: none;
+}
+
+.frase-destacada h2 {
+  font-size: clamp(1.3rem, 3.8vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--verde-oscuro);
+}
+
+.frase-destacada .resaltado {
+  color: var(--blanco-puro);
+  text-shadow: 0 2px 12px rgba(13,59,18,0.25);
+}
+
+/* ---------- SLIDER DEMOGRÁFICO ---------- */
+.slider-demografico {
+  background:
+    linear-gradient(180deg, var(--gris-suave) 0%, var(--blanco) 100%);
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+}
+
+.titulo-seccion {
+  font-size: clamp(1.2rem, 3.5vw, 1.9rem);
+  font-weight: 800;
+  color: var(--verde);
+  position: relative;
+  display: inline-block;
+}
+
+.titulo-seccion::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 50%;
+  background: linear-gradient(90deg, var(--cian), transparent);
+  border-radius: 99px;
+  margin: 0.4rem auto 0;
+}
+
+.img-slider {
+  max-width: min(520px, 90%);
+  height: auto;
+  border: 4px solid var(--verde);
+  border-radius: 18px;
+  box-shadow: 0 10px 36px rgba(27,94,32,0.18);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--verde) !important;
+}
+
+/* ---------- QUÉ ES EL PROYECTO ---------- */
+.que-es-proyecto {
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+.bg-naranja {
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(38,198,218,0.12) 0%, transparent 60%),
+    linear-gradient(145deg, var(--verde) 0%, var(--verde-oscuro) 100%);
+}
+
+.bg-claro {
+  background-color: var(--blanco);
+}
+
+.titulo-proyecto {
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1.3;
+  color: var(--blanco-puro);
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+/* Cian accent bajo el titulo del proyecto */
+.titulo-proyecto::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--cian);
+  border-radius: 99px;
+  margin: 0.75rem auto 0;
+}
+
+.descripcion-proyecto {
+  font-size: clamp(0.92rem, 2.2vw, 1.1rem);
+  line-height: 1.85;
+  color: #2d4a30;
+}
+
+/* Tag verde decorativo */
+.descripcion-proyecto::before {
+  content: 'SOBRE EL PROYECTO';
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--cian-oscuro);
+  margin-bottom: 1.25rem;
+  padding-left: 2px;
+}
+
+/* ---------- PATROCINADORES / ALIADOS ---------- */
+.patrocinadores {
+  background:
+    radial-gradient(ellipse at 5% 20%, rgba(38,198,218,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 95% 80%, rgba(38,198,218,0.06) 0%, transparent 50%),
+    linear-gradient(160deg, var(--verde-oscuro) 0%, var(--verde) 100%);
+  padding: clamp(3rem, 7vw, 6rem) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Arco decorativo cian superior derecho */
+.patrocinadores::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 50px solid rgba(38,198,218,0.10);
+  pointer-events: none;
+}
+
+/* Arco decorativo cian inferior izquierdo */
+.patrocinadores::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 40px solid rgba(38,198,218,0.07);
+  pointer-events: none;
+}
+
+.patrocinadores .alias-label {
+  display: block;
+  color: rgba(38,198,218,0.75);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.patrocinadores h3 {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 800;
+  color: var(--blanco-puro);
+  margin-bottom: 0.4rem;
+}
+
+/* Línea cian bajo el título */
+.patrocinadores h3::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--cian);
+  border-radius: 99px;
+  margin: 0.5rem auto 0;
+}
+
+.patrocinadores h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 800;
+  color: var(--blanco-puro);
+  margin-bottom: 0.5rem;
+}
+
+.patrocinadores h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--cian);
+  border-radius: 99px;
+  margin: 0.5rem auto 0;
+}
+
+/* --- LOGO CARDS: blancas con logos originales --- */
+.patrocinadores .logo-card {
+  background: var(--blanco-puro);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 1.25rem 1.8rem;
+  min-width: 150px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Línea cian inferior en hover */
+.patrocinadores .logo-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cian), var(--cian-claro));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+  border-radius: 0 0 14px 14px;
+}
+
+.patrocinadores .logo-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: rgba(38, 198, 218, 0.5);
+  box-shadow:
+    0 12px 36px rgba(0,0,0,0.3),
+    0 0 0 2px rgba(38, 198, 218, 0.25);
+}
+
+.patrocinadores .logo-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Logos en colores originales — SIN filtros */
+.patrocinadores .logo-card img {
+  max-height: 58px;
+  max-width: 150px;
+  object-fit: contain;
+  filter: none !important;
+  opacity: 1 !important;
+  transition: all 0.35s ease;
+}
+
+.patrocinadores .logo-card:hover img {
+  filter: none !important;
+  transform: scale(1.05);
+}
+
+/* Fallback: logos sueltos sin .logo-card (por si acaso) */
+.patrocinadores > .container > .d-flex > img {
+  filter: none !important;
+  opacity: 1 !important;
+  background: var(--blanco-puro);
+  padding: 0.75rem 1.25rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: all 0.35s ease;
+}
+
+.patrocinadores > .container > .d-flex > img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+
+/* ---------- ENLACES INSTITUCIONALES ---------- */
+.enlaces-informacion {
+  background:
+    linear-gradient(135deg, var(--gris-suave) 0%, var(--blanco) 100%);
+  color: var(--texto-oscuro);
+  padding: clamp(3rem, 7vw, 5rem) 1rem;
+  text-align: center;
+}
+
+.enlaces-informacion h4 {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: 700;
+  color: var(--verde);
+  margin-bottom: 2.5rem;
+}
+
+.link-image,
+.enlaces-informacion img {
+  background: var(--blanco-puro);
+  padding: 0.75rem 1.5rem;
+  border-radius: 14px;
+  transition: var(--transition);
+  border: 2px solid var(--gris-suave);
+  box-shadow: var(--shadow-card);
+}
+
+.link-image:hover,
+.enlaces-informacion a:hover img {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: var(--shadow-verde);
+  border-color: rgba(27,94,32,0.25);
+}
+
+/* ---------- FOOTER ---------- */
+.footer-javeriana {
+  margin-top: 0;
+  background: var(--verde-oscuro);
+  border-top: 4px solid var(--cian);
+}
+
+.footer-javeriana img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- MOBILE EXTRAS ---------- */
+@media (max-width: 768px) {
+  body { padding-top: 0; }
+
+  .imagenes-horizontales {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 1.25rem !important;
+  }
+
+  .img-historia,
+  .img-historia-central {
+    width: 88%;
+    max-width: 360px;
+  }
+
+  .titulo-proyecto { text-align: center; }
+
+  .que-es-proyecto .col-md-4,
+  .que-es-proyecto .col-md-8 {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .patrocinadores .d-flex {
+    gap: 0.75rem !important;
+  }
+
+  .frase-destacada::after { display: none; }
+
+  .intro-proyecto .container::before { display: none; }
+}
+
+@media (max-width: 480px) {
+  .btn-contar-historia {
+    font-size: 0.72rem;
+    padding: 7px 14px;
+  }
+}
