@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-        content="Caminos para la Paz y Memoria TYWA-KHE — Un espacio para fortalecer la apropiación territorial de los barrios altos de la UPZ La Flora, Usme, Bogotá." />
-    <title>Inicio | Caminos para la Paz y Memoria – UPZ La Flora</title>
+        content="Caminos para la Paz y la Memoria Tywa Khe — Un museo abierto que reúne historias, murales y memorias de los barrios altos de Usme." />
+    <title>Caminos para la Paz y la Memoria Tywa Khe</title>
 
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,39 +25,7 @@
 </head>
 
 <body>
-    <!-- ENCABEZADO -->
-    <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold mb-0" href="/upz-la-flora/">Caminos para la Paz y Memoria</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
-          aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="menu-principal">
-          <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
-            <li class="nav-item">
-              <a class="btn btn-contar-historia me-2 fw-bold" href="/upz-la-flora/contar/">CONTAR MI HISTORIA</a>
-            </li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/autores/?v=20260523">Ruta de Murales</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-historia"
-                data-bs-toggle="dropdown" aria-expanded="false">Historia</a>
-              <ul class="dropdown-menu menu-desplegable" aria-labelledby="menu-historia">
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/historia/">L&#237;nea de Tiempo</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/entrevistas/">Entrevistas</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/informacion/">Informaci&#243;n</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/material-audiovisual/">Material Audiovisual</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/revision-documental/">Revisi&#243;n Documental</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/datos/">Estad&#237;sticas</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/nosotros/">Sobre Nosotros</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold nav-motiv-arche" href="/upz-la-flora/app-motiv-arche/">Motiv&#8209;ARCHE</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
+    {{ partial "site-nav.html" . }}
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -69,15 +37,13 @@
                 <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
                     <span class="badge-territorio">Territorio · Usme · Bogotá</span>
                     <h1 class="titulo-display">
-                        Caminos para la Paz<br />y Memoria<br /><span
-                            style="color: rgba(128,222,234,0.9); font-size: 0.7em; font-weight: 600;">&ldquo;TYWA-KHE&rdquo;</span>
+                        Caminos para la Paz<br />y la Memoria<br /><span
+                            style="color: rgba(128,222,234,0.9); font-size: 0.7em; font-weight: 600;">Tywa Khe</span>
                     </h1>
+                    <p class="fw-semibold mb-3">Muros que tejen historias</p>
                     <p class="descripcion-intro">
-                        Un espacio que nace de los intereses de los habitantes más
-                        antiguos de los barrios altos del Territorio La Flora, con el
-                        propósito de fortalecer la apropiación territorial de sus
-                        habitantes a partir de la creación de historias de los barrios
-                        desde un enfoque participativo de co-creación y tejido en red.
+                        Un museo abierto que reúne historias, murales y memorias de los
+                        barrios altos de Usme.
                     </p>
                 </div>
                 <div class="col-lg-5 text-center">
@@ -88,67 +54,14 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: Collage intermedio -->
-    <section class="collage-intermedio py-5">
-        <div class="container text-center">
-            <div
-                class="imagenes-horizontales d-flex flex-column flex-md-row justify-content-center align-items-center gap-4 mt-4">
-                <img src="/upz-la-flora/img_Home/collage-lado-izq.png" alt="Imagen barrio La Flora lado izquierdo"
-                    class="img-historia img-fluid" loading="lazy" />
-                <img src="/upz-la-flora/img_Home/collage-central.png" alt="Collage central La Flora"
-                    class="img-historia-central img-fluid" loading="lazy" />
-                <img src="/upz-la-flora/img_Home/collage-lado-der.png" alt="Imagen barrio La Flora lado derecho"
-                    class="img-historia img-fluid" loading="lazy" />
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: Frase destacada -->
-    <section class="frase-destacada text-center py-5">
+    <!-- SECCIÓN: Accesos principales -->
+    <section class="py-5 text-center">
         <div class="container">
-            <h2>
-                Nosotros no creamos las historias,<br /><span class="resaltado">las historias las construyes tú.</span>
-            </h2>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: Slider de imágenes demográficas -->
-    <section class="slider-demografico py-5 text-center">
-        <div class="container">
-            <h2 class="mb-4 titulo-seccion">Datos Demográficos</h2>
-
-            <div id="carouselDemografico" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-                <div class="carousel-inner">
-                    <!-- Imagen 1 -->
-                    <div class="carousel-item active">
-                        <img src="/upz-la-flora/img_Home/upz01.jpg" class="d-block mx-auto img-slider"
-                            alt="Dato demográfico UPZ La Flora 1" loading="lazy" />
-                    </div>
-
-                    <!-- Imagen 2 -->
-                    <div class="carousel-item">
-                        <img src="/upz-la-flora/img_Home/upz02.jpg" class="d-block mx-auto img-slider"
-                            alt="Dato demográfico UPZ La Flora 2" loading="lazy" />
-                    </div>
-
-                    <!-- Imagen 3 -->
-                    <div class="carousel-item">
-                        <img src="/upz-la-flora/img_Home/upz03.jpg" class="d-block mx-auto img-slider"
-                            alt="Dato demográfico UPZ La Flora 3" loading="lazy" />
-                    </div>
-                </div>
-
-                <!-- Controles de navegación -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDemografico"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselDemografico"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
+            <h2 class="mb-4 titulo-seccion">Explora el proyecto</h2>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a class="btn btn-primary px-4 py-3 fw-bold" href="/upz-la-flora/autores/">Ruta de Memoria</a>
+                <a class="btn btn-primary px-4 py-3 fw-bold" href="/upz-la-flora/historia/">Historias de barrio</a>
+                <a class="btn btn-secondary px-4 py-3 fw-bold" href="/upz-la-flora/contar/">Cuenta tu historia</a>
             </div>
         </div>
     </section>
@@ -160,7 +73,7 @@
                 <!-- Columna izquierda: título -->
                 <div class="col-md-4 d-flex align-items-center justify-content-center bg-naranja py-5">
                     <h2 class="titulo-proyecto text-center px-4">
-                        ¿Qué es el<br />proyecto<br />historias de<br />barrio?
+                        ¿Qué es<br />el proyecto?
                     </h2>
                 </div>
 
@@ -238,27 +151,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: Enlaces -->
-    <section class="enlaces-informacion text-center py-5">
-        <div class="container">
-            <h2 class="mb-4">Ingresa a estos sitios para conocer más de La Flora</h2>
-            <div class="d-flex flex-wrap justify-content-center gap-4 gap-md-5">
-                <a href="https://upz52laflora.wixsite.com/laflorausme/multimedia" target="_blank"
-                    rel="noopener noreferrer" aria-label="UPZ 52 - La Flora Wix">
-                    <img src="/upz-la-flora/img_Home/upz-la-flora.png" alt="UPZ 52 - La Flora" height="80"
-                        class="link-image" loading="lazy" />
-                </a>
-                <a href="https://sensolabjaveriana.wixsite.com/observatorio-javeria" target="_blank"
-                    rel="noopener noreferrer" aria-label="Observatorio Javeriano">
-                    <img src="/upz-la-flora/img_Home/observatorio-desigualdades.png" alt="Observatorio Javeriano"
-                        height="80" class="link-image" loading="lazy" />
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-
     <!-- Script de animaciones de entrada al scroll -->
     <script>
         // Intersection Observer para animar elementos al entrar en viewport
@@ -276,7 +168,7 @@
         );
 
         document.querySelectorAll(
-            'section > .container, .img-historia, .img-historia-central, .patrocinadores img'
+            'section > .container, .patrocinadores img'
         ).forEach((el) => {
             el.style.opacity = '0';
             observer.observe(el);

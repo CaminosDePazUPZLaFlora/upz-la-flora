@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contar Mi Historia | Caminos para la Paz y Memoria – UPZ La Flora</title>
+    <title>Contar mi historia | Caminos para la Paz y la Memoria Tywa Khe</title>
     <meta name="description" content="Comparte tu historia como habitante de La Flora, Usme. Deja tu testimonio y forma parte de la memoria colectiva del territorio." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,39 +14,7 @@
     <link rel="stylesheet" href="/upz-la-flora/css/contar.css" />
   </head>
   <body>
-    <!-- ENCABEZADO -->
-    <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold mb-0" href="/upz-la-flora/">Caminos para la Paz y Memoria</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
-          aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="menu-principal">
-          <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
-            <li class="nav-item">
-              <a class="btn btn-contar-historia me-2 fw-bold" href="/upz-la-flora/contar/">CONTAR MI HISTORIA</a>
-            </li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/autores/?v=20260523">Ruta de Murales</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-historia"
-                data-bs-toggle="dropdown" aria-expanded="false">Historia</a>
-              <ul class="dropdown-menu menu-desplegable" aria-labelledby="menu-historia">
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/historia/">L&#237;nea de Tiempo</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/entrevistas/">Entrevistas</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/informacion/">Informaci&#243;n</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/material-audiovisual/">Material Audiovisual</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/revision-documental/">Revisi&#243;n Documental</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/datos/">Estad&#237;sticas</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/nosotros/">Sobre Nosotros</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold nav-motiv-arche" href="/upz-la-flora/app-motiv-arche/">Motiv&#8209;ARCHE</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
+    {{ partial "site-nav.html" . }}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -60,43 +28,25 @@
     </section>
     <div class="shimmer-bar"></div>
 
-    <!-- SECCIÓN: Formulario para contar historia -->
+    <!-- SECCIÓN: Formulario moderado para contar historias -->
     <section class="py-5 bg-light">
       <div class="container">
-        <label for="historia" class="form-label fw-bold">Escribe tu historia aquí:</label>
-        <div class="input-group">
-          <textarea
-            class="form-control"
-            id="historia"
-            rows="4"
-            placeholder="Escribe algo bonito sobre La Flora..."
-          ></textarea>
-          <button class="btn btn-secondary" type="button" id="btnEnviar">
-            <span style="font-size: 1.5rem">⬆️</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN: Comentarios mostrados -->
-    <section class="py-5 bg-naranja">
-      <div class="container">
-        <div id="historias" class="d-flex flex-column gap-4">
-          <div class="d-flex align-items-start gap-3">
-            <span class="fs-1">👤</span>
-            <p class="mb-0">
-              Hola me llamo Loren y soy parte de la comunidad. Soy una niña de
-              16 años que va al colegio...
-            </p>
+        <h2 class="fw-bold mb-3">Comparte una memoria del territorio</h2>
+        <p>La historia será recibida de forma privada y revisada manualmente por el equipo de PROSOFI antes de cualquier publicación.</p>
+        <p class="small">La historia y la autorización de revisión serán obligatorias. El nombre y el correo serán opcionales.</p>
+        {{ with .Site.Params.storyFormUrl }}
+          <div class="ratio" style="--bs-aspect-ratio: 110%; min-height: 720px;">
+            <iframe src="{{ . }}" title="Formulario para contar una historia" loading="lazy" style="border:0; width:100%; height:100%;">Cargando…</iframe>
           </div>
-          <div class="d-flex align-items-start gap-3">
-            <span class="fs-1">👤</span>
-            <p class="mb-0">
-              Buenas tardes, soy el señor Andrés y soy un señor de 76 años que
-              vive cerca de Tihuaque...
-            </p>
+          <p class="text-center mt-3">
+            <a class="btn btn-secondary" href="{{ . }}" target="_blank" rel="noopener noreferrer">Abrir formulario en otra pestaña</a>
+          </p>
+        {{ else }}
+          <div class="alert alert-secondary text-center mt-4" role="status">
+            <strong>Formulario próximamente.</strong><br />
+            El equipo está preparando el canal para recibir y revisar las memorias de la comunidad.
           </div>
-        </div>
+        {{ end }}
       </div>
     </section>
 
@@ -105,20 +55,6 @@
       <img src="/upz-la-flora/img_Contar/flora.png" alt="Decoración historias" class="img-fluid w-100" loading="lazy" />
     </section>
 
-    <!-- JS para mostrar nueva historia -->
-    <script>
-      document.getElementById("btnEnviar").addEventListener("click", function() {
-        const texto = document.getElementById("historia").value.trim();
-        if (texto !== "") {
-          const contenedor = document.getElementById("historias");
-          const nuevaHistoria = document.createElement("div");
-          nuevaHistoria.className = "d-flex align-items-start gap-3";
-          nuevaHistoria.innerHTML = `<span class="fs-1">👤</span><p class="mb-0">${texto}</p>`;
-          contenedor.prepend(nuevaHistoria);
-          document.getElementById("historia").value = "";
-        }
-      });
-    </script>
 
     <section class="seccion-apoyo">
       <!-- Franja superior cian -->
@@ -171,7 +107,7 @@
       var obs = new IntersectionObserver(function(entries) {
         entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
       }, { threshold: 0.1 });
-      document.querySelectorAll('.logo-card, #historias > div').forEach(function(el) { el.classList.add('fade-in-up'); obs.observe(el); });
+      document.querySelectorAll('.logo-card, section > .container').forEach(function(el) { el.classList.add('fade-in-up'); obs.observe(el); });
     </script>
   </body>
 </html>

@@ -1,5 +1,8 @@
 baseURL = 'https://caminosdepazupzlaflora.github.io/upz-la-flora/'
 canonifyURLs = true
 languageCode = 'es'
-title = 'UPZ La Flora'
+title = 'Caminos para la Paz y la Memoria Tywa Khe'
 theme = 'mi-tema'
+
+[params]
+  storyFormUrl = ''

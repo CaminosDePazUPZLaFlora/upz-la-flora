@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Entrevistas | Caminos para la Paz y Memoria – UPZ La Flora</title>
+    <title>Entrevistas | Caminos para la Paz y la Memoria Tywa Khe</title>
     <meta name="description" content="Escucha los testimonios y entrevistas de los habitantes de La Flora, Usme. Voces de la comunidad que narran la historia del territorio." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,39 +14,7 @@
     <link rel="stylesheet" href="/upz-la-flora/css/entrevistas.css" />
   </head>
   <body>
-    <!-- ENCABEZADO -->
-    <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold mb-0" href="/upz-la-flora/">Caminos para la Paz y Memoria</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
-          aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="menu-principal">
-          <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
-            <li class="nav-item">
-              <a class="btn btn-contar-historia me-2 fw-bold" href="/upz-la-flora/contar/">CONTAR MI HISTORIA</a>
-            </li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/autores/?v=20260523">Ruta de Murales</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-historia"
-                data-bs-toggle="dropdown" aria-expanded="false">Historia</a>
-              <ul class="dropdown-menu menu-desplegable" aria-labelledby="menu-historia">
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/historia/">L&#237;nea de Tiempo</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/entrevistas/">Entrevistas</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/informacion/">Informaci&#243;n</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/material-audiovisual/">Material Audiovisual</a></li>
-                <li><a class="dropdown-item fw-bold" href="/upz-la-flora/revision-documental/">Revisi&#243;n Documental</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/datos/">Estad&#237;sticas</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="/upz-la-flora/nosotros/">Sobre Nosotros</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold nav-motiv-arche" href="/upz-la-flora/app-motiv-arche/">Motiv&#8209;ARCHE</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
+    {{ partial "site-nav.html" . }}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -82,7 +50,7 @@
                   </audio>
                 </div>
                 <a
-                  href="https://github.com/CaminosDePazUPZLaFlora/upz-la-flora/blob/development/static/transcripciones_entrevistas/VF_Mery%20Manosalva_Mar%C3%ADa%20Bernal.pdf"
+                  href="/upz-la-flora/transcripciones_entrevistas/VF_Mery%20Manosalva_Mar%C3%ADa%20Bernal.pdf"
                   class="btn btn-outline-primary w-100"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -121,7 +89,7 @@
                   </audio>
                 </div>
                 <a
-                  href="https://github.com/CaminosDePazUPZLaFlora/upz-la-flora/blob/development/static/transcripciones_entrevistas/VF_Aldemar_Lozano_2020.pdf"
+                  href="/upz-la-flora/transcripciones_entrevistas/VF_Aldemar_Lozano_2020.pdf"
                   class="btn btn-outline-primary w-100"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -143,7 +111,7 @@
                 <div class="mb-2">
                   <p class="small mb-1"><strong>Entrevista 2024:</strong></p>
                   <audio controls class="w-100 mb-2">
-                    <source src="/upz-la-flora/audios_entrevistas/ArgenizYtaz/20241128_Entrevista ArgenisYtaz.mp3" type="audio/mpeg" />
+                    <source src="/upz-la-flora/audios_entrevistas/ArgenizYtaz/20241128-Entrevista-ArgenisYtaz.mp3" type="audio/mpeg" />
                     Tu navegador no soporta audio.
                   </audio>
                 </div>
@@ -155,7 +123,7 @@
                   </audio>
                 </div>
                 <a
-                  href="https://github.com/CaminosDePazUPZLaFlora/upz-la-flora/blob/development/static/transcripciones_entrevistas/VF_Argenis%20Ytaz_2024.pdf"
+                  href="/upz-la-flora/transcripciones_entrevistas/VF_Argenis%20Ytaz_2024.pdf"
                   class="btn btn-outline-primary w-100"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -186,15 +154,9 @@
                     Tu navegador no soporta audio.
                   </audio>
                 </div>
-                <div class="mb-2">
-                  <p class="small mb-1"><strong>Audio 3:</strong></p>
-                  <audio controls class="w-100 mb-2">
-                    <source src="/upz-la-flora/audios_entrevistas/BrunoSilvaBobadilla/3BrunaSilva.mp3" type="audio/mpeg" />
-                    Tu navegador no soporta audio.
-                  </audio>
-                </div>
+                <p class="alert alert-light border small">Audio 3 próximamente.</p>
                 <a
-                  href="https://github.com/CaminosDePazUPZLaFlora/upz-la-flora/blob/development/static/transcripciones_entrevistas/VF_Bruno%20Silva.pdf"
+                  href="/upz-la-flora/transcripciones_entrevistas/VF_Bruno%20Silva.pdf"
                   class="btn btn-outline-primary w-100"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -212,11 +174,11 @@
                 <h5 class="card-title">Concepción Espejo</h5>
                 <p class="card-text">"Recuerdos de la comunidad..."</p>
                 <audio controls class="w-100 mb-3">
-                  <source src="/upz-la-flora/audios_entrevistas/ConcepcionEspejo/EntrevistaConcepciónEspejo.MP3" type="audio/mpeg" />
+                  <source src="/upz-la-flora/audios_entrevistas/ConcepcionEspejo/EntrevistaConcepcinEspejo.mp3" type="audio/mpeg" />
                   Tu navegador no soporta audio.
                 </audio>
                 <a
-                  href="https://github.com/CaminosDePazUPZLaFlora/upz-la-flora/blob/development/static/transcripciones_entrevistas/VF_Concepci%C3%B3n%20Espejo.pdf"
+                  href="/upz-la-flora/transcripciones_entrevistas/VF_Concepci%C3%B3n%20Espejo.pdf"
                   class="btn btn-outline-primary w-100"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -233,11 +195,11 @@
               <div class="card-body">
                 <h5 class="card-title">Felipa Pinzón</h5>
                 <audio controls class="w-100 mb-3">
-                  <source src="/upz-la-flora/audios_entrevistas/FelipaPinzon/20211002_HistoriasdeBarrio FelipaPinzon.mp3" type="audio/mpeg" />
+                  <source src="/upz-la-flora/audios_entrevistas/FelipaPinzon/20211002-HistoriasdeBarrio-Felip.mp3" type="audio/mpeg" />
                   Tu navegador no soporta audio.
                 </audio>
                 <a
-                  href="https://github.com/CaminosDePazUPZLaFlora/upz-la-flora/blob/development/static/transcripciones_entrevistas/VF_Felipa%20Pinz%C3%B3n.pdf"
+                  href="/upz-la-flora/transcripciones_entrevistas/VF_Felipa%20Pinz%C3%B3n.pdf"
                   class="btn btn-outline-primary w-100"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -278,7 +240,7 @@
                   </audio>
                 </div>
                 <a
-                  href="https://github.com/CaminosDePazUPZLaFlora/upz-la-flora/blob/development/static/transcripciones_entrevistas/VF_Mar%C3%ADa%20Bernal.pdf"
+                  href="/upz-la-flora/transcripciones_entrevistas/VF_Mar%C3%ADa%20Bernal.pdf"
                   class="btn btn-outline-primary w-100"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -297,12 +259,9 @@
                 <p class="card-text">
                   "Cuando llegaron a abrir esa carretera fue que esto cambió de verdad..."
                 </p>
-                <audio controls class="w-100 mb-3">
-                  <source src="/upz-la-flora/audios_entrevistas/MarthaAlvarez/AudioEntrevistaMarthaAlvarez.mp3" type="audio/mpeg" />
-                  Tu navegador no soporta audio.
-                </audio>
+                <p class="alert alert-light border small">Audio próximamente.</p>
                 <a
-                  href="https://github.com/CaminosDePazUPZLaFlora/upz-la-flora/blob/development/static/transcripciones_entrevistas/VF_Martha%20%C3%81lvarez.pdf"
+                  href="/upz-la-flora/transcripciones_entrevistas/VF_Martha%20%C3%81lvarez.pdf"
                   class="btn btn-outline-primary w-100"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -324,7 +283,7 @@
                   Tu navegador no soporta audio.
                 </audio>
                 <a
-                  href="https://github.com/CaminosDePazUPZLaFlora/upz-la-flora/blob/development/static/transcripciones_entrevistas/VF_Martha%20Castellanos%202021.pdf"
+                  href="/upz-la-flora/transcripciones_entrevistas/VF_Martha%20Castellanos%202021.pdf"
                   class="btn btn-outline-primary w-100"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -1,5 +1,5 @@
 ---
-title: "Sobre Nosotros"
+title: "Acerca del proyecto"
 url: "/nosotros/"
 layout: "nosotros"
 ---
