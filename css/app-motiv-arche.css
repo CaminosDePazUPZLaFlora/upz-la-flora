@@ -144,6 +144,20 @@
   box-shadow: 0 8px 28px rgba(0,0,0,0.15);
 }
 
+.motiv-btn-login {
+  background: var(--verde);
+  color: var(--blanco-puro);
+  border: 2px solid var(--verde);
+  box-shadow: 0 4px 18px rgba(27,94,32,0.22);
+}
+
+.motiv-btn-login:hover {
+  background: var(--verde-oscuro);
+  color: var(--blanco-puro);
+  border-color: var(--verde-oscuro);
+  transform: translateY(-3px);
+}
+
 /* =========== HERO CARD =========== */
 .motiv-hero-card {
   flex: 1 1 320px;

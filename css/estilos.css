@@ -88,77 +88,7 @@ body {
   box-shadow: 0 28px 72px rgba(0,0,0,0.35), 0 0 0 6px rgba(38,198,218,0.3);
 }
 
-/* =========== COLABORADORES =========== */
-.colaboradores {
-  background:
-    linear-gradient(180deg, var(--gris-suave) 0%, var(--blanco) 100%);
-  color: var(--texto-oscuro);
-  padding: clamp(3rem, 7vw, 5rem) 0;
-  position: relative;
-}
-
-.colaboradores::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
-  background-size: 200% auto;
-  animation: shimmer-line 4s linear infinite;
-}
-
-.colaboradores .titulo-seccion {
-  font-size: clamp(1.3rem, 3.5vw, 2rem);
-  font-weight: 900;
-  color: var(--verde);
-}
-
-.colaboradores .titulo-seccion::after {
-  content: '';
-  display: block;
-  width: 50px; height: 4px;
-  background: linear-gradient(90deg, var(--cian), transparent);
-  border-radius: 99px;
-  margin: 0.5rem auto 0;
-}
-
-.colaborador {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.img-colaborador {
-  width: clamp(80px, 15vw, 120px);
-  height: clamp(80px, 15vw, 120px);
-  object-fit: contain;
-  border-radius: 50%;
-  border: 4px solid rgba(38,198,218,0.3);
-  padding: 8px;
-  background: var(--blanco-puro);
-  box-shadow: var(--shadow-card);
-  transition: var(--transition);
-}
-
-.img-colaborador:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: var(--shadow-cian);
-  border-color: var(--cian);
-}
-
-.etiqueta-colaborador {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--verde);
-  text-align: center;
-  background: rgba(27,94,32,0.06);
-  padding: 4px 12px;
-  border-radius: 99px;
-  border: 1px solid rgba(27,94,32,0.15);
-}
-
-/* =========== PARTICIPANTES =========== */
+/* =========== AUTORÍAS =========== */
 .participantes {
   background:
     radial-gradient(ellipse at 5% 20%, rgba(38,198,218,0.08) 0%, transparent 55%),
