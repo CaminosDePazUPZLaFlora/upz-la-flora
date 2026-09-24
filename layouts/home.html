@@ -1,191 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description"
-        content="Caminos para la Paz y la Memoria Tywa Khe — Un museo abierto que reúne historias, murales y memorias de los barrios altos de Usme." />
-    <title>Caminos para la Paz y la Memoria Tywa Khe</title>
-
-    <!-- Google Fonts: Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Estilos globales navbar -->
-    <link rel="stylesheet" href="/upz-la-flora/css/global-nav.css" />
-
-    <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="/upz-la-flora/css/home.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Caminos para la Paz y la Memoria Tywa Khe — Un museo abierto que reúne historias, murales y memorias de los barrios altos de Usme." />
+  <title>Caminos para la Paz y la Memoria Tywa Khe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/upz-la-flora/css/global-nav.css" />
+  <link rel="stylesheet" href="/upz-la-flora/css/home.css?v=20260923" />
+  <link rel="stylesheet" href="/upz-la-flora/css/visual-refresh.css?v=20260923" />
 </head>
+<body class="home-page">
+  {{ partial "site-nav.html" . }}
 
-<body>
-    {{ partial "site-nav.html" . }}
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- SECCIÓN: Hero / Introducción al proyecto -->
-    <section class="intro-proyecto text-white">
-        <div class="container py-5">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
-                    <span class="badge-territorio">Territorio · Usme · Bogotá</span>
-                    <h1 class="titulo-display">
-                        Caminos para la Paz<br />y la Memoria<br /><span
-                            style="color: rgba(128,222,234,0.9); font-size: 0.7em; font-weight: 600;">Tywa Khe</span>
-                    </h1>
-                    <p class="fw-semibold mb-3">Muros que tejen historias</p>
-                    <p class="descripcion-intro">
-                        Un museo abierto que reúne historias, murales y memorias de los
-                        barrios altos de Usme.
-                    </p>
-                </div>
-                <div class="col-lg-5 text-center">
-                    <img src="/upz-la-flora/img_Home/collage-intro.png" alt="Collage introductorio del barrio La Flora"
-                        class="img-fluid rounded" loading="eager" />
-                </div>
-            </div>
+  <main>
+    <section class="home-hero">
+      <div class="container home-hero-grid">
+        <div class="home-hero-copy">
+          <p class="eyebrow">Muros que tejen historias</p>
+          <h1>Memoria viva en los barrios altos de <span>Usme</span></h1>
+          <p class="home-lead">Un museo abierto que reúne historias, murales y memorias del territorio.</p>
+          <div class="home-actions">
+            <a class="home-btn home-btn-light" href="/upz-la-flora/autores/">
+              Explorar la Ruta de Memoria <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a class="home-btn home-btn-outline" href="/upz-la-flora/historia/">
+              Conocer las historias <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
+        <div class="home-hero-art">
+          <span class="hero-orbit" aria-hidden="true"></span>
+          <img src="/upz-la-flora/img_Home/collage-intro.png" alt="Collage de memoria familiar, flores y paisaje de Usme" loading="eager" />
+        </div>
+      </div>
     </section>
 
-    <!-- SECCIÓN: Accesos principales -->
-    <section class="py-5 text-center">
-        <div class="container">
-            <h2 class="mb-4 titulo-seccion">Explora el proyecto</h2>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a class="btn btn-primary px-4 py-3 fw-bold" href="/upz-la-flora/autores/">Ruta de Memoria</a>
-                <a class="btn btn-primary px-4 py-3 fw-bold" href="/upz-la-flora/historia/">Historias de barrio</a>
-                <a class="btn btn-secondary px-4 py-3 fw-bold" href="/upz-la-flora/contar/">Cuenta tu historia</a>
-            </div>
+    <section class="home-intro" aria-labelledby="intro-title">
+      <div class="container home-intro-grid">
+        <div class="home-intro-art">
+          <span aria-hidden="true"></span>
+          <img src="/upz-la-flora/img_Home/collage-central.png" alt="Collage de vida cotidiana, transporte, flores y paisaje rural" loading="lazy" />
         </div>
+        <div class="home-intro-copy">
+          <p class="eyebrow eyebrow-coral">Una memoria hecha entre muchas voces</p>
+          <h2 id="intro-title">El territorio también se cuenta con imágenes.</h2>
+          <p>Este proyecto, liderado por la Pontificia Universidad Javeriana desde 2020, preserva la memoria histórica de la UPZ La Flora mediante un trabajo colaborativo con organizaciones territoriales.</p>
+          <a class="text-link" href="/upz-la-flora/nosotros/">Conocer el proyecto <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
     </section>
 
-    <!-- SECCIÓN: ¿Qué es el proyecto? -->
-    <section class="que-es-proyecto text-white">
-        <div class="container-fluid px-0">
-            <div class="row g-0">
-                <!-- Columna izquierda: título -->
-                <div class="col-md-4 d-flex align-items-center justify-content-center bg-naranja py-5">
-                    <h2 class="titulo-proyecto text-center px-4">
-                        ¿Qué es<br />el proyecto?
-                    </h2>
-                </div>
-
-                <!-- Columna derecha: descripción -->
-                <div class="col-md-8 bg-claro px-4 px-md-5 py-5 text-dark">
-                    <p class="descripcion-proyecto">
-                        Este proyecto, liderado por la Pontificia Universidad Javeriana
-                        desde 2020, busca crear espacios de reflexión y preservar la
-                        memoria histórica de la UPZ La Flora. Para lograrlo, dos equipos
-                        de trabajo colaboran estrechamente con organizaciones
-                        territoriales: el programa social de la Facultad de Ingeniería,
-                        PROSOFI, y el Observatorio Javeriano de las Desigualdades.
-                        <br /><br />
-                        Juntos impulsamos un trabajo interdisciplinario que integra
-                        ciencias sociales, ingeniería y ciencia de datos, con el propósito
-                        de rescatar historias que reflejan las luchas populares y
-                        comunitarias de las personas en los barrios altos de Usme por el
-                        acceso a derechos esenciales, como el acceso al agua.
-                    </p>
-                </div>
-            </div>
+    <section class="home-paths" aria-labelledby="paths-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-coral">Explorar</p>
+            <h2 id="paths-title">Tres formas de entrar a la memoria</h2>
+          </div>
+          <p>Una navegación directa para recorrer, escuchar y participar en este archivo colectivo.</p>
         </div>
+        <div class="path-grid">
+          <a class="path-item" href="/upz-la-flora/autores/">
+            <span class="path-icon"><i data-lucide="map" aria-hidden="true"></i></span>
+            <small>01 · Recorrer</small>
+            <h3>Ruta de Memoria</h3>
+            <span>Ver los cinco murales <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="path-item" href="/upz-la-flora/historia/">
+            <span class="path-icon"><i data-lucide="audio-lines" aria-hidden="true"></i></span>
+            <small>02 · Escuchar</small>
+            <h3>Historias de barrio</h3>
+            <span>Voces, archivos y relatos <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="path-item" href="/upz-la-flora/contar/">
+            <span class="path-icon"><i data-lucide="message-square-text" aria-hidden="true"></i></span>
+            <small>03 · Participar</small>
+            <h3>Cuenta tu historia</h3>
+            <span>Compartir una memoria <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- SECCIÓN: Aliados / Patrocinadores -->
-    <section class="patrocinadores text-center py-5">
-        <div class="container">
-            <p
-                style="color: rgba(38,198,218,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">
-                INSTITUCIONES &amp; ORGANIZACIONES</p>
-            <h2 class="mb-4">Aliados</h2>
-            <div class="d-flex flex-wrap justify-content-center align-items-stretch gap-3 gap-md-4 mt-3">
-
-                <a href="https://www.javeriana.edu.co/inicio" target="_blank" rel="noopener noreferrer"
-                    aria-label="Pontificia Universidad Javeriana">
-                    <div class="logo-card">
-                        <img src="/upz-la-flora/img_Home/logo-javeriana.png" alt="Javeriana" height="55"
-                            loading="lazy" />
-                    </div>
-                </a>
-
-                <a href="https://www.javeriana.edu.co/compromiso-social/prosofi" target="_blank"
-                    rel="noopener noreferrer" aria-label="PROSOFI">
-                    <div class="logo-card">
-                        <img src="/upz-la-flora/img_Home/logo-prosofi.png" alt="PROSOFI" height="55" loading="lazy" />
-                    </div>
-                </a>
-
-                <a href="https://sensolabjaveriana.wixsite.com/observatorio-javeria" target="_blank"
-                    rel="noopener noreferrer" aria-label="Observatorio Javeriano">
-                    <div class="logo-card">
-                        <img src="/upz-la-flora/img_Home/logo-ojds.png" alt="Observatorio" height="55" loading="lazy" />
-                    </div>
-                </a>
-
-                <div class="logo-card">
-                    <img src="/upz-la-flora/img_Home/logo-colegio.png" alt="Colegio Gabriel García Márquez" height="55"
-                        loading="lazy" />
-                </div>
-
-                <div class="logo-card">
-                    <img src="/upz-la-flora/img_Home/logo-umb.png" alt="UMB" height="55" loading="lazy" />
-                </div>
-
-                <div class="logo-card">
-                    <img src="/upz-la-flora/img_Home/logo-sabios.png" alt="Sabios del Territorio" height="55"
-                        loading="lazy" />
-                </div>
-
-                <div class="logo-card">
-                    <img src="/upz-la-flora/img_Home/logo-tunalito.png" alt="Tunalito" height="55" loading="lazy" />
-                </div>
-
-            </div>
+    <section class="home-community" aria-labelledby="community-title">
+      <div class="container home-community-grid">
+        <div class="home-community-copy">
+          <p class="eyebrow eyebrow-coral">Comunidad que hace memoria</p>
+          <h2 id="community-title">Las personas son el centro del proyecto.</h2>
+          <p>Las historias nacen de quienes habitan, recuerdan y transforman los barrios altos de Usme.</p>
+          <a class="text-link" href="/upz-la-flora/entrevistas/">Escuchar sus voces <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
+        <div class="home-community-art">
+          <span aria-hidden="true"></span>
+          <img src="/upz-la-flora/img_Nosotros/foto-participantes.png" alt="Participantes del proyecto mostrando sus reconocimientos" loading="lazy" />
+        </div>
+      </div>
     </section>
 
-    <!-- Script de animaciones de entrada al scroll -->
-    <script>
-        // Intersection Observer para animar elementos al entrar en viewport
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeSlideUp 0.7s ease both';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.12
-            }
-        );
+    <section class="home-landscape">
+      <img src="/upz-la-flora/img_Contar/flora.png" alt="Collage de frailejones, paisaje de páramo, comunidad y ciudad" loading="lazy" />
+      <div class="container home-landscape-copy">
+        <p class="eyebrow">Del páramo a la ciudad</p>
+        <h2>La memoria también es paisaje.</h2>
+        <p>Una historia común entre lo rural, lo barrial y lo colectivo.</p>
+      </div>
+    </section>
 
-        document.querySelectorAll(
-            'section > .container, .patrocinadores img'
-        ).forEach((el) => {
-            el.style.opacity = '0';
-            observer.observe(el);
-        });
+    <section class="home-allies patrocinadores" aria-labelledby="allies-title">
+      <div class="container">
+        <p class="eyebrow eyebrow-coral text-center">Instituciones y organizaciones</p>
+        <h2 id="allies-title" class="text-center">Aliados</h2>
+        <div class="allies-grid">
+          <a class="ally" href="https://www.javeriana.edu.co/inicio" target="_blank" rel="noopener noreferrer"><img src="/upz-la-flora/img_Home/logo-javeriana.png" alt="Pontificia Universidad Javeriana" loading="lazy" /></a>
+          <a class="ally" href="https://www.javeriana.edu.co/compromiso-social/prosofi" target="_blank" rel="noopener noreferrer"><img src="/upz-la-flora/img_Home/logo-prosofi.png" alt="PROSOFI" loading="lazy" /></a>
+          <a class="ally" href="https://sensolabjaveriana.wixsite.com/observatorio-javeria" target="_blank" rel="noopener noreferrer"><img src="/upz-la-flora/img_Home/logo-ojds.png" alt="Observatorio Javeriano de las Desigualdades" loading="lazy" /></a>
+          <div class="ally"><img src="/upz-la-flora/img_Home/logo-colegio.png" alt="Colegio Gabriel García Márquez" loading="lazy" /></div>
+          <div class="ally"><img src="/upz-la-flora/img_Home/logo-umb.png" alt="UMB" loading="lazy" /></div>
+          <div class="ally"><img src="/upz-la-flora/img_Home/logo-sabios.png" alt="Sabios del Territorio" loading="lazy" /></div>
+          <div class="ally"><img src="/upz-la-flora/img_Home/logo-tunalito.png" alt="Tunalito" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        // Navbar shrink en scroll
-        const navbar = document.querySelector('.encabezado');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 40) {
-                navbar.style.padding = '4px 12px';
-                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.12)';
-            } else {
-                navbar.style.padding = '';
-                navbar.style.boxShadow = '';
-            }
-        });
-    </script>
+  <footer class="site-footer">
+    <div class="container"><strong>Tywa Khe · Muros que tejen historias</strong><span>Caminos para la Paz y la Memoria</span></div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

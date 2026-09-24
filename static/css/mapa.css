@@ -1,12 +1,12 @@
 /* Fondo del encabezado */
 .encabezado {
-    background-color: #ffffff;
+    background-color: #FAF7EF;
     border-bottom: 3px solid #000;
   }
   
   /* Botón naranja */
   .btn-contar-historia {
-    background-color: #f36e23;
+    background-color: #C77360;
     color: white;
     border-radius: 20px;
     font-size: 12px;
@@ -15,7 +15,7 @@
   
   /* Menú desplegable oscuro */
   .menu-desplegable {
-    background-color: #1a1a1a;
+    background-color: #26312C;
     color: white;
   }
   
@@ -43,7 +43,7 @@
 /*------------------*/
 
 .seccion-mapa-interactivo {
-    background-color: #f0f0f0;
+    background-color: #EFE9DD;
   }
   
   .mapa-responsive {
@@ -64,7 +64,7 @@
 /*------------------*/
   /* Enlaces institucionales */
 .enlaces-informacion {
-    background-color: #eeeeee;
+    background-color: #EFE9DD;
     color: #333;
     padding-top: 6rem;
     padding-bottom: 6rem;

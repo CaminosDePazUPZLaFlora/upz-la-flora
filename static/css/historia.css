@@ -7,7 +7,7 @@
 /*------------------*/
 /* Guía de categorías de discos */
 .guia-categorias {
-  background: linear-gradient(180deg, #fff 0%, #E8F5E9 100%);
+  background: linear-gradient(180deg, #fff 0%, #E4ECE5 100%);
   padding: clamp(1.5rem, 4vw, 2.5rem) 1rem;
   text-align: center;
 }
@@ -16,7 +16,7 @@
   font-size: clamp(1.2rem, 3.5vw, 1.8rem);
   margin-bottom: 1.5rem;
   font-weight: 700;
-  color: #1B5E20;
+  color: #527864;
 }
 
 .guia-categorias .fila-categorias {
@@ -108,7 +108,7 @@
 .disco-anio {
   width: clamp(56px, 10vw, 80px);
   height: clamp(56px, 10vw, 80px);
-  background: linear-gradient(135deg, #1B5E20 0%, #0D3B12 100%);
+  background: linear-gradient(135deg, #527864 0%, #355C4B 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -132,7 +132,7 @@
 .decada {
   cursor: pointer;
   font-size: clamp(1.2rem, 4vw, 1.8rem);
-  color: #26C6DA;
+  color: #C77360;
   background-color: transparent;
   border: none;
   padding: 0.5rem;
@@ -140,12 +140,12 @@
 }
 .decada:hover {
   transform: scale(1.15);
-  color: #80DEEA;
+  color: #D5E2D8;
 }
 
 /* Reproductor */
 .reproductor-musical {
-  background: linear-gradient(145deg, #0D3B12 0%, #1B5E20 60%, #2E7D32 100%);
+  background: linear-gradient(145deg, #355C4B 0%, #527864 60%, #6B8D78 100%);
   border-radius: 20px;
   padding: clamp(1.25rem, 3vw, 2rem);
   max-width: 700px;
@@ -177,7 +177,7 @@
 #titulo-evento {
   font-size: clamp(1.1rem, 3vw, 1.5rem);
   font-weight: 700;
-  color: #ffffff;
+  color: #FAF7EF;
 }
 
 #descripcion-evento {
@@ -264,7 +264,7 @@
 
 /*------------------*/
 .fondo-verde {
-  background: linear-gradient(135deg, #009688, #00796b);
+  background: linear-gradient(135deg, #527864, #355C4B);
 }
 
 .imagen-tiempo {
@@ -282,7 +282,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 5px;
-  background: linear-gradient(90deg, var(--verde, #1B5E20), var(--cian, #26C6DA), #4CAF50, var(--cian, #26C6DA));
+  background: linear-gradient(90deg, var(--verde, #527864), var(--cian, #C77360), #8FA995, var(--cian, #C77360));
   background-size: 200% auto;
   animation: shimmer-line 4s linear infinite;
 }

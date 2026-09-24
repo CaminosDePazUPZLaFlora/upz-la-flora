@@ -21,8 +21,9 @@
 
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="/upz-la-flora/css/historia.css" />
+    <link rel="stylesheet" href="/upz-la-flora/css/visual-refresh.css?v=20260923" />
   </head>
-  <body>
+  <body class="timeline-page">
     {{ partial "site-nav.html" . }}
 
     <!-- Bootstrap JS -->
@@ -38,91 +39,36 @@
     </section>
     <div class="shimmer-bar"></div>
 
-    <!-- SECCIÓN: Guía de categorías -->
-    <section class="guia-categorias">
-      <h3>Guía de categorías</h3>
-      <div class="fila-categorias">
-        <div class="categoria-guia">
-          <div
-            class="categoria-circulo"
-            style="background-color: #39c0f0"
-          ></div>
-          <span>Festival del Agua</span>
-        </div>
-        <div class="categoria-guia">
-          <div
-            class="categoria-circulo"
-            style="background-color: #27ae60"
-          ></div>
-          <span>Acceso al Agua</span>
-        </div>
-        <div class="categoria-guia">
-          <div
-            class="categoria-circulo"
-            style="background-color: #f4c542"
-          ></div>
-          <span>Cervecería</span>
-        </div>
-        <div class="categoria-guia">
-          <div
-            class="categoria-circulo"
-            style="background-color: #444444"
-          ></div>
-          <span>Intervención Institucional</span>
-        </div>
-        <div class="categoria-guia">
-          <div
-            class="categoria-circulo"
-            style="background-color: #42f4e5"
-          ></div>
-          <span>Papel de la iglesia</span>
-        </div>
-        <div class="categoria-guia">
-          <div
-            class="categoria-circulo"
-            style="background-color: #9bf442"
-          ></div>
-          <span>Hitos históricos</span>
+    <main class="chronicle container">
+      <p class="chronicle-hint">Recorre la historia del territorio. Selecciona un año sobre la línea para explorar sus memorias.</p>
+      <nav class="chronicle-axis" aria-label="Años de la línea del tiempo">
+        <ol id="chronicle-years"></ol>
+      </nav>
+      <div class="chronicle-toolbar">
+        <label for="chronicle-year">Ir al año <select id="chronicle-year"></select></label>
+        <span id="chronicle-count" aria-live="polite"></span>
+        <div class="chronicle-controls">
+          <button id="chronicle-prev" type="button"><i data-lucide="arrow-left" aria-hidden="true"></i> Anterior</button>
+          <button id="chronicle-next" type="button">Siguiente <i data-lucide="arrow-right" aria-hidden="true"></i></button>
         </div>
       </div>
-    </section>
-
-    <!-- SECCIÓN: Línea de tiempo -->
-    <!-- SECCIÓN: Línea de tiempo interactiva con reproductor -->
-    <section class="linea-tiempo-musical">
-      <div class="contenedor-general">
-        <!-- Disco selector izquierdo -->
-        <div class="selector-anios">
-          <div class="decada" id="decada-anterior">&#x25C0;</div>
-          <div class="discos-anios" id="discos-anios"></div>
-          <div class="decada" id="decada-siguiente">&#x25B6;</div>
+      <article class="chronicle-event">
+        <figure><img id="chronicle-image" alt="" /><figcaption id="chronicle-source"></figcaption></figure>
+        <div class="chronicle-copy" aria-live="polite">
+          <p id="chronicle-category"></p>
+          <h2 id="chronicle-date"></h2>
+          <p id="chronicle-description"></p>
+          <p id="chronicle-reference"></p>
         </div>
-
-        <!-- Reproductor a la derecha -->
-        <div class="reproductor-musical fondo-naranja">
-          <img
-            id="imagen-reproductor"
-            src="/upz-la-flora/img_Historia/radio.png"
-            alt="Imagen asociada"
-            class="imagen-reproductor"
-          />
-          <p class="fuente-imagen" id="fuente-imagen"></p>
-          <h3 id="titulo-evento">Selecciona un año</h3>
-          <p id="descripcion-evento"></p>
-          <p class="fuente-descripcion" id="fuente-descripcion"></p>
-
-          <!-- Círculos inferiores de categorías -->
-          <div class="categorias" id="categorias"></div>
-        </div>
-      </div>
-    </section>
+      </article>
+    </main>
 
     <script>
       const data = {
         1957: [
           {
             categoria: "",
-            color: "#f4c542",
+            color: "#C5A75F",
             descripcion:
               "Construcción de la Cervecería\nColombo-Alemana sobre la cuenca del quebrada Yomasa - Vereda Bella Suiza por Ernesto Wersin y Weiget-Brau. (8)",
             imagen: "/upz-la-flora/img_Historia/Cervecera.jpg",
@@ -134,7 +80,7 @@
         1959: [
           {
             categoria: "",
-            color: "#f4c542",
+            color: "#C5A75F",
             descripcion:
               "Salen a la venta dos cervezas: La Alemana y Extra. (8)",
             imagen: "/upz-la-flora/img_Historia/Cervecera.jpg",
@@ -145,7 +91,7 @@
         1960: [
           {
             categoria: "",
-            color: "#27ae60",
+            color: "#527864",
             descripcion:
               "La comunida de Tiguaque recurre a nacederos, aljibes para tomar agua para el autoconsumo. En las quebradas se realizaba el lavado de la ropa. Esta práctica persiste con fuerza hasta los 90s. (20)",
             imagen: "/upz-la-flora/img_Historia/tiguaque.jpg",
@@ -156,7 +102,7 @@
         1964: [
           {
             categoria: "",
-            color: "#f4c542",
+            color: "#C5A75F",
             descripcion:
               "La Cervecería Bavaria Adquiere los predios de la Cervecería Colombo-Alemana. (11)",
             imagen: "/upz-la-flora/img_Historia/Cervecera.jpg",
@@ -167,7 +113,7 @@
         1969: [
           {
             categoria: "",
-            color: "#42f4e5",
+            color: "#B5CDBD",
             descripcion:
               "Los habitantes de Tiguaque participaban en la Iglesia más cercana",
             imagen: "/upz-la-flora/img_Historia/IglesiaJuanJoseRondon.jpg",
@@ -176,7 +122,7 @@
           },
           {
             categoria: "",
-            color: "#9bf442",
+            color: "#8FA995",
             descripcion:
               " fue una práctica cotidiana en barrios como Las Violetas, Juan José Rondón, Villa Diana y Arrayanes, donde muchas familias lavaban la ropa a mano directamente en el agua de la quebrada",
             imagen: "/upz-la-flora/img_Historia/BerrioLasVioletas.jpg",
@@ -187,7 +133,7 @@
         1973: [
           {
             categoria: "",
-            color: "#f4c542",
+            color: "#C5A75F",
             descripcion:
               "Bavaria produce cerveza de barril, Pony Malta y Costeñita. (8)",
             imagen: "/upz-la-flora/img_Historia/BarrilCerveza.jpg",
@@ -198,7 +144,7 @@
         1977: [
           {
             categoria: "",
-            color: "#9bf442",
+            color: "#8FA995",
             descripcion:
               "Se construye el colegio Las Violetas (posterior Gabriel García Márquez) por iniciativa comunitaria.",
             imagen: "/upz-la-flora/img_Historia/col-gabrielg.jpg",
@@ -209,7 +155,7 @@
         1979: [
           {
             categoria: "",
-            color: "#27ae60",
+            color: "#527864",
             descripcion:
               "Se construye el colegio Las Violetas (posterior Gabriel García Márquez) por iniciativa comunitaria.",
             imagen: "/upz-la-flora/img_Historia/Acueducto.jpeg",
@@ -218,7 +164,7 @@
           },
           {
             categoria: "",
-            color: "#9bf442",
+            color: "#8FA995",
             descripcion:
               "Primera reunión en Juan José Rondón para acordar el suministro de agua para los barrios altos",
             imagen: "/upz-la-flora/img_Historia/JuanJoseRondon.jpg",
@@ -229,7 +175,7 @@
         1980: [
           {
             categoria: "",
-            color: "#27ae60",
+            color: "#527864",
             descripcion:
               "Construcción del acueducto aéreo del barrio San Pedro alimentado por la qubrada San Pedrina y Raque.\n(Es el primer acueducto comunitario de los barrios altos de Usme; los siguientes fueron terrestres.  (1)",
             imagen: "/upz-la-flora/img_Historia/san-pedro.jpg",
@@ -240,7 +186,7 @@
         1988: [
           {
             categoria: "",
-            color: "#27ae60",
+            color: "#527864",
             descripcion:
               "Los habitantes de Tiguaque conformaron una Comisión Interbarrial integrada por lideres de Juntas de Acción Comunal, mientros de la iglesia católica y antiguos trabajadores de la planta, para gestionar ante el gerente de la Cervecería Colombo-Alemana el acceso al agua de la quebrada Yomasa. Se logró el suministro de 2 pulgadas permanentes. (11)",
             imagen: "/upz-la-flora/img_Historia/UPZFlora.jpg",
@@ -251,7 +197,7 @@
         1990: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "A comienzos de los 90s.\nCamino del agua. \nIniciativa comunitaria en \nJuan José Rondó.",
             imagen: "/upz-la-flora/img_Historia/CaminoAgua.png",
@@ -260,7 +206,7 @@
           },
           {
             categoria: "",
-            color: "#27ae60",
+            color: "#527864",
             descripcion:
               "Construcción de tres tanques por parte de la comunidad para almacenar el agua (2 en Juan José Rondón, 1 en Los Arrayanes y 1 en Villa Diana) para dar inicio al funcionamiento del Acueducto Comunitario. (11)",
             imagen: "/upz-la-flora/img_Historia/ContruccionTanq.jpeg",
@@ -269,7 +215,7 @@
           },
           {
             categoria: "",
-            color: "#f4c542",
+            color: "#C5A75F",
             descripcion:
               "Cierre de la Cervecería Colombo-Alemana: cesa sus actividades y cierra definitivamente sus instalaciones (8)",
             imagen: "/upz-la-flora/img_Historia/CerveceriaHoy.jpeg",
@@ -282,7 +228,7 @@
         1997: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "Fundación y realización del primer Festival del Agua por parte de Coopbaus, el CID de la Universidad Nacional y la EAAB en el paradero de Tiguaque. barrios San Pedro, Villa\nDiana, Tiguaque, Juan José Rondón I y II,\nVilla Rosita, Los Arayanes y Las Violetas. (1)",
             imagen: "/upz-la-flora/img_Historia/DiseñoAcueducto.jpeg",
@@ -294,7 +240,7 @@
           },
           {
             categoria: "",
-            color: "#27ae60",
+            color: "#527864",
             descripcion:
               "La Empresa de Acueducto y Alcantarillado de Bogotá a través de la oficina de gestión comunitaria firma un convenio con el Centro de Investigaciones para el Desarrollo (CID), de la Universidad Nacional de Colonmbia, con el propósito de realizar los primeros estudios para la construcción de un acueducto comunitario para siete barrios de la parte sur-oriental de la Localidad de Usme. (9)",
             imagen: "/upz-la-flora/img_Historia/Empresa_de_Acueducto.jpg",
@@ -305,7 +251,7 @@
         1998: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "Realización de la segunda edición del Festival del Agua por parte de Coopbaus en el paradero de Tiguaque. (20)",
             imagen: "/upz-la-flora/img_Historia/2FestivalAgua.webp",
@@ -316,7 +262,7 @@
         1999: [
           {
             categoria: "",
-            color: "#27ae60",
+            color: "#527864",
             descripcion:
               "Diseño de planos y maquetas de la Planta de Tratamiento de Agua Potable a cargo de la firma ACUATECNICA LIMITADA. (9)",
             imagen: "/upz-la-flora/img_Historia/Planos.jpeg",
@@ -330,7 +276,7 @@
         2000: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "Panorámica del barrio Villa Rosita en la V edición del festival del agua",
             imagen: "/upz-la-flora/img_Historia/barrioVilla.jpeg",
@@ -343,7 +289,7 @@
         2001: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "V Festival del Agua , Coronación Reina, tiene como obejetivo mantener la integración de los habitantes.  (Barrios altos de Usme, equipo organizador, Líderes, JAC, Hermana Helena Hernández, COOPBAUS).  (23)",
             imagen: "/upz-la-flora/img_Historia/CoronacionAgua.jpeg",
@@ -354,7 +300,7 @@
           },
           {
             categoria: "",
-            color: "#27ae60",
+            color: "#527864",
             descripcion:
               "Inicio de la construcción de la Planta de Tratamiento de Agua Potable Yomasa y tanque de almacenamiento a cargo de la firma ACUATECNICA LIMITADA (2001-2002). (9)",
             imagen: "/upz-la-flora/img_Historia/PlantaTratamiento.jpeg",
@@ -368,7 +314,7 @@
         2002: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "Inicio de la construcción del Parque del Agua en el barrio Juan José Rondón con mano de obra local con la financiación de las Hernanas Adoratrices y con el acompañamiento de la Hermana Ana. (1)",
             imagen: "/upz-la-flora/img_Historia/ParqueAgua.jpg",
@@ -379,7 +325,7 @@
         2003: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "El Parque del Agua se convierte en la sede para la realización anual del Festivales del Agua. Tihuaque.  (20)",
             imagen: "/upz-la-flora/img_Historia/ParqueAgua.jpg",
@@ -388,7 +334,7 @@
           },
           {
             categoria: "",
-            color: "#27ae60",
+            color: "#527864",
             descripcion:
               "Inauguración de la Planta de Tratamiento de Agua Potable (PTAP) Yomasa: En colaboración con la Empresa de Acueducto y Alcantarillado de Bogotá (EAAB) y la Cooperativa de Servicios Públicos COOPBAUS, se construyó una planta de tratamiento de agua en la parte alta del barrio Las Violetas. El acto de inauguración contó con la presencia del exalcalde Enrique Peñalosa.\n\nDisolución COOPBAUS.",
             imagen: "/upz-la-flora/img_Historia/TratamientoPlanta.jpg",
@@ -397,7 +343,7 @@
           },
           {
             categoria: "",
-            color: "#f4c542",
+            color: "#C5A75F",
             descripcion:
               'Bavaria liquida la sociedad "Cervecería Colombo-Alemana S.A.S.". (8)',
             imagen: "/upz-la-flora/img_Historia/Alemana.jpg",
@@ -408,7 +354,7 @@
         2004: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "Tras la disolución de COOPBAUS e Inauguración de la PTAP Yomasa, el Festival del Agua adquiere un nuevo enfoque volvado a la conservación ecológica y la memoria de la gestión del agua potable. (20)",
             imagen: "/upz-la-flora/img_Historia/black-background.png",
@@ -419,7 +365,7 @@
         2009: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "Festival del Agua \ndeclarado como \nPatrimonio Cultural por la alcaldía local del Usme y vinculado a la Red de festivales de Usme, condición que le otorga financiación anual.(Declarado por Instituto Distrital de Patrimonio Cultural (IDPC) y la Alcaldía Local de Usme) (1)",
             imagen: "/upz-la-flora/img_Historia/black-background.png",
@@ -430,7 +376,7 @@
         2012: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "Visita del exalcalde de Bogotá Gustavo Petro al Festival del Agua para promover el nuevo modelo de basuras y el cuidado del medio ambiente. (20)",
             imagen: "/upz-la-flora/img_Historia/black-background.png",
@@ -441,7 +387,7 @@
         2020: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "Suspensión del Festival del Agua y de los eventos masivos por parte de la Alcaldía Mayor de Bogotá por Pandemia por Covid 19. (20)",
             imagen: "/upz-la-flora/img_Historia/black-background.png",
@@ -452,7 +398,7 @@
         2022: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "Reapertura del Festival \ndel Agua con la vinculación de Organizaciones \nComunitarias. (7)",
             imagen: "/upz-la-flora/img_Historia/black-background.png",
@@ -461,7 +407,7 @@
           },
           {
             categoria: "",
-            color: "#f4c542",
+            color: "#C5A75F",
             descripcion:
               "EL Cuerpo Oficial de Bomberos toma en comodato los precios de la Cervecería Colombo-Alemana pertenecientes a la EAAB, para entrenamiento de personal. (12)",
             imagen: "/upz-la-flora/img_Historia/black-background.png",
@@ -472,7 +418,7 @@
         2024: [
           {
             categoria: "",
-            color: "#39c0f0",
+            color: "#7C9E8B",
             descripcion:
               "Festival del Agua pierde temporalmente su financiación por parte de la alcaldía local y es desarrollado de manera comunitaria y autogestioanda por organizaciones comunitarias e instituciones educativas de la zona. (20)",
             imagen: "/upz-la-flora/img_Historia/black-background.png",
@@ -481,87 +427,81 @@
           },
         ],
       };
-      let aniosDisponibles = Object.keys(data);
-      let aniosPorPagina = 5;
-      let paginaActual = 0;
-      let discosContenedor = document.getElementById("discos-anios");
-      let categoriasContenedor = document.getElementById("categorias");
-
-      function renderDiscos() {
-        discosContenedor.innerHTML = "";
-        let inicio = paginaActual * aniosPorPagina;
-        let fin = inicio + aniosPorPagina;
-        let aniosPagina = aniosDisponibles.slice(inicio, fin);
-
-        aniosPagina.forEach((anio, index) => {
-          let disco = document.createElement("div");
-          disco.className =
-            "disco-anio offset-" + (index % 2 === 0 ? "0" : "1");
-          disco.innerHTML = `<span>${anio}</span>`;
-          disco.onclick = () => mostrarEventos(anio);
-          discosContenedor.appendChild(disco);
+      const categoryNames = {
+        '#7C9E8B': 'Festival del Agua', '#527864': 'Acceso al agua',
+        '#C5A75F': 'Cervecería', '#667069': 'Intervención institucional',
+        '#B5CDBD': 'Papel de la iglesia', '#8FA995': 'Hitos históricos'
+      };
+      const events = Object.entries(data).flatMap(([year, entries]) =>
+        entries.map(event => ({ ...event, year })));
+      const yearSelect = document.getElementById('chronicle-year');
+      Object.keys(data).forEach(year => yearSelect.add(new Option(year, year)));
+      const yearButtons = new Map();
+      const yearRail = document.getElementById('chronicle-years');
+      Object.keys(data).forEach(year => {
+        const item = document.createElement('li');
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = year;
+        button.setAttribute('aria-label', year + ': ' + data[year].length + ' eventos');
+        button.addEventListener('click', () => showEvent(events.findIndex(event => event.year === year)));
+        item.append(button); yearRail.append(item); yearButtons.set(year, button);
+      });
+      let selectedEvent = 0;
+      function centerActiveYear(smooth = true) {
+        const activeYear = yearButtons.get(events[selectedEvent].year);
+        const rail = yearRail.parentElement;
+        const buttonBounds = activeYear.getBoundingClientRect();
+        const railBounds = rail.getBoundingClientRect();
+        // Measure against the scroll container, not the positioned list item.
+        const target = rail.scrollLeft + buttonBounds.left - railBounds.left
+          - rail.clientLeft + buttonBounds.width / 2 - rail.clientWidth / 2;
+        rail.scrollTo({
+          left: Math.max(0, Math.min(target, rail.scrollWidth - rail.clientWidth)),
+          behavior: smooth && !window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'smooth' : 'instant'
         });
       }
-
-      function mostrarEventos(anio) {
-        let eventos = data[anio];
-        if (!eventos || eventos.length === 0) return;
-
-        document.getElementById("titulo-evento").textContent = "";
-        document.getElementById("descripcion-evento").textContent = "";
-        document.getElementById("fuente-imagen").textContent = "";
-        document.getElementById("fuente-descripcion").textContent = "";
-        document.getElementById("imagen-reproductor").src = "";
-        categoriasContenedor.innerHTML = "";
-
-        eventos.forEach((ev) => {
-          let cat = document.createElement("div");
-          cat.className = "categoria-disco";
-          cat.style.backgroundColor = ev.color;
-          cat.innerHTML = `<small>${anio}</small><div class='ronda'></div><p>${ev.categoria}</p>`;
-          cat.onclick = () => mostrarDetalle(ev);
-          categoriasContenedor.appendChild(cat);
+      function showEvent(index) {
+        selectedEvent = Math.max(0, Math.min(events.length - 1, index));
+        const event = events[selectedEvent];
+        const category = event.categoria || categoryNames[event.color.toUpperCase()] || 'Memoria del territorio';
+        document.getElementById('chronicle-category').textContent = category;
+        document.getElementById('chronicle-date').textContent = event.year;
+        document.getElementById('chronicle-description').textContent = event.descripcion;
+        document.getElementById('chronicle-reference').textContent = event.fuenteDescripcion || '';
+        document.getElementById('chronicle-count').textContent = 'Evento ' + (selectedEvent + 1) + ' de ' + events.length;
+        yearSelect.value = event.year;
+        yearButtons.forEach((button, year) => {
+          if (year === event.year) button.setAttribute('aria-current', 'date');
+          else button.removeAttribute('aria-current');
         });
-
-        mostrarDetalle(eventos[0]);
+        centerActiveYear();
+        document.getElementById('chronicle-prev').disabled = selectedEvent === 0;
+        document.getElementById('chronicle-next').disabled = selectedEvent === events.length - 1;
+        const image = document.getElementById('chronicle-image');
+        const hasImage = event.imagen && !event.imagen.includes('black-background');
+        image.parentElement.hidden = !hasImage;
+        document.querySelector('.chronicle-event').classList.toggle('without-image', !hasImage);
+        if (hasImage) { image.src = event.imagen; image.alt = category + ', ' + event.year; }
+        const source = document.getElementById('chronicle-source');
+        source.replaceChildren();
+        if (event.fuenteImagen && event.nombreFuenteImagen) {
+          const link = document.createElement('a');
+          link.href = event.fuenteImagen; link.textContent = event.nombreFuenteImagen;
+          link.target = '_blank'; link.rel = 'noopener noreferrer'; source.append(link);
+        }
       }
-
-      function mostrarDetalle(ev) {
-        document.getElementById("titulo-evento").textContent = ev.categoria;
-        document.getElementById("descripcion-evento").textContent =
-          ev.descripcion;
-        const fuenteImagenElem = document.getElementById("fuente-imagen");
-        if (ev.fuenteImagen && ev.nombreFuenteImagen) {
-          fuenteImagenElem.innerHTML = `<a href="${ev.fuenteImagen}" target="_blank">${ev.nombreFuenteImagen}</a>`;
-        } else {
-          fuenteImagenElem.innerHTML = "";
-        }
-        document.getElementById("fuente-descripcion").textContent =
-          ev.fuenteDescripcion;
-        document.getElementById("imagen-reproductor").src = ev.imagen;
-      }
-
-      document.getElementById("decada-anterior").onclick = () => {
-        if (paginaActual > 0) {
-          paginaActual--;
-          renderDiscos();
-        }
-      };
-
-      document.getElementById("decada-siguiente").onclick = () => {
-        if ((paginaActual + 1) * aniosPorPagina < aniosDisponibles.length) {
-          paginaActual++;
-          renderDiscos();
-        }
-      };
-
-      renderDiscos();
+      yearSelect.addEventListener('change', () => showEvent(events.findIndex(event => event.year === yearSelect.value)));
+      document.getElementById('chronicle-prev').addEventListener('click', () => showEvent(selectedEvent - 1));
+      document.getElementById('chronicle-next').addEventListener('click', () => showEvent(selectedEvent + 1));
+      showEvent(0);
+      window.addEventListener('resize', () => centerActiveYear(false));
     </script>
 
     <!-- SECCIÓN: Aliados -->
     <section class="patrocinadores text-center">
       <div class="container py-5">
-        <p style="color: rgba(38,198,218,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">INSTITUCIONES &amp; ORGANIZACIONES</p>
+        <p style="color: rgba(199,115,96,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">INSTITUCIONES &amp; ORGANIZACIONES</p>
         <h3 class="mb-4">Aliados</h3>
         <div class="d-flex flex-wrap justify-content-center align-items-stretch gap-3 gap-md-4 mt-3">
           <a href="https://www.javeriana.edu.co/inicio" target="_blank" rel="noopener noreferrer" aria-label="Pontificia Universidad Javeriana">
@@ -638,5 +578,6 @@
         observer.observe(el);
       });
     </script>
+    {{ partial "site-allies-footer.html" . }}
   </body>
 </html>

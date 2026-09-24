@@ -1,21 +1,21 @@
 /* =============================================
    GLOBAL-NAV.CSS — Paleta "Territorio Vivo"
-   Verde #1B5E20 · Cian #26C6DA · Blanco #F5F5F5
+   Verde #527864 · Cian #C77360 · Blanco #EFE9DD
    Aplicado en TODOS los layouts del sitio
    ============================================= */
 
 :root {
-  --verde:        #1B5E20;
-  --verde-oscuro: #0D3B12;
-  --verde-medio:  #2E7D32;
-  --verde-claro:  #4CAF50;
-  --cian:         #26C6DA;
-  --cian-oscuro:  #0097A7;
-  --cian-claro:   #80DEEA;
-  --blanco:       #F5F5F5;
-  --blanco-puro:  #FFFFFF;
-  --gris-suave:   #E8F5E9;
-  --texto-oscuro: #0D3B12;
+  --verde:        #527864;
+  --verde-oscuro: #355C4B;
+  --verde-medio:  #6B8D78;
+  --verde-claro:  #8FA995;
+  --cian:         #C77360;
+  --cian-oscuro:  #A85B4C;
+  --cian-claro:   #D5E2D8;
+  --blanco:       #EFE9DD;
+  --blanco-puro:  #FAF7EF;
+  --gris-suave:   #E4ECE5;
+  --texto-oscuro: #355C4B;
   --transition:   all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --shadow-verde: 0 8px 32px rgba(27, 94, 32, 0.35);
   --shadow-cian:  0 8px 32px rgba(38, 198, 218, 0.35);
@@ -90,7 +90,7 @@ body {
   border-radius: 8px !important;
 }
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231B5E20' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23527864' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* Nav links */

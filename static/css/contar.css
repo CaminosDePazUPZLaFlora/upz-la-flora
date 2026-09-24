@@ -1,6 +1,6 @@
 /* =============================================
    CONTAR.CSS — Contar Mi Historia · UPZ La Flora
-   Paleta "Territorio Vivo": Verde #1B5E20 · Cian #26C6DA
+   Paleta "Territorio Vivo": Verde #527864 · Cian #C77360
    NOTA: variables y navbar cubiertos por global-nav.css
    ============================================= */
 
@@ -116,7 +116,7 @@ section.py-5.bg-light .form-label {
 .franja-amarilla {
   background:
     radial-gradient(ellipse at 30% 50%, rgba(38,198,218,0.12) 0%, transparent 55%),
-    linear-gradient(145deg, var(--cian-oscuro) 0%, var(--cian) 50%, #4DD0E1 100%);
+    linear-gradient(145deg, var(--cian-oscuro) 0%, var(--cian) 50%, #D5E2D8 100%);
   padding: clamp(2.5rem, 6vw, 4rem) 2rem;
 }
 
