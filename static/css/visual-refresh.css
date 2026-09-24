@@ -330,9 +330,10 @@ body:not(.home-page) main + br + .patrocinadores { display: none !important; }
 .chronicle-axis li { position: relative; flex: 1 0 92px; border-bottom: 2px solid var(--tk-blue); margin-bottom: 12px; }
 .chronicle-axis button { position: relative; display: block; width: 100%; min-height: 64px; padding: .8rem .9rem 1.4rem; border: 0; background: transparent; color: var(--tk-navy); font-weight: 600; }
 .chronicle-axis button::after { content: ''; position: absolute; width: 12px; height: 12px; left: calc(50% - 6px); bottom: -7px; border: 2px solid var(--tk-blue); border-radius: 50%; background: var(--tk-paper); }
-.chronicle-axis button[aria-current] { background: var(--tk-navy); color: var(--tk-cream); }
-.chronicle-axis button[aria-current]::after { background: var(--tk-navy); outline: 4px solid var(--tk-paper); }
-.chronicle-axis button:hover { background: var(--tk-cyan); color: var(--tk-ink); }
+.chronicle-axis button[aria-current] { background: var(--event-color); color: var(--event-contrast); }
+.chronicle-axis button[aria-current]:hover { background: color-mix(in srgb, var(--event-color) 88%, black); color: var(--event-contrast); }
+.chronicle-axis button[aria-current]::after { background: var(--event-color); border-color: var(--event-color); outline: 4px solid var(--tk-paper); }
+.chronicle-axis button:hover { background: color-mix(in srgb, var(--year-color) 28%, var(--tk-paper)); color: var(--tk-ink); }
 .chronicle-axis button:focus-visible { outline: 2px solid var(--tk-navy); outline-offset: -4px; }
 .chronicle-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; padding-bottom: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--tk-muted); }
 .chronicle-toolbar label { display: flex; align-items: center; gap: .8rem; font-weight: 600; }
@@ -351,6 +352,8 @@ body:not(.home-page) main + br + .patrocinadores { display: none !important; }
 #chronicle-source { margin-top: .75rem; font-size: .85rem; }
 #chronicle-source a { color: var(--tk-navy); }
 #chronicle-category { color: var(--tk-navy); font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+#chronicle-category { display: inline-flex; align-items: center; padding: .55rem .85rem; background: var(--event-color); color: var(--event-contrast); }
+.chronicle-copy { border-top: 4px solid var(--event-color); padding-top: 1.25rem; }
 #chronicle-date { color: var(--tk-navy); margin: 0 0 1.25rem; font-size: clamp(3.5rem,7vw,6rem); line-height: 1; }
 #chronicle-description { color: var(--tk-ink); font-size: 1.15rem; line-height: 1.8; white-space: pre-line; max-width: 75ch; }
 #chronicle-reference { color: var(--tk-muted); font-size: .85rem; }

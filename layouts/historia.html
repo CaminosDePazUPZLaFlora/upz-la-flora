@@ -21,7 +21,7 @@
 
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="/upz-la-flora/css/historia.css" />
-    <link rel="stylesheet" href="/upz-la-flora/css/visual-refresh.css?v=20260923" />
+    <link rel="stylesheet" href="/upz-la-flora/css/visual-refresh.css?v={{ readFile "static/css/visual-refresh.css" | md5 }}" />
   </head>
   <body class="timeline-page">
     {{ partial "site-nav.html" . }}
@@ -432,6 +432,12 @@
         '#C5A75F': 'Cervecería', '#667069': 'Intervención institucional',
         '#B5CDBD': 'Papel de la iglesia', '#8FA995': 'Hitos históricos'
       };
+      // Familias de la convención original con saturación armonizada.
+      const categoryColors = {
+        '#7C9E8B': '#79b8cc', '#527864': '#78aa87',
+        '#C5A75F': '#d6b65e', '#667069': '#444444',
+        '#B5CDBD': '#83c5bb', '#8FA995': '#b1c67d'
+      };
       const events = Object.entries(data).flatMap(([year, entries]) =>
         entries.map(event => ({ ...event, year })));
       const yearSelect = document.getElementById('chronicle-year');
@@ -443,6 +449,7 @@
         const button = document.createElement('button');
         button.type = 'button';
         button.textContent = year;
+        button.style.setProperty('--year-color', categoryColors[data[year][0].color.toUpperCase()]);
         button.setAttribute('aria-label', year + ': ' + data[year].length + ' eventos');
         button.addEventListener('click', () => showEvent(events.findIndex(event => event.year === year)));
         item.append(button); yearRail.append(item); yearButtons.set(year, button);
@@ -466,13 +473,20 @@
         const event = events[selectedEvent];
         const category = event.categoria || categoryNames[event.color.toUpperCase()] || 'Memoria del territorio';
         document.getElementById('chronicle-category').textContent = category;
+        const accent = categoryColors[event.color.toUpperCase()] || event.color;
+        const chronicle = document.querySelector('.chronicle');
+        chronicle.style.setProperty('--event-color', accent);
+        chronicle.style.setProperty('--event-contrast', accent.toLowerCase() === '#444444' ? '#ffffff' : '#202020');
         document.getElementById('chronicle-date').textContent = event.year;
         document.getElementById('chronicle-description').textContent = event.descripcion;
         document.getElementById('chronicle-reference').textContent = event.fuenteDescripcion || '';
         document.getElementById('chronicle-count').textContent = 'Evento ' + (selectedEvent + 1) + ' de ' + events.length;
         yearSelect.value = event.year;
         yearButtons.forEach((button, year) => {
-          if (year === event.year) button.setAttribute('aria-current', 'date');
+          if (year === event.year) {
+            button.setAttribute('aria-current', 'date');
+            button.style.setProperty('--year-color', accent);
+          }
           else button.removeAttribute('aria-current');
         });
         centerActiveYear();
