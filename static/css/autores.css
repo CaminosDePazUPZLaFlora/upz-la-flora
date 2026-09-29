@@ -8,6 +8,31 @@ body {
   background-color: var(--blanco);
 }
 
+/* ============ HERO BUTTON ============ */
+.btn-ruta-cta {
+  background: linear-gradient(135deg, var(--cian) 0%, var(--cian-oscuro) 100%) !important;
+  color: var(--blanco-puro) !important;
+  border-radius: 50px !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  padding: 12px 28px !important;
+  border: none !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  transition: var(--transition) !important;
+  box-shadow: 0 4px 16px rgba(38, 198, 218, 0.35) !important;
+  animation: ripple-cian 2.2s infinite;
+  display: inline-block;
+}
+
+.btn-ruta-cta:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: var(--shadow-cian) !important;
+  color: var(--blanco-puro) !important;
+  animation: none !important;
+}
+
 /* ============ CAROUSEL SECTION ============ */
 .murales-carousel {
   background: linear-gradient(180deg, var(--gris-suave) 0%, var(--blanco) 100%);
