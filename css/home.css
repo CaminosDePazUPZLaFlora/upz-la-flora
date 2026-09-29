@@ -717,6 +717,51 @@ body {
   width: 100%;
   height: auto;
 }
+/* ---------- BOTONES EXPLORA ---------- */
+.btn-explora {
+  background: var(--verde) !important;
+  color: var(--blanco-puro) !important;
+  border-radius: 50px !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  padding: 12px 28px !important;
+  border: 2px solid transparent !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  transition: var(--transition) !important;
+  box-shadow: 0 4px 16px rgba(27, 94, 32, 0.2) !important;
+}
+
+.btn-explora:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: var(--shadow-verde) !important;
+  background: var(--verde-oscuro) !important;
+  color: var(--blanco-puro) !important;
+}
+
+.btn-explora-alt {
+  background: linear-gradient(135deg, var(--cian) 0%, var(--cian-oscuro) 100%) !important;
+  color: var(--blanco-puro) !important;
+  border-radius: 50px !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  padding: 12px 28px !important;
+  border: none !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  transition: var(--transition) !important;
+  box-shadow: 0 4px 16px rgba(38, 198, 218, 0.35) !important;
+  animation: ripple-cian 2.2s infinite;
+}
+
+.btn-explora-alt:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: var(--shadow-cian) !important;
+  color: var(--blanco-puro) !important;
+  animation: none !important;
+}
 
 /* ---------- MOBILE EXTRAS ---------- */
 @media (max-width: 768px) {
