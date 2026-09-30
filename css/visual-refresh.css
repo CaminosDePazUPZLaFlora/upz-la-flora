@@ -90,14 +90,14 @@ a { transition: color .2s ease, background .2s ease, transform .2s ease; }
   padding-top: clamp(7rem,12vw,9rem);
   color: var(--tk-cream);
   background: var(--tk-navy);
-  border-bottom: 7px solid var(--tk-coral);
+  border-bottom: 0;
 }
 .page-hero::before, .motiv-hero::before { width: min(34vw,340px); height: auto; aspect-ratio: 1; top: 18%; right: 8%; border: 0; background: var(--tk-cyan); opacity: .13; }
 .page-hero::after, .motiv-hero::after { display: none; }
 .page-hero h1, .page-hero h2, .motiv-hero h1, .motiv-hero h2 { color: var(--tk-cream); font-family: "Source Serif 4",Georgia,serif; font-weight: 700; letter-spacing: -.03em; }
 .page-hero h1::after, .page-hero h2::after, .motiv-hero h1::after, .motiv-hero h2::after { width: 52px; height: 2px; background: var(--tk-coral); border-radius: 0; }
 .page-hero-badge, .motiv-hero-badge { color: var(--tk-cyan); background: transparent; border: 0; border-radius: 0; padding: 0; letter-spacing: .15em; }
-.shimmer-bar, .motiv-shimmer { height: 4px; background: var(--tk-coral); animation: none; }
+.shimmer-bar, .motiv-shimmer { display: none; }
 
 /* Superficies, tarjetas y controles */
 .card, .motiv-card, .motiv-hero-card, .motiv-credentials {

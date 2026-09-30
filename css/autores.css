@@ -10,27 +10,36 @@ body {
 
 /* ============ HERO BUTTON ============ */
 .btn-ruta-cta {
-  background: linear-gradient(135deg, var(--cian) 0%, var(--cian-oscuro) 100%) !important;
-  color: var(--blanco-puro) !important;
-  border-radius: 50px !important;
-  font-size: 0.95rem !important;
+  align-items: center;
+  background: var(--tk-cream) !important;
+  color: var(--tk-navy) !important;
+  border-radius: 2px !important;
+  font-size: 0.82rem !important;
   font-weight: 700 !important;
-  padding: 12px 28px !important;
-  border: none !important;
+  gap: 0.55rem;
+  padding: 0.8rem 1rem !important;
+  border: 1px solid var(--tk-cream) !important;
   text-decoration: none !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   transition: var(--transition) !important;
-  box-shadow: 0 4px 16px rgba(38, 198, 218, 0.35) !important;
-  animation: ripple-cian 2.2s infinite;
-  display: inline-block;
+  box-shadow: none !important;
+  animation: none !important;
+  display: inline-flex;
 }
 
 .btn-ruta-cta:hover {
-  transform: translateY(-3px) scale(1.05) !important;
-  box-shadow: var(--shadow-cian) !important;
-  color: var(--blanco-puro) !important;
+  background: var(--tk-cyan) !important;
+  border-color: var(--tk-cyan) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+  color: var(--tk-navy) !important;
   animation: none !important;
+}
+
+.btn-ruta-cta svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* ============ CAROUSEL SECTION ============ */
