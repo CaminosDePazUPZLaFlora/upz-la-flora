@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="/upz-la-flora/css/global-nav.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/upz-la-flora/css/autores.css?v=3.0" />
+    <link rel="stylesheet" href="/upz-la-flora/css/visual-refresh.css?v=20260923" />
   </head>
-  <body>
+  <body class="gallery-page">
     {{ partial "site-nav.html" . }}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -28,41 +29,34 @@
     </section>
     <div class="shimmer-bar"></div>
 
-    <!-- MAIN CONTENT -->
-    <main>
-      <section class="murales-carousel py-5">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="carousel-container">
-                <button class="carousel-arrow carousel-arrow-left" id="prevBtn" onclick="changeSlide(-1)">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div class="carousel-image-container">
-                  <div class="carousel-main-image">
-                    <img id="currentImage" src="/upz-la-flora/img_MaterialAudiovisual/imagen1.jpg" alt="Material Audiovisual" class="img-fluid" />
-                  </div>
-                  <div class="text-center mt-3">
-                    <p id="imageCaption" class="fw-bold" style="color: var(--verde);"></p>
-                  </div>
-                  <br />
-                  <div class="carousel-indicators" id="indicators"></div>
-                </div>
-                <button class="carousel-arrow carousel-arrow-right" id="nextBtn" onclick="changeSlide(1)">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
+    <main class="archive-gallery-section">
+      <div class="container">
+        <div class="archive-gallery-heading">
+          <p>Archivo fotográfico</p>
+          <h2>Imágenes que guardan la historia del territorio</h2>
+          <span>Selecciona una fotografía para verla completa y leer su descripción.</span>
         </div>
-      </section>
+        <div class="archive-gallery" id="galleryGrid"></div>
+      </div>
     </main>
+
+    <dialog class="gallery-dialog" id="galleryDialog" aria-labelledby="galleryDialogTitle">
+      <button class="gallery-dialog-close" id="galleryDialogClose" type="button" aria-label="Cerrar"><i data-lucide="x" aria-hidden="true"></i></button>
+      <div class="gallery-dialog-layout">
+        <img id="galleryDialogImage" src="" alt="" />
+        <div class="gallery-dialog-copy">
+          <p>Archivo de memoria</p>
+          <h2 id="galleryDialogTitle"></h2>
+          <span id="galleryDialogCount"></span>
+        </div>
+      </div>
+    </dialog>
 
     <br />
     <!-- SECCIÓN: Aliados -->
     <section class="patrocinadores text-center">
       <div class="container py-5">
-        <p style="color: rgba(38,198,218,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">INSTITUCIONES &amp; ORGANIZACIONES</p>
+        <p style="color: rgba(199,115,96,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">INSTITUCIONES &amp; ORGANIZACIONES</p>
         <h3 class="mb-4">Aliados</h3>
         <div class="d-flex flex-wrap justify-content-center align-items-stretch gap-3 gap-md-4 mt-3">
           <a href="https://www.javeriana.edu.co/inicio" target="_blank" rel="noopener noreferrer"><div class="logo-card"><img src="/upz-la-flora/img_Home/logo-javeriana.png" alt="Javeriana" height="55" loading="lazy" /></div></a>
@@ -138,81 +132,45 @@
         { id: 42, image: "/upz-la-flora/img_MaterialAudiovisual/imagen42.png", caption: "Viacrucis del Viernes Santo - Segunda imagen" }
       ];
 
-      let currentSlide = 0;
+      const galleryGrid = document.getElementById('galleryGrid');
+      const galleryDialog = document.getElementById('galleryDialog');
+      const galleryDialogImage = document.getElementById('galleryDialogImage');
+      const galleryDialogTitle = document.getElementById('galleryDialogTitle');
+      const galleryDialogCount = document.getElementById('galleryDialogCount');
 
-      function initCarousel() { updateSlide(); createIndicators(); updateNavigationButtons(); }
-
-      function updateSlide() {
-        const item = muralsData[currentSlide];
-        const imgElement = document.getElementById("currentImage");
-        imgElement.src = item.image;
-        imgElement.alt = item.caption;
-        document.getElementById("imageCaption").textContent = item.caption;
-        updateURL(); updateIndicators(); updateNavigationButtons();
-      }
-
-      function createIndicators() {
-        const indicatorsContainer = document.getElementById("indicators");
-        indicatorsContainer.innerHTML = "";
-        muralsData.forEach((_, index) => {
-          const indicator = document.createElement("button");
-          indicator.className = "indicator";
-          indicator.onclick = () => goToSlide(index);
-          indicatorsContainer.appendChild(indicator);
-        });
-      }
-
-      function updateIndicators() {
-        document.querySelectorAll(".indicator").forEach((indicator, index) => {
-          indicator.classList.toggle("active", index === currentSlide);
-        });
-      }
-
-      function updateNavigationButtons() {
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-        prevBtn.style.visibility = currentSlide === 0 ? "hidden" : "visible";
-        prevBtn.disabled = currentSlide === 0;
-        nextBtn.style.visibility = currentSlide === muralsData.length - 1 ? "hidden" : "visible";
-        nextBtn.disabled = currentSlide === muralsData.length - 1;
-      }
-
-      function changeSlide(direction) {
-        const newSlide = currentSlide + direction;
-        if (newSlide >= 0 && newSlide < muralsData.length) { currentSlide = newSlide; updateSlide(); }
-      }
-
-      function goToSlide(slideIndex) {
-        if (slideIndex >= 0 && slideIndex < muralsData.length) { currentSlide = slideIndex; updateSlide(); }
-      }
-
-      function updateURL() {
+      function openGalleryItem(index) {
+        const item = muralsData[index];
+        galleryDialogImage.src = item.image;
+        galleryDialogImage.alt = item.caption;
+        galleryDialogTitle.textContent = item.caption;
+        galleryDialogCount.textContent = `Fotografía ${index + 1} de ${muralsData.length}`;
         const url = new URL(window.location);
-        url.searchParams.set("imagen", currentSlide + 1);
-        window.history.replaceState({}, "", url);
-        document.title = `UPZ La Flora - ${muralsData[currentSlide].caption}`;
+        url.searchParams.set('imagen', index + 1);
+        window.history.replaceState({}, '', url);
+        galleryDialog.showModal();
       }
 
-      document.addEventListener("DOMContentLoaded", function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const imagenParam = urlParams.get("imagen");
-        if (imagenParam) {
-          const slideIndex = parseInt(imagenParam) - 1;
-          if (slideIndex >= 0 && slideIndex < muralsData.length) currentSlide = slideIndex;
-        }
-        initCarousel();
+      function renderGallery() {
+        muralsData.forEach((item, index) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'archive-gallery-item';
+          button.setAttribute('aria-label', `Ver fotografía: ${item.caption}`);
+          button.innerHTML = `<img src="${item.image}" alt="${item.caption}" loading="lazy"><span><small>${String(index + 1).padStart(2, '0')}</small>${item.caption}</span>`;
+          button.addEventListener('click', () => openGalleryItem(index));
+          galleryGrid.appendChild(button);
+        });
+      }
+
+      document.getElementById('galleryDialogClose').addEventListener('click', () => galleryDialog.close());
+      galleryDialog.addEventListener('click', event => {
+        if (event.target === galleryDialog) galleryDialog.close();
       });
 
-      document.addEventListener("keydown", e => { if (e.key === "ArrowLeft") changeSlide(-1); else if (e.key === "ArrowRight") changeSlide(1); });
-      let touchStartX = 0;
-      document.addEventListener("touchstart", e => { touchStartX = e.changedTouches[0].screenX; });
-      document.addEventListener("touchend", e => { const diff = touchStartX - e.changedTouches[0].screenX; if (Math.abs(diff) > 50) changeSlide(diff > 0 ? 1 : -1); });
-
-      // Scroll animations
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.logo-card').forEach(function(el) { el.classList.add('fade-in-up'); obs.observe(el); });
+      renderGallery();
+      const imageParam = Number(new URLSearchParams(window.location.search).get('imagen'));
+      if (imageParam >= 1 && imageParam <= muralsData.length) openGalleryItem(imageParam - 1);
     </script>
+    {{ partial "site-allies-footer.html" . }}
   </body>
 </html>

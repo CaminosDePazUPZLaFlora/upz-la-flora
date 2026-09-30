@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="/upz-la-flora/css/global-nav.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/upz-la-flora/css/mapa.css" />
+    <link rel="stylesheet" href="/upz-la-flora/css/visual-refresh.css?v=20260923" />
   </head>
-  <body>
+  <body class="map-page">
     {{ partial "site-nav.html" . }}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -33,7 +34,7 @@
       <div class="container">
         <h2 class="mb-3 fw-bold" style="color:var(--verde);">Mapa Interactivo de Usme</h2>
         <p class="mb-4" style="color:#5a7a5a;">Haz clic sobre los puntos para conocer más sobre cada mural y su autor.</p>
-        <div class="mapa-responsive rounded border shadow" style="border-color: rgba(38,198,218,0.3) !important; border-radius: 18px !important; overflow: hidden; box-shadow: 0 12px 40px rgba(27,94,32,0.15) !important;">
+        <div class="mapa-responsive rounded border shadow" style="border-color: rgba(199,115,96,0.3) !important; border-radius: 18px !important; overflow: hidden; box-shadow: 0 12px 40px rgba(82,120,100,0.15) !important;">
           <iframe
             src="https://www.google.com/maps/d/u/0/embed?mid=1NiPhwWWYg4oflgoOaDXMuFx_laXAw2Y&ehbc=2E312F"
             width="100%"
@@ -49,7 +50,7 @@
     <!-- SECCIÓN: Aliados -->
     <section class="patrocinadores text-center">
       <div class="container py-5">
-        <p style="color: rgba(38,198,218,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">INSTITUCIONES &amp; ORGANIZACIONES</p>
+        <p style="color: rgba(199,115,96,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">INSTITUCIONES &amp; ORGANIZACIONES</p>
         <h3 class="mb-4">Aliados</h3>
         <div class="d-flex flex-wrap justify-content-center align-items-stretch gap-3 gap-md-4 mt-3">
           <a href="https://www.javeriana.edu.co/inicio" target="_blank" rel="noopener noreferrer"><div class="logo-card"><img src="/upz-la-flora/img_Home/logo-javeriana.png" alt="Javeriana" height="55" loading="lazy" /></div></a>
@@ -97,5 +98,6 @@
         obs.observe(el);
       });
     </script>
+    {{ partial "site-allies-footer.html" . }}
   </body>
 </html>

@@ -18,9 +18,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/upz-la-flora/css/global-nav.css" />
     <link rel="stylesheet" href="/upz-la-flora/css/autores.css?v=20260923" />
+    <link rel="stylesheet" href="/upz-la-flora/css/visual-refresh.css?v=20260923" />
 </head>
 
-<body>
+<body class="route-page">
     {{ partial "site-nav.html" . }}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -41,62 +42,36 @@
     <!-- MAIN CONTENT -->
     <main>
         <!-- SECCIÓN: Carousel de Murales -->
-        <section class="murales-carousel py-5">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <!-- Carousel Container -->
-                        <div class="carousel-container">
-                            <!-- Navigation arrow left -->
-                            <button class="carousel-arrow carousel-arrow-left" id="prevBtn" onclick="changeSlide(-1)">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-
-                            <!-- Main image and indicators container -->
-                            <div class="carousel-image-container">
-                                <div class="carousel-main-image" id="currentImageContainer"></div>
-                                <br />
-                                <div class="carousel-indicators" id="indicators"></div>
-                            </div>
-
-                            <!-- Navigation arrow right -->
-                            <button class="carousel-arrow carousel-arrow-right" id="nextBtn" onclick="changeSlide(1)">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <!-- Description and Audio Section -->
-                        <div class="mural-info">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <h4 id="muralTitle" class="fw-bold mb-3">Luchas por el Agua</h4>
-                                    <p id="muralDescription"></p>
-                                    <div class="author-info"><strong>Autoría:</strong> <span id="authorName"></span></div>
-                                    <div id="authorImageContainer" class="mt-3 mb-3" style="max-width: 280px; width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 4px; background: #fff; border-radius: 8px;"></div>
-                                    <div class="location-info"><strong>Ubicación:</strong> <span id="locationInfo"></span></div>
-                                    <a class="btn btn-outline-secondary btn-sm mt-3" href="#mapa-ruta">Ver ubicación en el mapa</a>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <div class="audio-player" id="audioPlayer">
-                                        <h6 class="mb-3">Descripción de Audio</h6>
-                                        <audio id="muralAudio" controls class="w-100">
-                                            Tu navegador no soporta el elemento de audio.
-                                        </audio>
-                                    </div>
-                                    <p id="audioPending" class="alert alert-light border mt-3 d-none">Audio próximamente.</p>
-                                </div>
-                            </div>
-                        </div>
+        <section class="route-explorer">
+            <div class="container route-layout">
+                <div class="route-visual">
+                    <p class="route-label">Archivo mural · piezas 07–11</p>
+                    <div class="route-image-row">
+                        <button class="carousel-arrow" id="prevBtn" onclick="changeSlide(-1)" aria-label="Mural anterior"><i data-lucide="arrow-left" aria-hidden="true"></i></button>
+                        <div class="carousel-main-image" id="currentImageContainer"></div>
+                        <button class="carousel-arrow" id="nextBtn" onclick="changeSlide(1)" aria-label="Mural siguiente"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
                     </div>
+                    <div class="carousel-indicators" id="indicators" aria-label="Seleccionar mural"></div>
                 </div>
+
+                <article class="mural-info route-details">
+                    <p class="route-label">Historia del mural</p>
+                    <h2 id="muralTitle">Luchas por el Agua</h2>
+                    <p id="muralDescription" class="route-description"></p>
+                    <dl class="route-metadata">
+                        <div><dt>Autoría</dt><dd id="authorName"></dd></div>
+                        <div><dt>Ubicación</dt><dd id="locationInfo"></dd></div>
+                    </dl>
+                    <div id="authorImageContainer" class="route-author-image"></div>
+                    <div class="route-audio" id="audioPlayer">
+                        <span><i data-lucide="headphones" aria-hidden="true"></i> Relato sonoro</span>
+                        <audio id="muralAudio" controls>
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                    <p id="audioPending" class="route-pending d-none">Audio próximamente.</p>
+                    <a class="route-map-link" href="#mapa-ruta"><i data-lucide="map-pin" aria-hidden="true"></i> Ver ubicación en el mapa</a>
+                </article>
             </div>
         </section>
 
@@ -109,7 +84,7 @@
                     autoría.</p>
                 <p class="small mb-4" style="color:#5a7a5a;">Ubicaciones provisionales, pendientes de confirmación por Jaroth.</p>
                 <div class="mapa-responsive rounded border shadow"
-                    style="border-color: rgba(38,198,218,0.3) !important; border-radius: 18px !important; overflow: hidden; box-shadow: 0 12px 40px rgba(27,94,32,0.15) !important; position: relative; padding-top: 56.25%;">
+                    style="border-color: rgba(199,115,96,0.3) !important; border-radius: 18px !important; overflow: hidden; box-shadow: 0 12px 40px rgba(82,120,100,0.15) !important; position: relative; padding-top: 56.25%;">
                     <iframe
                         src="https://www.google.com/maps/d/u/0/embed?mid=1NiPhwWWYg4oflgoOaDXMuFx_laXAw2Y&ehbc=2E312F"
                         width="100%" height="520"
@@ -125,7 +100,7 @@
     <section class="patrocinadores text-center">
         <div class="container py-5">
             <p
-                style="color: rgba(38,198,218,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">
+                style="color: rgba(199,115,96,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">
                 INSTITUCIONES &amp; ORGANIZACIONES</p>
             <h3 class="mb-4">Aliados</h3>
             <div class="d-flex flex-wrap justify-content-center align-items-stretch gap-3 gap-md-4 mt-3">
@@ -277,7 +252,7 @@
                 const authorImg = document.createElement("img");
                 authorImg.src = mural.authorImage;
                 authorImg.alt = "Imagen de autores - " + mural.title;
-                authorImg.className = "img-fluid rounded";
+                authorImg.className = "route-author-photo";
                 authorImg.style.maxWidth = "100%";
                 authorImageContainer.appendChild(authorImg);
             }
@@ -388,6 +363,7 @@
             obs.observe(el);
         });
     </script>
+    {{ partial "site-allies-footer.html" . }}
 </body>
 
 </html>

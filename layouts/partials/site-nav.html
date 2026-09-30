@@ -1,34 +1,48 @@
-<header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold mb-0" href="/upz-la-flora/">Caminos para la Paz y la Memoria Tywa Khe</a>
+<header class="navbar navbar-expand-lg encabezado fixed-top">
+  <div class="container-fluid nav-shell">
+    <a class="navbar-brand" href="/upz-la-flora/" aria-label="Caminos para la Paz y la Memoria Tywa Khe, página principal">
+      <span class="brand-text">
+        <strong>Caminos para la Paz y la Memoria</strong>
+        <small>Tywa Khe</small>
+      </span>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
       aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
-      <span class="navbar-toggler-icon"></span>
+      <i data-lucide="menu" aria-hidden="true"></i>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="menu-principal">
-      <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+      <ul class="navbar-nav align-items-lg-center">
         <li class="nav-item">
-          <a class="btn btn-contar-historia me-2 fw-bold" href="/upz-la-flora/contar/">CONTAR MI HISTORIA</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold" href="/upz-la-flora/autores/">Ruta de Memoria</a>
+          <a class="nav-link" href="/upz-la-flora/autores/">Ruta de Memoria</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fw-bold" href="#" id="menu-historia"
+          <a class="nav-link dropdown-toggle" href="#" id="menu-historia"
             data-bs-toggle="dropdown" aria-expanded="false">Historias de barrio</a>
           <ul class="dropdown-menu menu-desplegable" aria-labelledby="menu-historia">
-            <li><a class="dropdown-item fw-bold" href="/upz-la-flora/historia/">Línea del tiempo</a></li>
-            <li><a class="dropdown-item fw-bold" href="/upz-la-flora/entrevistas/">Entrevistas</a></li>
-            <li><a class="dropdown-item fw-bold" href="/upz-la-flora/material-audiovisual/">Material audiovisual</a></li>
+            <li><a class="dropdown-item" href="/upz-la-flora/historia/"><i data-lucide="milestone" aria-hidden="true"></i>Línea del tiempo</a></li>
+            <li><a class="dropdown-item" href="/upz-la-flora/entrevistas/"><i data-lucide="audio-lines" aria-hidden="true"></i>Entrevistas</a></li>
+            <li><a class="dropdown-item" href="/upz-la-flora/material-audiovisual/"><i data-lucide="images" aria-hidden="true"></i>Material audiovisual</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold" href="/upz-la-flora/nosotros/">Acerca del proyecto</a>
+          <a class="nav-link" href="/upz-la-flora/nosotros/">Acerca del proyecto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold nav-motiv-arche" href="/upz-la-flora/app-motiv-arche/">Motiv&#8209;ARCHE</a>
+          <a class="nav-link nav-motiv-arche" href="/upz-la-flora/app-motiv-arche/"><i data-lucide="scan-line" aria-hidden="true"></i>Motiv&#8209;ARCHE</a>
+        </li>
+        <li class="nav-item nav-cta-item">
+          <a class="btn btn-contar-historia" href="/upz-la-flora/contar/"><i data-lucide="message-square-text" aria-hidden="true"></i>Cuenta tu historia</a>
         </li>
       </ul>
     </div>
   </div>
 </header>
+
+<script defer src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    if (window.lucide) {
+      window.lucide.createIcons({ attrs: { 'stroke-width': 1.8 } });
+    }
+  });
+</script>

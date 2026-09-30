@@ -20,8 +20,9 @@
 
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="/upz-la-flora/css/estilos.css" />
+    <link rel="stylesheet" href="/upz-la-flora/css/visual-refresh.css?v=20260923" />
   </head>
-  <body>
+  <body class="about-page">
     {{ partial "site-nav.html" . }}
 
     <!-- Bootstrap JS -->
@@ -52,8 +53,8 @@
 
     <!-- SECCIÓN: Caminos de paz Tywa Khe -->
     <section id="caminos-paz" class="caminos-paz-memoria py-5">
-      <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
-        <div class="col-lg-7">
+      <div class="container about-story-grid">
+        <div>
           <p>
             Caminos para la Paz y la Memoria Tywa Khe —muros que tejen historias— busca
             plasmar esas memorias en murales comunitarios, integrando
@@ -62,11 +63,11 @@
             espacio público como escenario de memoria y paz.
           </p>
         </div>
-        <div class="col-lg-4 text-center">
+        <div class="about-story-art">
           <img
-            src="/upz-la-flora/img_Nosotros/mural-paz.jpg"
-            alt="Mural Caminos para la paz"
-            class="img-fluid rounded sombra-img"
+            src="/upz-la-flora/img_Home/collage-central.png"
+            alt="Collage de vida cotidiana y memoria del territorio"
+            class="img-fluid"
             loading="lazy"
           />
         </div>
@@ -75,23 +76,25 @@
 
     <!-- SECCIÓN: Autorías -->
     <section class="participantes py-5">
-      <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
+      <div class="container about-authors-layout">
         <img
           src="/upz-la-flora/img_Nosotros/foto-participantes.png"
           alt="Personas participantes del proyecto"
-          class="img-fluid col-lg-5 sombra-img"
+          class="img-fluid about-authors-photo"
           loading="lazy"
         />
 
-        <div class="col-lg-6 text-center text-lg-start">
+        <div>
           <h3 class="titulo-seccion mb-3">
             Autorías
           </h3>
-          <div class="row text-center participantes-lista mt-4">
-            <div class="col-6 col-md-4">👤 Lina Marcela<br />Giraldo Mejía</div>
-            <div class="col-6 col-md-4">👤 Juan Diego<br />Palacios</div>
-            <div class="col-6 col-md-4">👤 Alfonso Reyes<br />Rodríguez</div>
-            <div class="col-6 col-md-4">👤 Jorge Eduardo<br />Ureña López</div>
+          <div class="about-authors-grid participantes-lista mt-4">
+            <div><span class="author-icon"><i data-lucide="user-round" aria-hidden="true"></i></span><span>Lina Marcela<br />Giraldo Mejía</span></div>
+            <div><span class="author-icon"><i data-lucide="user-round" aria-hidden="true"></i></span><span>Juan Diego<br />Palacios</span></div>
+            <div><span class="author-icon"><i data-lucide="user-round" aria-hidden="true"></i></span><span>Alfonso Reyes<br />Rodríguez</span></div>
+            <div><span class="author-icon"><i data-lucide="user-round" aria-hidden="true"></i></span><span>Jorge Eduardo<br />Ureña López</span></div>
+            <div><span class="author-icon"><i data-lucide="user-round" aria-hidden="true"></i></span><span>Samuel<br />Pico</span></div>
+            <div><span class="author-icon"><i data-lucide="user-round" aria-hidden="true"></i></span><span>Juan David<br />Ortiz</span></div>
           </div>
         </div>
       </div>
@@ -100,7 +103,7 @@
     <!-- SECCIÓN: Aliados -->
     <section class="patrocinadores text-center">
       <div class="container py-5">
-        <p style="color: rgba(38,198,218,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">INSTITUCIONES &amp; ORGANIZACIONES</p>
+        <p style="color: rgba(199,115,96,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">INSTITUCIONES &amp; ORGANIZACIONES</p>
         <h3 class="mb-4">Aliados</h3>
         <div class="d-flex flex-wrap justify-content-center align-items-stretch gap-3 gap-md-4 mt-3">
           <a href="https://www.javeriana.edu.co/inicio" target="_blank" rel="noopener noreferrer">
@@ -159,5 +162,6 @@
         observer.observe(el);
       });
     </script>
+    {{ partial "site-allies-footer.html" . }}
   </body>
 </html>
