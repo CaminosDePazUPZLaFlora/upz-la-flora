@@ -1,0 +1,30 @@
+media:
+  input: static/img_MaterialAudiovisual
+  output: /img_MaterialAudiovisual
+  extensions: [jpg, jpeg, png, webp]
+  rename: safe
+
+content:
+  - name: galeria
+    label: Galería fotográfica
+    description: Agrega, edita, reordena o elimina fotografías del archivo audiovisual de La Flora.
+    type: file
+    path: data/galeria.json
+    format: json
+    fields:
+      - name: items
+        label: Fotografías
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{index}. {fields.caption}"
+        fields:
+          - name: image
+            label: Imagen
+            type: image
+            required: true
+          - name: caption
+            label: Descripción
+            type: string
+            required: true
