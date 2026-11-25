@@ -1,0 +1,122 @@
+/* =============================================
+   ESTILOS.CSS — Nosotros · UPZ La Flora
+   Paleta "Territorio Vivo": Verde #527864 · Cian #C77360
+   NOTA: variables y navbar cubiertos por global-nav.css
+   ============================================= */
+
+body {
+  background-color: var(--blanco);
+}
+
+/* =========== SECCIÓN ACERCA DE NOSOTROS =========== */
+.acerca-de-nosotros {
+  background: var(--blanco-puro);
+  color: var(--texto-oscuro);
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.acerca-de-nosotros::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -80px;
+  width: clamp(200px, 35vw, 380px);
+  height: clamp(200px, 35vw, 380px);
+  border-radius: 50%;
+  border: 50px solid rgba(38,198,218,0.05); /* Lighter cian border for light bg */
+  pointer-events: none;
+}
+
+.acerca-de-nosotros .titulo-seccion {
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 900;
+  color: var(--verde);
+  margin-bottom: 1.5rem;
+}
+
+.acerca-de-nosotros .titulo-seccion::after {
+  content: '';
+  display: block;
+  width: 60px; height: 4px;
+  background: linear-gradient(90deg, var(--cian), var(--cian-claro));
+  border-radius: 99px;
+  margin-top: 0.75rem;
+}
+
+.acerca-de-nosotros p {
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  line-height: 1.85;
+  opacity: 0.9;
+}
+
+/* =========== CAMINOS DE PAZ TYWA KHE =========== */
+.caminos-paz-memoria {
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(38,198,218,0.12) 0%, transparent 60%),
+    linear-gradient(145deg, var(--verde) 0%, var(--verde-oscuro) 100%);
+  color: var(--blanco-puro);
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  position: relative;
+}
+
+.caminos-paz-memoria::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--verde), var(--cian), var(--verde-claro), var(--cian));
+  background-size: 200% auto;
+  animation: shimmer-line 4s linear infinite;
+}
+
+.caminos-paz-memoria p {
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  line-height: 1.85;
+  opacity: 0.92;
+  color: var(--blanco-puro);
+}
+
+.sombra-img {
+  border-radius: 20px;
+  box-shadow: 0 20px 56px rgba(0,0,0,0.3), 0 0 0 4px rgba(38,198,218,0.2);
+  transition: var(--transition);
+}
+
+.sombra-img:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 28px 72px rgba(0,0,0,0.35), 0 0 0 6px rgba(38,198,218,0.3);
+}
+
+/* =========== AUTORÍAS =========== */
+.participantes {
+  background:
+    radial-gradient(ellipse at 5% 20%, rgba(38,198,218,0.08) 0%, transparent 55%),
+    linear-gradient(145deg, var(--verde-oscuro) 0%, var(--verde) 100%);
+  color: var(--blanco-puro);
+  padding: clamp(3rem, 7vw, 5rem) 0;
+}
+
+.participantes .titulo-seccion {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  color: var(--cian-claro);
+}
+
+.participantes-lista > div {
+  font-size: clamp(0.82rem, 1.8vw, 0.95rem);
+  padding: 0.5rem;
+  opacity: 0.9;
+  transition: var(--transition);
+  border-radius: 8px;
+}
+
+.participantes-lista > div:hover {
+  background: rgba(38,198,218,0.12);
+  opacity: 1;
+}
+
+/* =========== RESPONSIVE =========== */
+@media (max-width: 768px) {
+  .acerca-de-nosotros::before { display: none; }
+}
