@@ -87,7 +87,7 @@
 
     {{- $basePath := strings.TrimSuffix "/" (urls.Parse site.BaseURL).Path -}}
     {{- $galleryItems := slice -}}
-    {{- range $idx, $item := (hugo.Data.galeria.items | default slice) -}}
+    {{- range $idx, $item := (site.Data.galeria.items | default slice) -}}
       {{- $img := $item.image | default "" -}}
       {{- if $img -}}
         {{- if and (not (hasPrefix $img "http://")) (not (hasPrefix $img "https://")) -}}
